@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5" name="viewport"/><meta content="dark" name="color-scheme"/><title>Khối Lab v5.2 — AUTO 138 công thức · Theo dõi từng bàn</title><style>
+:root{color-scheme:dark;--bg:#080d13;--panel:#121d29;--panel2:#0d1721;--line:#273a4b;--fg:#eaf2f6;--sub:#93adbf;--green:#42d4b9;--blue:#53a9f4;--red:#ff7182;--gold:#f3c87b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top right,#112232,#080d13 55%);color:var(--fg);font:14px/1.5 system-ui,-apple-system,'Segoe UI',sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.35;cursor:not-allowed}h1,h2,h3,p{margin:0}h1{font-size:22px;letter-spacing:-.7px}h2{font-size:15px}h3{font-size:13px}label{cursor:pointer}small{color:var(--sub)}.shell{max-width:1490px;margin:auto;padding:20px 20px 70px}.header{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}.tag{display:inline-block;font-size:11px;color:var(--green);background:#12382f;border:1px solid #286c57;border-radius:100px;padding:3px 9px}.sub{color:var(--sub);font-size:12px}.tabs{display:flex;gap:6px;overflow:auto;border-bottom:1px solid var(--line);margin:17px 0 15px}.tabs button{border:0;color:var(--sub);background:transparent;padding:10px 13px;white-space:nowrap;font-weight:700;border-bottom:2px solid transparent}.tabs button.active{color:var(--fg);border-color:var(--green)}.tab{display:none}.tab.active{display:block}.layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(370px,.9fr);gap:15px}.panel{border:1px solid var(--line);background:var(--panel);border-radius:15px;padding:16px;margin-bottom:14px;min-width:0}.panelhead{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:11px}.hint{font-size:12px;color:var(--sub)}.flex{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.spread{justify-content:space-between}.btn{background:#1a2d3e;color:var(--fg);border:1px solid #355065;border-radius:10px;font-weight:700;padding:8px 11px;transition:.15s}.btn:hover:not(:disabled){background:#264357}.btn.primary{background:var(--green);border-color:var(--green);color:#08231f}.btn.slim{font-size:12px;padding:6px 8px}.btn.red{color:#ff9a9a}.entrybtn{font-size:20px;padding:11px 23px;border:0;border-radius:11px;color:white;font-weight:900}.entrybtn.B{background:#b93758}.entrybtn.P{background:#2477c0}.entrybtn.H{background:#168872}.select,.input,textarea{min-width:0;border:1px solid #354b60;border-radius:9px;padding:8px 10px;background:#0b1824;color:var(--fg)}.select{max-width:100%}textarea{width:100%;height:116px;resize:vertical}.roadWrap{overflow:auto;border-radius:12px;border:1px solid #253a4d;background:#0a1620;padding:7px}.road{display:grid;grid-auto-flow:column;grid-template-rows:repeat(6,40px);grid-auto-columns:40px;gap:5px;width:max-content}.cell{height:40px;width:40px;border-radius:8px;display:grid;place-items:center;font-weight:850;border:1px solid #244052;position:relative}.cell.empty{background:#11212f;color:#304454}.cell.B{background:#8e2d45;border-color:#ad4661}.cell.P{background:#1a598e;border-color:#3279b6}.cell.H{background:#187765;border-color:#289583}.cell.next{background:#133c38;color:var(--green);border:2px dashed var(--green)}.cell em{position:absolute;bottom:0;right:3px;font-size:8px;color:#ffffff8c;font-style:normal;font-weight:500}.signal{padding:16px;border:1px solid #2e5661;background:linear-gradient(120deg,#17313d,#13212c);border-radius:13px;margin-bottom:12px}.signal h2{color:var(--sub);font-weight:650}.hero{font-size:29px;font-weight:900;margin:4px 0 3px}.hero.B{color:var(--red)}.hero.P{color:var(--blue)}.hero.warn{color:var(--gold)}.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}.chip{border:1px solid #355266;background:#0a1824;border-radius:8px;padding:5px 8px;font-size:11px}.chip strong{color:#fff}.alert{border:1px solid #7d5f37;background:#2b261d;color:#f2d19a;border-radius:9px;padding:9px 11px;font-size:12px;margin-top:10px}.ruleCard{border:1px solid #2c4050;border-radius:10px;padding:11px;margin:8px 0;background:#0e1b27}.ruleTop{display:flex;gap:10px;justify-content:space-between;align-items:flex-start}.ruleName{font-weight:800}.side{border:1px solid #3a5365;border-radius:9px;padding:7px 12px;font-size:20px;font-weight:850}.side.B{color:var(--red)}.side.P{color:var(--blue)}.side.off{color:var(--sub)}.pill{font-size:10px;background:#173044;color:#b1c6d8;border:1px solid #3b5969;border-radius:6px;padding:2px 6px}.pill.warn{color:var(--gold);border-color:#745937}.gridStats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}.stat{border:1px solid var(--line);background:#10202d;border-radius:11px;padding:11px}.stat b{font-size:21px;display:block}.stat span{font-size:11px;color:var(--sub)}.progress{height:7px;border-radius:9px;background:#2a3949;overflow:hidden;margin-top:7px}.progress>i{height:100%;display:block;background:var(--green)}.tableScroll{overflow:auto;max-width:100%}.table{width:100%;border-collapse:collapse;font-size:12px}.table th{text-align:left;white-space:nowrap;color:#bfd2e2;background:#1b2b3a;border-bottom:1px solid #416074;position:sticky;top:0;z-index:1}.table td,.table th{padding:10px 9px;border-bottom:1px solid #263b4a;vertical-align:top}.table tbody tr:hover{background:#18293a}.table .n{font-variant-numeric:tabular-nums}.table .B{color:var(--red);font-weight:850}.table .P{color:var(--blue);font-weight:850}.table .H{color:var(--green);font-weight:850}.table .bad{color:var(--red)}.table .good{color:var(--green)}.dim{color:var(--sub)}.tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0}.tools input[type=search]{width:220px}.tools input[type=number]{width:73px}.check{accent-color:var(--green);width:17px;height:17px}.scrollList{max-height:610px;overflow:auto}.mutedNote{font-size:12px;color:var(--sub);line-height:1.6;padding:11px;border:1px solid var(--line);background:#0e1a25;border-radius:10px;margin-top:9px}.footer{color:#7892a5;font-size:12px;line-height:1.6;margin-top:20px}.badge{font-size:11px;border-radius:7px;padding:3px 7px;background:#163c32;color:#8ce4c9}.fileLabel{border:1px dashed #4f7389;background:#123044;border-radius:10px;padding:10px;display:inline-block;cursor:pointer}.hide{display:none!important}.emptyState{color:var(--sub);text-align:center;padding:22px}.help{background:#101f2a;border:1px solid var(--line);border-radius:10px;padding:12px;color:#c2d3df;font-size:12px;line-height:1.6}#popup{position:fixed;right:16px;bottom:16px;background:#1b3b43;border:1px solid #40aa98;color:#dcfff2;padding:10px 14px;border-radius:10px;max-width:420px;box-shadow:0 15px 40px #0008;display:none;z-index:50}.running{color:var(--green)}
+@media(max-width:1000px){.layout{grid-template-columns:1fr}.shell{padding:13px 11px 55px}}@media(max-width:520px){.gridStats{grid-template-columns:repeat(2,1fr)}.cell,.road{--x:36px}.road{grid-template-rows:repeat(6,36px);grid-auto-columns:36px;gap:4px}.cell{width:36px;height:36px}.panel{padding:11px}.entrybtn{padding:10px 18px}.header h1{font-size:18px}.tools input[type=search]{width:100%}}
+
+/* compact status list for twelve rules */
+#currentRules .ruleCard{padding:8px 10px;margin:5px 0}
+#currentRules .chips{gap:5px;margin-top:6px}
+
+/* fixed 12-rule edition: hide all alternate preset and on/off controls */
+#coveragePresets,#activateThree,#onlyThree,#enableAll,#preset12,#preset20,#preset30,#disableAll,#onlyOn,.ruleCheckbox{display:none!important}
+
+/* v2.7: selectable 3/7/12/20/30 rule, compact mobile picker */
+.quickMode{padding:11px 12px!important;margin-bottom:10px!important;background:#0d1e2b}
+.quickMode .panelhead{margin-bottom:7px!important}
+.quickMode h2{font-size:12px}.modeRow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.modeBtn{background:#142b3b;border:1px solid #334f64;color:#d7e8f3;min-width:0;min-height:54px;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4px;gap:2px}
+.modeBtn b{font-size:19px;line-height:1.1}.modeBtn small{font-size:10px;color:#9cbece}
+.modeBtn.selected{border-color:#4aded0;background:#153d40;color:#65ead4;box-shadow:inset 0 0 0 1px #33a999}
+.modeSummary{font-size:11.2px;line-height:1.5;margin-top:8px;color:#b1c9d8}.modeSummary strong{color:#f0f8fc}
+.comparison-panel .hint{margin-top:8px}
+.compareList{display:grid;gap:7px}
+.compareCard{width:100%;background:#0f2331;color:#e8f3fc;border:1px solid #324d61;border-radius:11px;padding:11px;display:grid;grid-template-columns:1fr auto 72px;align-items:center;gap:12px;text-align:left}
+.compareCard.selected{border-color:#4ad3bd;background:#133a3b}.compareCard strong{font-size:16px}.compareCard small{display:block;font-size:10.5px;color:#98b6c9}.compareNum{text-align:right}.compareNum b{font-size:19px;color:#e8f3fc}.compareArrow{font-size:10px;text-align:center;color:#9bd8ce;font-weight:800}
+.rulePicker{display:grid;gap:8px;max-height:62vh;overflow-y:auto;overscroll-behavior:contain;padding:2px 2px 5px}
+.pickCard{display:flex;gap:10px;align-items:flex-start;border:1px solid #304758;border-radius:11px;padding:11px;background:#101f2e;cursor:pointer;min-width:0}
+.pickCard.selected{background:#112c31;border-color:#377e77}
+.pickCard input.ruleCheckbox{display:block!important;accent-color:#47d8b8;width:20px;height:20px;flex:none;margin:2px 0}
+.pickContent{flex:1;min-width:0}.pickTop{display:flex;flex-wrap:wrap;align-items:baseline;gap:7px;margin-bottom:7px}.pickTop strong{font-size:13px}.pickTag{font-size:10.5px;color:#aac4d3}
+.pickNumbers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}.pickNumbers>span{display:flex;flex-direction:column;min-width:0}.pickNumbers b{font-size:14px;color:#e6f1fb;white-space:nowrap}.pickNumbers small{font-size:9px;white-space:nowrap;color:#8ba7b8}
+.pickDetail{font-size:10px;margin-top:7px;color:#9cbacc}.pickDetail p{margin:5px 0}.pickDetail summary{cursor:pointer}
+.ruleTools{margin:9px 0!important}.ruleTools .input{min-width:160px;flex:1}.ruleTools .select{max-width:100%}
+@media(max-width:520px){.quickMode{margin-top:2px!important}.modeBtn{min-height:51px}.modeBtn b{font-size:17px}.modeBtn small{font-size:9.4px}.pickNumbers b{font-size:13px}.pickNumbers small{font-size:8.5px}.compareCard{grid-template-columns:1fr auto 56px;gap:6px}.compareNum b{font-size:18px}}
+@media(min-width:800px){.rulePicker{grid-template-columns:repeat(2,minmax(0,1fr));max-height:70vh}.compareList{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* v3.0 rolling-window controls; do not change prediction engine */
+.windowPanel{margin:4px 0 12px;padding:11px;border-radius:12px;border:1px solid #355566;background:#0b202c}
+.windowHeader{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-bottom:9px}
+.windowHeader strong{font-size:12px}
+.windowOptions{display:flex;gap:5px;flex-wrap:wrap}
+.windowBtn{border:1px solid #345268;border-radius:8px;background:#142d3b;color:#b6cfde;padding:8px 11px;font-size:12px;font-weight:750;cursor:pointer}
+.windowBtn.selected{background:#13564f;border-color:#36c3ad;color:#eafffa}
+.windowCaption{font-size:10.5px;color:#a1bccb;margin:7px 0 0}
+.stageReveal{border-top:1px solid #2e4857;margin-top:12px;padding-top:9px}
+.stageReveal summary{font-size:11.5px;font-weight:800;color:#bad9e4;cursor:pointer}
+.stageTable{width:100%;font-size:11px;border-collapse:collapse;margin-top:8px}
+.stageTable th,.stageTable td{padding:7px 5px;border-bottom:1px solid #294350;text-align:left}
+.stageTable th{color:#8faab9}
+.periodCount{color:#88b4c5;font-size:10px}
+.periodInfo{color:#a9c4d0;font-size:11px;margin-bottom:5px}
+.modeWindowCount{color:#94c7cf;font-size:10px}
+.pickWindow{color:#a6d8e0;font-size:11px;margin:6px 0}
+@media(max-width:430px){.windowBtn{padding:8px 9px}.windowPanel{padding:8px}.stageTable{font-size:10px}}
+
+/* v3.1 automatic, walk-forward selection */
+.autoPanel{border-color:#2d6770;background:linear-gradient(135deg,#102c36,#101e2d)}
+.autoHeader{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.autoToggle{min-width:110px}
+.autoStatus{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:9px 10px;border-radius:10px;background:#0a1d28;border:1px solid #2b5360;margin:9px 0}
+.autoStatus .main{font-size:16px;font-weight:850;color:#c9f5ee}
+.autoStatus .desc{font-size:11px;color:#9ab7c4;margin-top:3px;line-height:1.5}
+.autoStatus .side{font-size:11px;text-align:right;color:#c6d6e2;flex-shrink:0}
+.autoStat{font-size:11px;color:#a7c3d0;line-height:1.55;margin-top:6px}
+.autoGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin-top:10px}
+.autoMini{border:1px solid #294657;border-radius:9px;padding:8px;background:#0c2130;min-width:0}
+.autoMini.leader{border-color:#31bda9;background:#153c3c}
+.autoMini .n{font-size:11px;font-weight:800;color:#f0f8fc}
+.autoMini .r{font-size:17px;font-weight:900;color:#e6f3f8;margin:2px 0}
+.autoMini .m{font-size:9.5px;line-height:1.55;color:#a4c0cf;overflow-wrap:anywhere}
+.autoMini .good{color:#70e0c3}.autoMini .poor{color:#f2a3a6}
+.autoMini .tiny{font-size:9px;color:#f0cc8b}
+.autoNotes{font-size:10.5px;color:#8bafbd;margin-top:8px;line-height:1.55}
+@media(max-width:650px){.autoGrid{display:flex;overflow:auto;gap:7px;-webkit-overflow-scrolling:touch}.autoMini{flex:0 0 108px}.autoStatus .main{font-size:15px}.autoPanel{padding:12px!important}}
+
+body.auto-on #quickMode,body.auto-on .mobile-mini-note{display:none!important}
+.autoDetails{margin-top:7px;border-top:1px solid #274b56;padding-top:2px}
+.autoDetails[open]>.autoGrid{padding-bottom:8px}
+.autoPanel .autoNotes{margin-top:6px;font-size:10px}
+@media(max-width:680px){.autoPanel .autoHeader h2{font-size:11px;line-height:1.4}.autoPanel .autoStatus{padding:8px}.autoPanel .autoStat{font-size:10px}}
+
+/* v3.3: compact whole-board + adaptive recent health + upcoming signal; no form overflow */
+body.auto-on #quickMode{display:block!important}
+.modeRow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}
+.modeBtn{min-height:132px!important;padding:9px!important;gap:6px!important;align-items:stretch!important;justify-content:flex-start!important;overflow:hidden;contain:layout style;text-align:left}
+.modeTop,.modeFull,.modeRecent{display:flex;width:100%;min-width:0;justify-content:space-between;align-items:center;gap:5px}
+.modeTop .modeTag{white-space:nowrap;font-size:11px}
+.modeNext{max-width:75px;min-width:29px;text-align:center;padding:2px 5px;border-radius:6px;font-size:10px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border:1px solid #476278;background:#0c1d2a;color:#b2cbda}
+.modeNext.B{color:#ff94a4;border-color:#914c64}.modeNext.P{color:#81befc;border-color:#436f9c}.modeNext.conflict{color:#ffcb8d;border-color:#aa7045;font-size:8px}.modeNext.wait{color:#aac1cf}
+.modeFull strong{font-size:24px!important;line-height:1.05;letter-spacing:-.7px;color:#eef9fb;font-variant-numeric:tabular-nums}
+.modeBtn.selected .modeFull strong{color:#63e9d1}
+.modeFull span{font-size:9px;color:#a9c0d0;white-space:nowrap}
+.modeRecent{background:#0d2532;border-radius:6px;padding:4px 5px}
+.modeRecent span{font-size:9px;color:#afc7d4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.modeRecent strong{font-size:13px!important;color:#e7f3f8;white-space:nowrap;line-height:1.1;font-variant-numeric:tabular-nums}
+.modeRecent em{font-style:normal;font-weight:500;font-size:9px;color:#afc4d1}
+.modeBottom{font-size:10px;font-weight:750;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#a6bdcc}
+.modeBottom.good{color:#6be2bf}.modeBottom.warm{color:#eac77f}.modeBottom.weak{color:#ff9a9e}.modeBottom.small{color:#d6b989}.modeBottom.empty{color:#90a5b6}
+.modeHiddenHistory{display:none}
+@media(max-width:1100px){.modeRow{display:flex;overflow-x:auto;gap:7px;padding:1px 1px 6px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scroll-snap-type:x proximity}.modeBtn{flex:0 0 184px!important;max-width:184px;scroll-snap-align:start}}
+@media(max-width:360px){.modeBtn{flex-basis:174px!important;max-width:174px}.modeFull strong{font-size:22px!important}}
+
+@media(max-width:1000px){#tab-data .layout{display:flex;flex-direction:column-reverse}}
+/* v5.2 one-file research export */
+#tab-data .exportAdvanced{margin-top:10px;border-top:1px solid #294454;padding-top:9px}
+#tab-data .exportAdvanced summary{cursor:pointer;color:#9cbac8;font-size:12px}
+#tab-data #exportJson{max-width:100%;white-space:normal;line-height:1.3;text-align:center}
+#tab-data #researchExportStatus{min-height:20px;margin:7px 0 12px;overflow-wrap:anywhere}
+</style><meta content="yes" name="apple-mobile-web-app-capable"/><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/><meta content="#071019" name="theme-color"/><meta content="yes" name="mobile-web-app-capable"/><style>
+/* iPhone UI edition: visual changes only; core prediction logic unchanged. */
+:root{--bg:#080e15;--panel:#111c28;--panel2:#0b1722;--line:#24364a;--fg:#ecf3fa;--sub:#90a5b6;--green:#48d8c1;--blue:#63b1ff;--red:#ff6883;--gold:#f3c884}
+body{background:#080e15; -webkit-font-smoothing:antialiased}
+button,input,select,textarea{-webkit-tap-highlight-color:transparent}
+button{touch-action:manipulation}
+.brand-mark{display:inline-flex;width:33px;height:33px;border-radius:10px;background:#0d3e43;color:#58e0c9;align-items:center;justify-content:center;margin-right:4px}
+.brand-accent{color:var(--green)}.edition{font-size:12px;letter-spacing:0;font-weight:650;color:#b3cbd5;padding:5px 9px;border:1px solid #2a4957;border-radius:30px;vertical-align:middle;margin-left:6px;white-space:nowrap}
+.mobile-mini-note{display:none}
+#tab-main>#heroSignal{max-width:100%}
+#heroSignal{border:1px solid #365e67;background:linear-gradient(130deg,#14353e,#10232e);padding:17px 20px;border-radius:16px}
+#heroSignal .hero{font-size:34px;letter-spacing:-1.2px;line-height:1.16}
+#heroSignal h2{font-size:11px;letter-spacing:.9px;font-weight:850}
+#heroSignal .alert{font-size:11px;line-height:1.5;background:#102229;border-color:#2d5a5c}
+#currentRules .ruleCard.rule-active{border-color:#448576;background:#0e2b30}
+#currentRules .ruleCard.rule-idle{opacity:.85}
+#currentRules .ruleCard.rule-idle .chips{display:none}
+body.hide-idle #currentRules .rule-idle{display:none}
+#toggleIdleRules{flex-shrink:0}
+.ruleName .pill{display:inline-block;white-space:normal}
+#boardSelect{flex:1;min-width:130px}
+@media (min-width: 1001px){#tab-main .layout{margin-top:13px}}
+@media (max-width: 1000px){
+  .shell{padding:12px 13px 76px;max-width:650px}
+  .header{gap:6px;align-items:start}
+  .header>.sub{font-size:11px}
+  .tabs{position:sticky;top:0;z-index:20;background:#08121de8;backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);padding:2px 0;margin:12px -13px 12px;border-bottom:1px solid #30445a;justify-content:space-around}
+  .tabs button{flex:1;min-width:0;font-size:12px;padding:13px 4px;font-weight:750;min-height:47px}
+  .tab.active{display:block}
+  #tab-main .layout{display:flex;flex-direction:column;gap:0}
+  #tab-main .layout>div{display:contents}
+  #tab-main .board-panel{order:1}
+  #tab-main .rules-panel{order:2}
+  #tab-main .stats-panel{order:3}
+  #tab-main .mode-panel{order:4}
+  #tab-main .entry-panel{order:5}
+  #heroSignal{margin-bottom:11px}
+  .mobile-mini-note{display:block;color:var(--sub);font-size:11px;margin:-3px 3px 10px}
+  .panel{margin-bottom:10px;border-radius:14px}
+  #tab-main .panelhead{gap:4px}
+  .roadWrap{overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#345568 transparent}
+  #tab-main .entry-panel{position:fixed;left:0;right:0;bottom:0;width:100%;z-index:30;margin:0;padding:9px max(11px,env(safe-area-inset-right)) calc(9px + env(safe-area-inset-bottom)) max(11px,env(safe-area-inset-left));background:linear-gradient(180deg,#10202bef,#101a26 30%);border:1px solid #30465c;border-radius:14px 14px 0 0;box-shadow:0 -12px 40px #000b;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+  #tab-main .entry-panel .panelhead{margin:0 0 6px;display:flex;justify-content:space-between}
+  #tab-main .entry-panel .panelhead h2{font-size:12px}
+  #mobileNextNumber{color:var(--green);font-size:12px}
+  #tab-main .entry-panel>.flex{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.75fr) 43px 43px;gap:6px}
+  #tab-main .entry-panel .entrybtn{width:100%;height:52px;font-size:22px;padding:0;border-radius:11px;line-height:1}
+  #tab-main .entry-panel .btn{font-size:0;height:52px;padding:0;width:43px;display:flex;align-items:center;justify-content:center}
+  #tab-main .entry-panel #undo:before{content:'↶';font-size:25px}
+  #tab-main .entry-panel #redo:before{content:'↷';font-size:25px}
+  #tab-main .entry-panel>p{display:none}
+  #tab-main{padding-bottom:calc(107px + env(safe-area-inset-bottom))}
+  #tab-main .road{grid-template-rows:repeat(6,42px);grid-auto-columns:42px;gap:4px}
+  #tab-main .cell{width:42px;height:42px;border-radius:9px;font-size:15px}
+  #tab-main .roadWrap{padding:5px}
+  #tab-main .panel{padding:12px}
+  .ruleCard .ruleTop .side{min-width:54px;text-align:center}
+  #currentRules{max-height:none}
+  .entry-panel button:disabled{filter:grayscale(.45);opacity:.38}
+  .tableScroll{max-width:100%;-webkit-overflow-scrolling:touch}
+  .table{min-width:640px}
+  #tab-stats .table{min-width:600px}
+  #tab-rules .table{min-width:780px}
+  .fileLabel{display:inline-flex;min-height:45px;align-items:center}
+  #tab-data .btn, #tab-data .select, #tab-data .fileLabel{min-height:44px}
+  .footer{margin-top:10px;padding-bottom:10px}
+}
+@media(max-width:520px){
+  .shell{padding:9px 11px 78px}
+  .header h1{font-size:20px}
+  .edition{font-size:10px;padding:3px 7px}
+  .header>.sub{display:none}
+  .tabs{margin:10px -11px 11px}
+  .tabs button{font-size:11.4px}
+  .gridStats{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+  .stat b{font-size:19px}
+  .stat span{font-size:10px}
+  #heroSignal{padding:14px;margin-bottom:9px}
+  #heroSignal .hero{font-size:30px}
+  #heroSignal .alert{padding:8px;margin-top:9px}
+  #heroSignal .chips{gap:5px;margin-top:6px}
+  #heroSignal .chip{font-size:11px;padding:4px 7px}
+  #tab-main .board-panel .flex{gap:5px}
+  #tab-main .board-panel .btn{padding:8px 9px;min-height:38px}
+  #boardSelect{max-width:100%;min-width:0;width:100%;flex:1 1 100%;height:40px}
+  #tab-main .board-panel .panelhead small{font-size:10px}
+  #tab-main .road{grid-template-rows:repeat(6,43px);grid-auto-columns:43px;gap:4px}
+  #tab-main .cell{width:43px;height:43px}
+  #tab-main .entry-panel{padding:8px 10px calc(8px + env(safe-area-inset-bottom))}
+  #tab-main .entry-panel .entrybtn,#tab-main .entry-panel .btn{height:53px}
+  #tab-main .rules-panel .panelhead h2{font-size:13px}
+  #currentRules .ruleCard{padding:10px 9px}
+  .ruleName{font-size:12px}
+  .pill{font-size:9px}
+  #currentRules .chip{font-size:10px}
+  .tools{gap:7px}
+  #ruleSearch{width:100%}
+  #ruleOrder{flex:1}
+}
+@media(max-width:360px){
+  #tab-main .entry-panel>.flex{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.7fr) 36px 36px;gap:4px}
+  #tab-main .entry-panel .btn{width:36px}
+  .tabs button{font-size:10.5px}
+  .edition{display:block;width:max-content;margin:6px 0 0}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* v2.6: iPhone main tab = signal, grid, active rules, short performance */
+#tab-main .layout{grid-template-columns:minmax(0,1fr)}
+#tab-main .live-rules-panel{min-width:0}
+.signalCaution{font-size:10.5px;margin-top:9px;color:#9bb4c4}
+.liveRuleCards{display:grid;gap:6px}
+.liveRule{display:grid;grid-template-columns:minmax(0,1fr) 43px;align-items:center;gap:8px;padding:9px 10px;border:1px solid #2a4552;border-radius:10px;background:#0e2230}
+.liveRuleName{font-size:12px;font-weight:850;display:flex;gap:7px;align-items:baseline;flex-wrap:wrap}
+.liveRuleMeta{font-size:10.5px;color:#91aec0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px}
+.liveRuleResult{border:1px solid #36556a;border-radius:9px;font-size:19px;font-weight:900;text-align:center;padding:6px 0}
+.liveRuleResult.B{color:var(--red)}.liveRuleResult.P{color:var(--blue)}
+#tab-rules .mode-panel,#tab-rules .rules-panel{margin-bottom:11px}
+#tab-rules #currentRules{max-height:390px;overflow:auto}
+#tab-rules #currentRules .ruleCard{padding:9px;margin:6px 0}
+@media(max-width:1000px){
+  #tab-main .layout>div{display:contents}
+  #tab-main .board-panel{order:1}
+  #tab-main .live-rules-panel{order:2}
+  #tab-main .stats-panel{order:3}
+  #tab-main .entry-panel{order:5}
+  #tab-rules .panel{padding:12px}
+  #tab-rules #currentRules{max-height:370px}
+  #tab-main .entry-panel{z-index:35}
+}
+@media(max-width:390px){.tabs button{font-size:10.7px;padding-left:2px;padding-right:2px}.liveRuleMeta{font-size:10px}}
+
+
+/* v2.8: live rule health, deliberately retrospective—not a win-probability indicator */
+.healthOverview{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:11px 0}
+.healthOverview>span{padding:9px;border:1px solid #334659;background:#0d1c29;border-radius:9px;min-width:0}
+.healthOverview b{font-size:19px;display:block;line-height:1.1;font-variant-numeric:tabular-nums}
+.healthOverview small{font-size:10px;line-height:1.25;display:block;margin-top:5px}
+.topLiveRules{margin:0 0 13px}.topHead{font-size:12px;font-weight:750;margin:8px 0}.topHead small{font-weight:400}
+.topGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.topOne{background:#10212d;border:1px solid #395266;border-radius:10px;padding:9px;display:flex;flex-direction:column;gap:7px}
+.topOne>div:nth-child(2){display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}.topOne strong{font-size:18px}
+.topOne .btn{align-self:flex-start;margin-top:auto}
+.noTop{font-size:12px;padding:9px;border:1px dashed #415365;border-radius:9px;color:#a8bdce}
+.healthFlag{display:inline-block;border:1px solid #536275;border-radius:7px;padding:2px 6px;font-size:10px;font-weight:800;white-space:nowrap;color:#afc1cf;background:#182936}
+.healthFlag.good{color:#89e2cc;border-color:#3a8d78;background:#13352f}.healthFlag.weak{color:#ffaaaa;border-color:#a65c67;background:#36222d}
+.healthFlag.streak{color:#f1ce90;border-color:#806b47;background:#332b20}.healthFlag.slump{color:#ffaaaa;border-color:#a65c67;background:#36222d}
+.healthFlag.small{color:#f1ce90;border-color:#806b47;background:#332b20}.healthFlag.neutral{color:#b8d2e8;border-color:#54697d}
+.nowFlag{font-size:10px;font-weight:800;border-radius:6px;padding:2px 6px;border:1px solid #457a94}.nowFlag.B{color:#ff8798}.nowFlag.P{color:#77baff}
+.pickCard.currently-good{border-left:3px solid #4eb99f}
+.pickPrimary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:8px 0}
+.pickPrimary>div{padding:7px 6px;background:#0b1b28;border:1px solid #2d4051;border-radius:8px;min-width:0}
+.pickPrimary b{font-size:17px;display:block;white-space:nowrap;font-variant-numeric:tabular-nums}
+.pickPrimary small{display:block;font-size:10px;color:#a2b8c8;line-height:1.3}
+.pickSecondary{font-size:10px;color:#8faaba;display:flex;gap:7px;flex-wrap:wrap;margin-top:7px}
+.pickSecondary b{color:#c4d5e2}.pickTag{display:block;line-height:1.4;margin-top:4px}
+.ruleTrend{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:4px}
+.trend{display:inline-flex;gap:3px;align-items:center}
+.trend i{display:inline-grid;place-items:center;width:22px;height:22px;border:1px solid;border-radius:5px;font-size:13px;font-style:normal;font-weight:800}
+.trend i.win{color:#83e7c7;border-color:#387864;background:#14342d}.trend i.loss{color:#ff9aa7;border-color:#8d4252;background:#39212c}
+.trendEmpty,.mutedMeta{font-size:10px;color:#98acbd}
+.liveRule .healthFlag{font-size:9px;padding:2px 5px}.liveRule .trend{margin-top:6px}
+#tab-rules.tab.active{display:flex;flex-direction:column}#tab-rules>.comparison-panel{order:2}#tab-rules>.panel:not(.comparison-panel){order:1}
+@media(max-width:680px){.topGrid{grid-template-columns:1fr}.topOne{padding:10px}.healthOverview{grid-template-columns:repeat(2,minmax(0,1fr))}.pickPrimary b{font-size:15px}.pickPrimary small{font-size:9.4px}.pickCard{gap:8px;padding:10px}.rulePicker{max-height:75vh}}
+
+/* v3.0: compact, live-on-this-board comparison of all five presets */
+.quickMode .panelhead{margin-bottom:8px!important}
+.modeRow{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.modeBtn{min-height:96px;display:flex;flex-direction:column;align-items:stretch;text-align:left;justify-content:center;padding:8px 7px;gap:1px;position:relative}
+.modeTag{font-size:10.5px;font-weight:850;letter-spacing:.1px;color:#d7eaf4}
+.modePct{font-size:24px;line-height:1.28;font-weight:900;font-variant-numeric:tabular-nums;color:#e7f3fa}
+.modeBtn .modeFraction,.modeBtn .modeHistorical{font-size:9px;color:#9cb8c8;white-space:nowrap;line-height:1.45}
+.modeBtn .modeHistorical{color:#7499ad}
+.modeBtn.selected .modeTag,.modeBtn.selected .modePct{color:#68ebd5}
+.modeBtn.enough-good:not(.selected) .modePct{color:#67d6bd}
+.modeBtn.enough-low:not(.selected) .modePct{color:#f7b18b}
+.modeBtn .modeSmall{font-size:8.7px;color:#edd0a0;white-space:nowrap}
+.quickMode .modeSummary{border-top:1px solid #263f50;padding-top:7px;line-height:1.6}
+@media(max-width:720px){
+ .modeRow{display:flex;overflow-x:auto;scroll-snap-type:x proximity;gap:7px;padding-bottom:4px;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+ .modeBtn{flex:0 0 110px;min-height:96px;scroll-snap-align:start}
+ .modePct{font-size:24px}
+}
+@media(max-width:360px){.modeBtn{flex-basis:103px}.modePct{font-size:22px}}
+
+.activeBoardBanner{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:10px;padding:9px 12px;border:1px solid #2a6d6a;border-radius:10px;background:#0f292c;color:#d5f6ed;font-size:12px}
+.activeBoardBanner>b{font-size:14px}.activeBoardBanner>span:last-child{margin-left:auto;font-size:10px;color:#8fe5c8;font-weight:700}
+.boardPulse{width:8px;height:8px;background:#36cbb1;border-radius:50%;display:inline-block;box-shadow:0 0 0 3px #36cbb126}
+.autoCurrent{font-size:11px;padding:7px 10px;border:1px solid #335d60;border-radius:8px;color:#a6dcd4;margin-top:9px;background:#0b242c}
+.autoCurrent strong{color:#cbfff3}
+@media(max-width:520px){.activeBoardBanner{font-size:11px}.activeBoardBanner>span:last-child{width:100%;margin-left:14px}}
+
+/* v3.5 — formula names and adaptive ranking, compact iPhone cards */
+.formulaSub{display:block;font-size:9px;line-height:1.25;color:#8eafc3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:-3px}
+.modeTop .modeTag{font-size:11px;font-weight:850;letter-spacing:-.15px}
+.modeBtn.formulaLowSample{border-style:dashed}
+.modeBtn{min-height:142px!important}
+@media(max-width:1100px){.modeRow{gap:7px}.modeBtn{flex:0 0 186px!important;max-width:186px}}
+@media(max-width:360px){.modeBtn{flex-basis:174px!important;max-width:174px}}
+/* v3.6 — one-row AUTO toolbar; details hidden until requested */
+.autoPanel.is-collapsed{padding:7px 10px!important;margin-bottom:8px!important;background:#0c1c27;border-color:#29465a;border-radius:11px}
+.autoPanel.is-collapsed .autoHeader{min-height:29px}
+.autoDisclosure{font-size:11px;font-weight:800;line-height:1.35;min-width:0;flex:1;text-align:left;color:#c6e4eb;background:transparent;border:0;padding:5px 2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.autoDisclosure:hover{color:#68e1cf}
+.autoDisclosure:focus-visible{outline:2px solid var(--green);outline-offset:2px;border-radius:5px}
+.autoPanel .autoToggle{flex:none;min-width:84px;padding:5px 9px}
+.autoBody[hidden]{display:none!important}
+@media(max-width:520px){.autoPanel.is-collapsed{padding:6px 8px!important}.autoDisclosure{font-size:11px}.autoPanel .autoToggle{min-width:78px;font-size:11px}}
+
+/* v3.8: Historical-board-derived groups; mobile-safe tabs */
+.formulaScope{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:7px 0 10px}.formulaScope[hidden]{display:none!important}
+.scopeBtn{appearance:none;cursor:pointer;background:#142a38;border:1px solid #34556a;border-radius:9px;color:#cde6ee;padding:7px 10px;font:inherit;font-size:11px;font-weight:800;white-space:nowrap}
+.scopeBtn.active{border-color:#41d9bb;background:#153d39;color:#70efcb}
+#formulaScopeNote{color:#91b1bf;font-size:10px;line-height:1.4;flex:1 1 120px}
+.formulaIds{display:block;color:#96adbc;font-size:9px;line-height:1.35;overflow-wrap:anywhere;padding:3px 0 1px}
+@media(max-width:390px){.formulaScope{gap:5px}.scopeBtn{font-size:10px;padding:7px}.formulaIds{font-size:8.5px}}
+/* v3.7: Independent rule dashboard, no artificial vote aggregation */
+#modeButtons[hidden],#singleRuleBoard[hidden],#autoPanel[hidden]{display:none!important}
+body[data-focus="single"] #rulePicker .ruleCheckbox{display:none!important}
+.ruleExportDetail{margin:10px 0;padding:8px 10px;border:1px solid #294559;border-radius:10px;color:#a8c9d6;font-size:11px}.ruleExportDetail summary{cursor:pointer;font-weight:750}.ruleExportButtons{display:flex;gap:7px;flex-wrap:wrap;margin:9px 0 4px}.ruleExportButtons .btn{flex:1;min-width:120px}
+.focusSwitch{display:flex;gap:3px;background:#08141f;border:1px solid #254459;border-radius:10px;padding:3px;margin:0 0 8px}
+.focusTab{flex:1;min-height:31px;padding:6px 9px;background:transparent;color:#9bb9c9;border:0;border-radius:7px;font:inherit;font-size:12px;font-weight:800;cursor:pointer}
+.focusTab.active{background:#17433f;color:#79f8dd;box-shadow:inset 0 0 0 1px #2e9483}
+#singleRuleBoard{max-width:100%;min-width:0}
+.singleRuleTools{display:flex;align-items:center;justify-content:space-between;gap:9px;margin:3px 0 9px;font-size:11px;color:#a9c2d1}
+.singleRuleTools span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.miniFilter{flex:none;color:#c4dbe8;background:#142b3b;border:1px solid #36556c;border-radius:7px;padding:6px 9px;font-weight:700;font-size:11px;cursor:pointer}
+.miniFilter.active{border-color:#45cdb5;color:#5bf3d1}
+.singleRuleRow{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(166px,185px);gap:7px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;padding:2px 1px 8px;scrollbar-width:thin}
+.singleRuleCard{display:flex;flex-direction:column;gap:5px;text-align:left;min-width:0;min-height:122px;background:#142536;border:1px solid #334c62;border-radius:11px;padding:10px;color:#dcecf4;cursor:pointer;scroll-snap-align:start;font:inherit}
+.singleRuleCard.selected{background:#123e3d;border-color:#4ad6c2;box-shadow:0 0 0 1px #4ad6c2}
+.singleRuleCard:focus-visible,.focusTab:focus-visible,.miniFilter:focus-visible{outline:2px solid #54dfc7;outline-offset:2px}
+.singleRuleTop{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.singleRuleTop b{font-size:13px;color:#e7f5f9}
+.singleRuleNext{font-size:10px;font-weight:900;background:#162e42;padding:3px 7px;border-radius:5px;border:1px solid #365369;color:#a5bccb;white-space:nowrap}
+.singleRuleNext.B{background:#752b43;color:white;border-color:#bc4969}.singleRuleNext.P{background:#1a5a87;color:white;border-color:#3b8cc2}
+.singleRuleStat{display:flex;gap:8px;align-items:baseline;min-width:0}
+.singleRuleStat strong{font-size:23px;line-height:1.1;color:#67e4cf;white-space:nowrap}
+.singleRuleStat span{font-size:10px;color:#a8c4d1;white-space:nowrap}
+.singleRuleRecent,.singleRuleStatus{font-size:10.5px;color:#c6e0e7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.singleRuleStatus.small{color:#f1c479}.singleRuleStatus.good{color:#69edbb}.singleRuleStatus.weak{color:#ff96a1}
+.singleRuleHelp{font-size:10.5px;color:#95b5c5;margin-top:1px}
+.singleRuleEmpty{padding:16px 11px;border:1px dashed #365266;border-radius:9px;font-size:12px;color:#b6cbda}
+.singleRulePick{border:1px solid #356270;border-radius:7px;padding:6px 10px;background:#143135;color:#a9eedf;font-weight:800;font-size:11px;cursor:pointer}
+.ruleOneTag{display:inline-flex;align-items:center;border:1px solid #41816f;border-radius:6px;padding:2px 6px;font-weight:800;color:#5be3c8}
+.pickDirect{display:flex;justify-content:flex-end;margin:6px 0}
+#rulePicker .pickCard .ruleCheckbox{display:block!important;appearance:auto!important;accent-color:#3fdbc2;flex:0 0 18px;width:18px;height:18px;margin:3px 3px 0 0}
+@media(max-width:390px){.singleRuleRow{grid-auto-columns:minmax(158px,72vw)}.singleRuleCard{padding:9px;min-height:117px}.focusTab{font-size:11px}}
+/* v4.1: keep Group B separate from the 23 original formulas */
+.scopeBtn.groupBTab{border-color:#53745f;color:#bbf0d0}.scopeBtn.groupBTab.active{border-color:#58d9a6;background:#153c32;color:#85ffd2}
+/* v4.0: compact three scopes and folded backtest */
+.studyWrap{margin:2px 0 8px;border-bottom:1px solid #264359;padding-bottom:4px}
+.studyScroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.studyTable{width:100%;border-collapse:collapse;font-size:10px;color:#b8d3e1;min-width:330px;font-variant-numeric:tabular-nums}
+.studyTable th,.studyTable td{padding:7px 6px;text-align:left;border-bottom:1px solid #233a4a;white-space:nowrap}
+.studyTable th{color:#e7f3f9;font-size:10px}
+.studyTable td:first-child{font-weight:800;color:#c9f3e7}
+.formulaScope .scopeBtn{min-width:0;white-space:nowrap}
+.modeBtn .formulaSub{line-height:1.25}
+@media(max-width:390px){.formulaScope .scopeBtn{font-size:9.5px;padding:7px 6px}.formulaScope{gap:4px}.formulaScope #formulaScopeNote{flex-basis:100%}}
+
+/* v4.3: one compact, live, per-board watchlist of 25 separate formula groups. */
+.smartScope{margin:4px 0 8px;display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.smartScope .scopeBtn{font-size:10.5px;padding:6px 9px;border-radius:8px}
+.smartScope .smartCount{font-size:10px;color:#8bb9c4;flex:1 1 100%;line-height:1.35}
+body[data-focus="formula"] .modeRow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;overflow:visible;padding:0;scroll-snap-type:none}
+body[data-focus="formula"] .modeBtn{max-width:none!important;min-width:0!important;width:100%;min-height:107px;display:flex;flex-direction:column;align-items:stretch;gap:5px;text-align:left;padding:9px 10px;justify-content:flex-start}
+body[data-focus="formula"] .modeBtn .formulaIds{display:none}
+body[data-focus="formula"] .modeBtn .formulaSub{font-size:9px!important;line-height:1.35;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-height:12px}
+body[data-focus="formula"] .modeBtn .modeFull strong{font-size:21px!important;letter-spacing:-.5px}
+body[data-focus="formula"] .modeBtn .modeFull>span{font-size:9px;white-space:nowrap}
+body[data-focus="formula"] .modeBtn .modeRecent{background:#0d2432;border-radius:6px;padding:4px 6px;font-size:9px}
+body[data-focus="formula"] .modeBtn .modeRecent strong{font-size:11px}
+body[data-focus="formula"] .modeBtn .modeBottom{display:block;align-self:flex-start;font-size:9px;max-width:100%}
+body[data-focus="formula"] .modeBtn .modeTag{font-size:11px}
+body[data-focus="formula"] .modeBtn .formulaHighlight{font-weight:750;color:#7ee3cb;white-space:nowrap;font-size:9px}
+.focusEmpty{grid-column:1/-1;padding:16px 14px;border:1px dashed #3b6071;border-radius:10px;color:#bdd2dc;font-size:12px;line-height:1.55;background:#102330}
+.focusEmpty b{color:#f1f9ff}
+@media(max-width:1099px){body[data-focus="formula"] .modeRow{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:640px){body[data-focus="formula"] .modeRow{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}body[data-focus="formula"] .modeBtn{min-height:108px;padding:8px;gap:5px}body[data-focus="formula"] .modeBtn .modeFull strong{font-size:19px!important}body[data-focus="formula"] .modeBtn .modeFull>span{font-size:8.5px}}
+@media(max-width:340px){body[data-focus="formula"] .modeRow{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}body[data-focus="formula"] .modeBtn{padding:6px}body[data-focus="formula"] .modeBtn .modeTop .modeTag{font-size:10px}body[data-focus="formula"] .modeBtn .modeFull strong{font-size:17px!important}body[data-focus="formula"] .modeBtn .modeRecent em{font-size:8px}}
+
+/* v4.3: AUTO dynamic, current-board-only rule selection. */
+.ruleAutoBox{border:1px solid #316c70;border-radius:12px;background:linear-gradient(110deg,#102e36,#0d202f);padding:10px 12px;margin:9px 0;min-width:0}
+.ruleAutoTop{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:7px}
+.ruleAutoTitle{font-size:12px;font-weight:850;color:#a5f8e0;display:flex;align-items:center;gap:7px}
+.ruleAutoCount{font-size:10px;color:#95bdc7;line-height:1.4}
+.ruleAutoCtl{border-radius:8px;border:1px solid #4d978d;padding:7px 11px;font-weight:850;font-size:11px;background:#163d3f;color:#d4fff1;cursor:pointer;min-width:95px}
+.ruleAutoCtl.selected{background:#146c59;border-color:#53d7ae;color:#fff}
+.ruleAutoStatus{font-size:11px;line-height:1.5;color:#d8eff2;margin-top:5px;overflow-wrap:anywhere}
+.ruleAutoStats{display:flex;flex-wrap:wrap;align-items:center;gap:5px 12px;margin-top:6px;font-size:10px;color:#93b9c6}
+.ruleAutoStats b{color:#f0f9ff}
+.ruleAutoBadges{display:flex;gap:4px;flex-wrap:wrap;margin-top:7px}
+.ruleAutoBadge{font-size:10px;color:#bfe9e6;border:1px solid #356575;background:#0e2937;border-radius:6px;padding:4px 6px;white-space:nowrap}
+.ruleAutoBadge{white-space:normal;overflow-wrap:anywhere;max-width:100%}.ruleAutoBadge strong{color:#fff}
+.ruleAutoBadge .B{color:#ff91b0}.ruleAutoBadge .P{color:#8dd6ff}
+.ruleAutoHelp{font-size:9px;color:#829eac;margin-top:7px;line-height:1.5}
+@media(max-width:380px){.ruleAutoBox{padding:9px}.ruleAutoTitle{font-size:11px}.ruleAutoCtl{padding:6px 9px}.ruleAutoStats{gap:4px 7px}}
+
+/* v4.6: AUTO is the default and sole main-screen selection mechanism. */
+body:not(.manual-enabled) .comparison-panel,
+body:not(.manual-enabled) .pickDirect,
+body:not(.manual-enabled) #rulePicker .pickCard .ruleCheckbox,
+body:not(.manual-enabled) [data-top-toggle]{display:none!important}
+body:not(.manual-enabled) .pickCard{cursor:default}
+body:not(.manual-enabled) .pickCard.selected{border-color:#304758;background:#101f2e}
+body:not(.manual-enabled) .focusSwitch,
+body:not(.manual-enabled) #singleRuleBoard,
+body #autoPanel{display:none!important}
+.manualGuide{padding:9px 10px;margin:9px 0 12px;background:#0e2630;border:1px solid #27535e;border-radius:10px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:11px;color:#bfe1e4}
+.manualGuide b{color:#dcfff1}
+body:not(.manual-enabled) .manualOnly{display:none}
+.ruleAutoHelp[hidden]{display:none!important}
+.ruleAutoBox{padding:10px 12px}
+.ruleAutoStatus{font-size:12px}
+.modeBtn{cursor:default}
+body.manual-enabled .modeBtn{cursor:pointer}
+@media(max-width:520px){.manualGuide{gap:7px}.manualGuide button{width:100%}.ruleAutoBox{margin:7px 0}}
+</style><link href="lab-manifest.webmanifest" rel="manifest"/><link href="lab-icon-192.png" rel="apple-touch-icon"/></head><body data-version="v5.2"><div class="shell">
+<header class="header"><div><small>BẢNG KHỐI • TỰ KIỂM TRA • OFFLINE</small><h1><span class="brand-mark">◈</span> KHỐI <span class="brand-accent">LAB</span> <span class="edition">iPhone · v5.2 · AUTO 138 BỘ</span></h1></div><span class="sub">138 công thức · Gợi ý theo bàn hiện tại</span></header>
+<div aria-label="Điều hướng" class="tabs"><button class="active" data-tab="main">Bảng chính</button><button data-tab="rules">Kho 86 rule</button><button data-tab="stats">Đúng / sai</button><button data-tab="data">Dữ liệu</button></div>
+<section class="tab active" id="tab-main"><div id="activeBoardBanner" class="activeBoardBanner" aria-live="polite">Bàn hiện tại · đang tải…</div><div class="signal" id="heroSignal"><h2>TÍN HIỆU CHO LƯỢT KẾ TIẾP</h2><div class="hero warn" id="signalTitle">CHỜ</div><div class="hint" id="signalDesc">Chưa có rule kích hoạt</div><div class="chips" id="voteChips"></div><div class="hint signalCaution">% lịch sử không phải xác suất thắng bàn mới · Chỉ dùng để kiểm nghiệm.</div></div>
+<div class="quickMode panel" id="quickMode"><div class="panelhead"><h2 id="modePanelTitle">86 rule · thống kê độc lập</h2><button class="btn slim" id="viewModeDetails" type="button">Xem chi tiết</button></div>
+
+<div class="ruleAutoBox" id="ruleAutoBox" aria-live="polite">
+ <div class="ruleAutoTop"><div class="ruleAutoTitle">✦ AUTO 138 CÔNG THỨC · THEO TỪNG BÀN</div><button type="button" class="ruleAutoCtl" id="ruleAutoToggle">Cách chọn</button></div>
+ <div id="ruleAutoStatus" class="ruleAutoStatus">Đang tìm rule nổi bật trong bàn này…</div>
+ <div id="ruleAutoStats" class="ruleAutoStats"></div>
+ <div id="ruleAutoBadges" class="ruleAutoBadges"></div>
+ <div class="ruleAutoHelp" id="autoHelp" hidden>AUTO quét 138 công thức trên bàn đang mở, gồm 32 bộ trước và 106 bộ E1–E106 tuyển từ 14 bàn lịch sử. Không cần bật BK thủ công. Bộ mới chỉ được xét dựa trên kết quả xảy ra trước lượt tiếp theo. Tỷ lệ ≥80% ở bàn nguồn là hậu nghiệm, không chứng minh xác suất thắng. Bộ đạt 3 tín hiệu là rất ít mẫu; hãy dùng lọc “≥80% · ≥5 mẫu” để xem các bộ có dữ liệu nhiều hơn. Khi công thức dùng chung BK rule, số bộ đồng thuận không phải số bằng chứng độc lập. AUTO có thể báo CHỜ.</div>
+</div>
+<div class="formulaScope smartScope" id="formulaScope" role="group" aria-label="Lọc 138 công thức trên bàn hiện tại">
+ <button type="button" class="scopeBtn" data-smart-filter="top">✦ Nổi bật</button>
+ <button type="button" class="scopeBtn" data-smart-filter="signal">Có tín hiệu</button>
+ <button type="button" class="scopeBtn" data-smart-filter="strong">≥80% · ≥5 mẫu</button>
+ <button type="button" class="scopeBtn" data-smart-filter="all">Tất cả 138</button>
+ <span id="formulaScopeNote" class="smartCount">Đang tính thống kê bàn hiện tại…</span>
+ </div>
+<details class="windowWrap studyWrap" id="backtestDetails"><summary class="hint" style="cursor:pointer;padding:4px 0 7px">Xem backtest 40 / 12 / 5 bàn (tham khảo)</summary><div class="studyScroll" id="backtestBody"></div><div class="windowCaption">Các bộ từng được nghiên cứu trên dữ liệu lịch sử. Không dùng tỷ lệ hồi cứu làm xác suất thắng lượt sau. Hòa và xung đột không tính vào mẫu đúng/sai B/P.</div></details>
+<details class="windowWrap"><summary class="hint" style="cursor:pointer;padding:3px 0 7px">Tự xem từng khoảng tay (tùy chọn)</summary><div class="windowPanel" id="windowPanel"><div class="windowHeader"><strong>Phong độ gần đây — số tay</strong><span class="periodCount" id="windowMeta">Đang tính</span></div><div class="windowOptions" id="windowOptions"><button type="button" class="windowBtn" data-lookback="0">Cả bàn</button><button type="button" class="windowBtn" data-lookback="5">5 tay</button><button type="button" class="windowBtn" data-lookback="10">10 tay</button><button type="button" class="windowBtn" data-lookback="15">15 tay</button><button type="button" class="windowBtn" data-lookback="20">20 tay</button></div><p class="windowCaption">Đếm đúng số tay thực tế (kể cả Hòa); tỷ lệ đúng chỉ tính những lượt có dự đoán B/P không xung đột. “—” = chưa có tín hiệu để chấm.</p></div></details>
+<div class="modeRow" id="modeButtons" aria-live="polite" aria-label="Công thức xếp theo tỷ lệ đúng của bàn đang chọn"></div>
+<div id="singleRuleBoard" aria-live="polite"><div class="singleRuleTools"><span id="singleRuleHint"></span><button type="button" class="miniFilter" id="singleFilter">Chỉ đang báo</button></div><div class="singleRuleRow" id="singleRuleCards"></div><div class="singleRuleHelp">Mỗi thẻ chỉ tính <b>một rule</b>. Nhấn thẻ để chọn riêng rule đó. Tỷ lệ trên bàn đang chọn, không phải xác suất thắng lượt tới.</div></div>
+<div class="modeSummary" id="modeSummary"></div><details class="stageReveal"><summary>Phân tích từng đoạn của bàn (1–20 / 21–40 / từ 41)</summary><div id="stageStats"></div></details>
+</div><div class="autoPanel panel is-collapsed" id="autoPanel"><div class="autoHeader"><button class="autoDisclosure" id="autoDisclosure" type="button" aria-controls="autoBody" aria-expanded="false">▸ Hiện chi tiết AUTO</button><button class="btn slim autoToggle" id="autoToggle" type="button">AUTO · BẬT</button></div>
+<div class="autoBody" id="autoBody" hidden><div class="autoCurrent" id="autoCurrent" aria-live="polite">Chưa chọn bàn</div><div class="autoStatus" id="autoStatus" aria-live="polite"><div class="main">Đang đánh giá…</div></div>
+<div class="autoStat" id="autoStat"></div><details class="autoDetails"><summary style="cursor:pointer;font-size:11px;color:#b6d7df;padding:6px 0">Phong độ công thức bàn này (chạm để thu gọn)</summary><div class="autoGrid" id="autoGrid"></div></details>
+<p class="autoNotes">Chỉ dùng kết quả của <b>bàn đang chọn</b>, không gộp các bàn trước. Mỗi bộ tự mở rộng 10 → 20 → 30 tay → cả bàn để tìm ít nhất 3 tín hiệu B/P đã chấm. Chỉ xét những kết quả xuất hiện <b>trước</b> lượt tiếp theo. 1–2 tín hiệu luôn là <b>ít mẫu</b>; bộ đang đứng đầu chưa chắc đoán đúng lượt sau. Khi không có bộ đạt ngưỡng, AUTO báo CHỜ.</p></div></div>
+<span class="mobile-mini-note">Rule độc lập · Tự cập nhật khi nhập B / P / H · Vuốt ngang để xem · Không cộng phiếu trùng</span><div class="layout"><div>
+<div class="panel board-panel"><div class="panelhead"><h2>Bảng khối 6 hàng</h2><small id="boardMeta"></small></div><div class="flex" style="margin-bottom:12px"><select class="select" id="boardSelect"></select><button class="btn slim" id="boardNew">+ Bàn mới</button><button class="btn slim" id="boardRename">Đổi tên</button><button class="btn slim red" id="boardClear">Xóa dữ liệu</button></div><div class="roadWrap" id="roadWrap"><div class="road" id="road"></div></div><div class="flex spread" style="margin-top:11px"><small id="boardSummary">Chưa có dữ liệu.</small><small>Ô xanh nét đứt = lượt tiếp theo</small></div></div>
+<div class="panel live-rules-panel" id="liveRulesPanel" style="display:none"><div class="panelhead"><h2>Rule đang báo tín hiệu</h2><button class="btn slim" id="gotoRuleSettings" type="button">Xem tất cả →</button></div><div class="liveRuleCards" id="liveRuleCards"></div></div>
+<div class="panel entry-panel"><div class="panelhead"><h2>Nhập kết quả thực tế</h2><span class="hint"><strong id="mobileNextNumber"></strong></span></div><div class="flex"><button class="entrybtn B" id="addB">B</button><button class="entrybtn P" id="addP">P</button><button class="entrybtn H" id="addH">H</button><button class="btn" id="undo">↶ Hoàn tác</button><button class="btn" id="redo">↷ Làm lại</button></div><p class="hint" style="margin-top:10px">Nhập theo thứ tự từ trên xuống, đủ 6 hàng thì sang cột mới. Có thể nhập B/P/H bằng bàn phím trên máy tính.</p></div>
+<div class="panel stats-panel"><div class="panelhead"><h2>Hiệu quả ngay trên bàn này</h2><button class="btn slim" id="goStats">Xem chi tiết</button></div><div class="gridStats" id="mainStats"></div><div class="mutedNote" id="currentWarning"></div></div>
+</div></div></section>
+<section class="tab" id="tab-rules">
+<div class="panel comparison-panel"><div class="panelhead"><h2 id="comparePanelTitle">Công thức đã nghiên cứu</h2><small>Chỉ dùng trong chế độ thủ công</small></div>
+<div class="compareList" id="compareList"></div>
+<p class="hint">Con số lớn “Bàn này” cập nhật ngay khi nhập B/P/H hoặc đổi bàn; số 12 bàn cũ để đối chiếu. Nếu ít tín hiệu, tỷ lệ có thể biến động mạnh.</p></div>
+
+
+
+<div class="panel">
+<div class="panelhead"><h2>Kho 86 BK rule · xem thống kê</h2><span class="hint" id="enabledCount">86 đang theo dõi</span></div><div class="manualGuide"><span><b>AUTO đang theo dõi cả 86 BK rule</b> và Kho 86 BK rule</b> và tự xét 138 công thức. Bạn không cần đánh dấu từng rule.</span><button type="button" id="manualToggle" class="btn slim">Bật thủ công (nâng cao)</button></div>
+<p class="hint manualOnly">Trong chế độ thủ công, bạn có thể chọn riêng BK rule hoặc chọn công thức; bấm “Quay lại AUTO” để tự động theo dõi.</p><p class="hint" id="liveBoardCaption">Các số ở <b>Bàn này</b> được tính lại mỗi khi thêm B/P/H, hoàn tác hoặc đổi bàn. Tỷ lệ lịch sử 40/12/CV là cố định; không phải xác suất thắng lượt tiếp.</p>
+ <div id="healthOverview" class="healthOverview" aria-live="polite"></div>
+ <div id="liveRuleTop" class="topLiveRules"></div>
+ <p class="hint" style="margin-top:9px">Nhãn <b>Tốt gần đây</b> chỉ dựa trên kết quả của bàn đang xem: có ít nhất 5 lần B/P đã chấm, đúng ít nhất 4/5 tín hiệu gần nhất và đúng tổng cộng ít nhất 65%. Không khẳng định lượt tiếp theo sẽ đúng.</p>
+<div class="tools ruleTools"><input class="input" id="ruleSearch" placeholder="Tìm BK047, chéo, bệt…" type="search"/><select class="select" id="ruleOrder"><option value="recentPct">% trong cửa sổ đang chọn</option><option value="currentHealth">Phong độ cả bàn (tốt trước)</option><option value="testPct">% đúng 12 bàn (cao nhất)</option><option value="testN">Nhiều tín hiệu đối chiếu</option><option value="cvPct">% kiểm tra chéo (CV)</option><option value="currentPct">% bàn này (nhiều mẫu ưu tiên)</option><option value="last5">5 tín hiệu gần nhất</option><option value="currentN">Nhiều tín hiệu trên bàn này</option><option value="activeNow">Đang báo B/P lượt kế tiếp</option><option value="id">Theo mã BK</option></select><select class="select" id="ruleFilter"><option value="all">Tất cả rule</option><option value="now">Đang báo B/P lượt tới</option><option value="seen">Đã có tín hiệu bàn này</option><option value="seen3">≥3 tín hiệu B/P bàn này</option><option value="good">Tốt gần đây (≥5 mẫu)</option><option value="enabled">Chỉ rule đang bật</option></select></div>
+<details class="ruleExportDetail"><summary>Xuất dữ liệu kiểm tra độc lập 86 rule</summary><div class="ruleExportButtons"><button class="btn slim" type="button" id="exportAllRuleSummary">CSV tổng hợp 86 rule</button><button class="btn slim" type="button" id="exportAllRuleEvents">CSV đúng/sai từng lượt</button></div><p class="hint">Xuất tất cả rule trên bàn đang chọn, kể cả rule không bật. Không chỉ xuất các rule đang chọn như bản cũ.</p></details><div class="rulePicker" id="rulePicker"></div>
+</div></section>
+<section class="tab" id="tab-stats"><div class="panel"><div class="panelhead"><h2>Đúng / sai trên bàn đang chọn</h2><button class="btn slim" id="exportRoundCsv">Xuất CSV đúng/sai</button></div><div class="gridStats" id="statsCards"></div><div class="mutedNote">Kết quả được tính lại theo bộ rule bạn chọn (không đảo B/P). Tỷ lệ bàn này theo từng rule và tỷ lệ gộp mỗi lượt là hai chỉ số khác nhau. Hòa được lưu riêng, không tính trong mẫu số đúng/sai B/P.</div><div class="tableScroll" style="max-height:420px;margin-top:10px"><table class="table"><thead><tr><th>Rule</th><th>Đúng</th><th>Sai</th><th>Hòa</th><th>Tổng tín hiệu B/P</th><th>% bàn này</th><th>% 12 bàn cũ</th></tr></thead><tbody id="statsRules"></tbody></table></div></div><div class="panel"><div class="panelhead"><h2>Chi tiết dự đoán từng lượt</h2><span class="hint">Mới nhất lên trên</span></div><div class="tableScroll" style="max-height:540px"><table class="table"><thead><tr><th>Lượt</th><th>Rule</th><th>Dự đoán</th><th>Thực tế</th><th>Đúng/sai</th><th>Điều kiện</th></tr></thead><tbody id="historyRows"></tbody></table></div></div></section>
+<section class="tab" id="tab-data"><div class="layout"><div><div class="panel"><div class="panelhead"><h2>Đánh thử từng lượt trên 12 bản ghi lịch sử</h2><span class="pill">Không phải bàn mới độc lập</span></div><select class="select" id="demoSelect" style="width:100%"></select><div class="tools"><button class="btn primary" id="demoOpen">Mở bàn thử từ đầu</button><button class="btn" id="demoPrev">← Trước</button><button class="btn" id="demoNext">Bước tiếp →</button><button class="btn" id="demoFinish">Xem hết</button><button class="btn" id="demoExit">Thoát thử</button></div><div class="hint" id="demoInfo"></div><div class="tools"><button class="btn slim" id="loadC10">Nạp bàn C10 từ ảnh bạn gửi (20 lượt)</button></div><div class="progress"><i id="demoBar" style="width:0%"></i></div><p class="hint">Bước tiếp chỉ mở ra 1 kết quả; tín hiệu được tính từ những kết quả đã biết trước bước đó. Dùng tab Bảng chính để nhìn điều kiện kích hoạt, tab Đúng/sai để xem chấm từng lượt.</p></div><div class="panel"><div class="panelhead"><h2>Nhập chuỗi / JSON</h2></div><textarea class="input" id="pasteText" placeholder="Ví dụ: BBPPHBPBPPB... (H là Hòa); hoặc dán JSON backup có boards/cols/hands/results."></textarea><div class="tools"><button class="btn primary" id="importPaste">Nhập chuỗi / JSON</button><label class="fileLabel">Chọn file .json / .txt / .csv<input accept=".json,.txt,.csv" hidden="" id="importFile" type="file"/></label></div><p class="hint">Tương thích bản sao lưu JSON của Bảng Khối Lab cũ. Khi dán chuỗi, chỉ gồm B/P/H (hoặc T cho Hòa).</p></div></div><div><div class="panel"><div class="panelhead"><h2>Xuất 1 file — đầy đủ để phân tích</h2><span class="badge">Dùng nút này</span></div>
+<p class="hint">Một file <b>JSON</b> gồm tất cả bàn B/P/H, 86 BK rule (định nghĩa + % tham chiếu), 138 công thức (thành phần), dự đoán đúng/sai từng lượt, thống kê từng bàn, AUTO và tín hiệu lượt tiếp theo. <b>Chỉ gửi file này</b> khi nhờ tôi phân tích.</p>
+<div class="tools"><button class="btn primary" id="exportJson">⬇ Xuất 1 file phân tích + backup</button></div>
+<div id="researchExportStatus" class="hint" role="status" aria-live="polite">Có thể nhập lại file JSON này trên thiết bị khác như backup thường.</div>
+<details class="exportAdvanced"><summary>Xuất dữ liệu cũ riêng lẻ (nâng cao, không cần gửi)</summary><div class="tools"><button class="btn slim" id="exportResults">CSV đúng/sai</button><button class="btn slim" id="exportFormulaLibrary">Danh mục 27 bộ JSON</button></div></details>
+<div class="help">Thông tin đúng/sai và AUTO trong file được <b>tính lại từ chuỗi đã lưu theo thuật toán v5.1</b>, không phải nhật ký thời gian thực đã ghi ở các phiên trước. Dữ liệu được lưu cục bộ trên trình duyệt; nhớ xuất file trước khi đổi điện thoại hoặc xóa dữ liệu trình duyệt.</div></div><div class="panel"><div class="panelhead"><h2>Phân biệt các chỉ số</h2></div><p class="hint"><b>40 bàn tìm:</b> kết quả trên nhóm dữ liệu dùng tạo mẫu. <b>12 bàn đối chiếu:</b> hồi cứu trên nhóm còn lại đã từng được xem khi chọn công thức. <b>CV:</b> chia nhóm kiểm tra trong tập học. <b>Bàn hiện tại:</b> đúng/sai bạn tự nhập hoặc các lượt được mở trong demo.</p><p class="hint" style="margin-top:10px">AUTO giới hạn các BK có chữ ký điều kiện trùng hệt nhau. Các công thức cố định vẫn có thể chứa các rule trùng tín hiệu; lịch sử đúng không bảo đảm kết quả lượt tiếp theo.</p></div></div></div></section>
+<footer class="footer">Bảng Khối Lab v5.1 · 138 công thức theo dõi trên từng bàn, 86 rule. Thống kê quá khứ không bảo đảm kết quả tương lai.</footer></div><div id="popup"></div>
+<script id="seed" type="application/json">{"rules":[{"id":"BK047","feature_names":["cell_-2_-2","cell_-3_-1"],"patterns":[{"values":["B","H"],"pick":"P","train_hit":6,"train_n":7},{"values":["P","H"],"pick":"B","train_hit":6,"train_n":7}],"train":{"hit":12,"n":14},"test":{"hit":15,"n":19},"cv":{"hit":12,"n":14},"c10":{"hit":0,"n":0}},{"id":"BK054","feature_names":["lag12","shape_mirror1_bp_count"],"patterns":[{"values":["P","-2"],"pick":"B","train_hit":9,"train_n":9},{"values":["H","-3"],"pick":"P","train_hit":5,"train_n":5}],"train":{"hit":14,"n":14},"test":{"hit":11,"n":14},"cv":{"hit":14,"n":18},"c10":{"hit":0,"n":0}},{"id":"BK030","feature_names":["netstrong_4","shape_L_a_bp_count"],"patterns":[{"values":["P+","3"],"pick":"P","train_hit":10,"train_n":12}],"train":{"hit":10,"n":12},"test":{"hit":8,"n":10},"cv":{"hit":10,"n":13},"c10":{"hit":0,"n":0}},{"id":"BK043","feature_names":["net_8","switch_6"],"patterns":[{"values":["E","1"],"pick":"B","train_hit":9,"train_n":10}],"train":{"hit":9,"n":10},"test":{"hit":4,"n":5},"cv":{"hit":9,"n":10},"c10":{"hit":1,"n":1}},{"id":"BK040","feature_names":["parityB_18","shape_vertical"],"patterns":[{"values":["0","PBP"],"pick":"B","train_hit":6,"train_n":7},{"values":["1","BPB"],"pick":"B","train_hit":7,"train_n":8}],"train":{"hit":13,"n":15},"test":{"hit":4,"n":5},"cv":{"hit":10,"n":12},"c10":{"hit":0,"n":0}},{"id":"BK065","feature_names":["lag5","shape_L_c_bp_count"],"patterns":[{"values":["H","-2"],"pick":"B","train_hit":7,"train_n":8}],"train":{"hit":7,"n":8},"test":{"hit":7,"n":9},"cv":{"hit":7,"n":8},"c10":{"hit":0,"n":0}},{"id":"BK069","feature_names":["net_8","shape_mirror1_bp_count"],"patterns":[{"values":["E","0"],"pick":"P","train_hit":6,"train_n":7},{"values":["E","-3"],"pick":"B","train_hit":4,"train_n":5}],"train":{"hit":10,"n":12},"test":{"hit":7,"n":9},"cv":{"hit":6,"n":7},"c10":{"hit":1,"n":1}},{"id":"BK005","feature_names":["last4","shape_mirror2"],"patterns":[{"values":["BPPP","BPB"],"pick":"B","train_hit":4,"train_n":5},{"values":["PBPB","PPP"],"pick":"P","train_hit":5,"train_n":5}],"train":{"hit":9,"n":10},"test":{"hit":1,"n":1},"cv":{"hit":3,"n":3},"c10":{"hit":0,"n":0}},{"id":"BK032","feature_names":["netstrong_18","netstrong_3"],"patterns":[{"values":["B+","flat"],"pick":"P","train_hit":8,"train_n":9}],"train":{"hit":8,"n":9},"test":{"hit":8,"n":10},"cv":{"hit":3,"n":3},"c10":{"hit":0,"n":0}},{"id":"BK035","feature_names":["cell_-2_0","net_8"],"patterns":[{"values":["H","E"],"pick":"P","train_hit":8,"train_n":10}],"train":{"hit":8,"n":10},"test":{"hit":5,"n":6},"cv":{"hit":5,"n":7},"c10":{"hit":0,"n":0}},{"id":"BK017","feature_names":["cell_-2_-2","shape_mirror2"],"patterns":[{"values":["B","PBP"],"pick":"P","train_hit":13,"train_n":16},{"values":["P","BPB"],"pick":"B","train_hit":13,"train_n":15},{"values":["P","HBP"],"pick":"P","train_hit":4,"train_n":5}],"train":{"hit":30,"n":36},"test":{"hit":8,"n":8},"cv":{"hit":25,"n":36},"c10":{"hit":0,"n":0}},{"id":"BK010","feature_names":["cell_-1_-3","shape_mirror2"],"patterns":[{"values":["B","PPP"],"pick":"B","train_hit":4,"train_n":5},{"values":["P","PBP"],"pick":"P","train_hit":8,"train_n":8}],"train":{"hit":12,"n":13},"test":{"hit":7,"n":8},"cv":{"hit":11,"n":16},"c10":{"hit":0,"n":0}},{"id":"BK018","feature_names":["cell_-1_-1","netstrong_3"],"patterns":[{"values":["H","P+"],"pick":"P","train_hit":8,"train_n":9}],"train":{"hit":8,"n":9},"test":{"hit":5,"n":6},"cv":{"hit":11,"n":16},"c10":{"hit":0,"n":0}},{"id":"BK027","feature_names":["cell_-1_2","switch_8"],"patterns":[{"values":["H","3"],"pick":"P","train_hit":6,"train_n":7},{"values":["B","7"],"pick":"P","train_hit":7,"train_n":9}],"train":{"hit":13,"n":16},"test":{"hit":3,"n":3},"cv":{"hit":4,"n":6},"c10":{"hit":0,"n":0}},{"id":"BK060","feature_names":["cell_-1_2","ties_6"],"patterns":[{"values":["P","2"],"pick":"B","train_hit":7,"train_n":9}],"train":{"hit":7,"n":9},"test":{"hit":8,"n":10},"cv":{"hit":4,"n":6},"c10":{"hit":0,"n":0}},{"id":"BK082","feature_names":["shape_triangle_bp_count","ties_3"],"patterns":[{"values":["2","0"],"pick":"P","train_hit":10,"train_n":11}],"train":{"hit":10,"n":11},"test":{"hit":13,"n":17},"cv":{"hit":20,"n":31},"c10":{"hit":0,"n":0}},{"id":"BK081","feature_names":["cell_-2_-2","shape_L_d"],"patterns":[{"values":["P","PPP"],"pick":"B","train_hit":9,"train_n":10},{"values":["P","BPB"],"pick":"B","train_hit":13,"train_n":16},{"values":["B","BPP"],"pick":"B","train_hit":5,"train_n":6}],"train":{"hit":27,"n":32},"test":{"hit":13,"n":17},"cv":{"hit":23,"n":37},"c10":{"hit":0,"n":0}},{"id":"BK058","feature_names":["colprev_major","shape_triangle"],"patterns":[{"values":["P","BBP"],"pick":"P","train_hit":4,"train_n":5},{"values":["B","BPP"],"pick":"P","train_hit":10,"train_n":13},{"values":["E","PPP"],"pick":"P","train_hit":5,"train_n":6},{"values":["E","BBP"],"pick":"B","train_hit":9,"train_n":11},{"values":["P","BPB"],"pick":"B","train_hit":9,"train_n":10},{"values":["P","PHP"],"pick":"B","train_hit":5,"train_n":5},{"values":["P","PPH"],"pick":"P","train_hit":6,"train_n":6}],"train":{"hit":48,"n":56},"test":{"hit":21,"n":27},"cv":{"hit":27,"n":45},"c10":{"hit":0,"n":0}},{"id":"BK026","feature_names":["net_8","switch_8"],"patterns":[{"values":["E","7"],"pick":"P","train_hit":7,"train_n":9},{"values":["E","2"],"pick":"B","train_hit":6,"train_n":7}],"train":{"hit":13,"n":16},"test":{"hit":5,"n":6},"cv":{"hit":3,"n":5},"c10":{"hit":0,"n":0}},{"id":"BK070","feature_names":["net_24","parityB_3"],"patterns":[{"values":["E","0"],"pick":"B","train_hit":7,"train_n":9}],"train":{"hit":7,"n":9},"test":{"hit":7,"n":8},"cv":{"hit":3,"n":5},"c10":{"hit":0,"n":0}},{"id":"BK051","feature_names":["colprev_switch","last2"],"patterns":[{"values":["2","HP"],"pick":"P","train_hit":7,"train_n":9},{"values":["3","BH"],"pick":"P","train_hit":5,"train_n":6},{"values":["5","BB"],"pick":"P","train_hit":4,"train_n":4}],"train":{"hit":16,"n":19},"test":{"hit":11,"n":14},"cv":{"hit":7,"n":12},"c10":{"hit":0,"n":0}},{"id":"BK028","feature_names":["netstrong_12","round_mod6"],"patterns":[{"values":["P+","3"],"pick":"B","train_hit":8,"train_n":10}],"train":{"hit":8,"n":10},"test":{"hit":9,"n":11},"cv":{"hit":16,"n":28},"c10":{"hit":0,"n":0}},{"id":"BK057","feature_names":["cell_-1_1","switch_18"],"patterns":[{"values":["B","12"],"pick":"P","train_hit":7,"train_n":9},{"values":["P","8"],"pick":"P","train_hit":11,"train_n":14},{"values":["H","11"],"pick":"B","train_hit":4,"train_n":4}],"train":{"hit":22,"n":27},"test":{"hit":25,"n":32},"cv":{"hit":8,"n":14},"c10":{"hit":0,"n":0}},{"id":"BK042","feature_names":["shape_horiz_bp_count","shape_vertical_bp_count"],"patterns":[{"values":["-1","-1"],"pick":"B","train_hit":8,"train_n":10}],"train":{"hit":8,"n":10},"test":{"hit":4,"n":5},"cv":{"hit":5,"n":9},"c10":{"hit":0,"n":0}},{"id":"BK067","feature_names":["cell_0_-4","shape_L_a_bp_count"],"patterns":[{"values":["P","0"],"pick":"P","train_hit":7,"train_n":8}],"train":{"hit":7,"n":8},"test":{"hit":7,"n":9},"cv":{"hit":11,"n":20},"c10":{"hit":0,"n":0}},{"id":"BK086","feature_names":["net_5","shape_L_d"],"patterns":[{"values":["P","BPH"],"pick":"B","train_hit":6,"train_n":6},{"values":["E","PBP"],"pick":"P","train_hit":4,"train_n":5},{"values":["P","BBH"],"pick":"B","train_hit":4,"train_n":4},{"values":["B","HBB"],"pick":"P","train_hit":4,"train_n":4},{"values":["B","PBH"],"pick":"P","train_hit":4,"train_n":5}],"train":{"hit":22,"n":24},"test":{"hit":16,"n":21},"cv":{"hit":7,"n":13},"c10":{"hit":0,"n":0}},{"id":"BK016","feature_names":["shape_triangle_bp_count","switch_18"],"patterns":[{"values":["1","12"],"pick":"P","train_hit":4,"train_n":4},{"values":["3","10"],"pick":"P","train_hit":5,"train_n":5}],"train":{"hit":9,"n":9},"test":{"hit":10,"n":12},"cv":{"hit":7,"n":13},"c10":{"hit":0,"n":0}},{"id":"BK011","feature_names":["netstrong_6","switch_12"],"patterns":[{"values":["P+","9"],"pick":"B","train_hit":7,"train_n":8}],"train":{"hit":7,"n":8},"test":{"hit":1,"n":1},"cv":{"hit":18,"n":34},"c10":{"hit":0,"n":0}},{"id":"BK004","feature_names":["run_bucket","shape_mirror1_bp_count"],"patterns":[{"values":["B4","-1"],"pick":"P","train_hit":6,"train_n":6},{"values":["P2","3"],"pick":"P","train_hit":5,"train_n":6},{"values":["P4","1"],"pick":"B","train_hit":7,"train_n":8}],"train":{"hit":18,"n":20},"test":{"hit":9,"n":10},"cv":{"hit":19,"n":36},"c10":{"hit":0,"n":2}},{"id":"BK061","feature_names":["cell_-2_-2","shape_L_b"],"patterns":[{"values":["P","PPB"],"pick":"B","train_hit":12,"train_n":15},{"values":["B","PHP"],"pick":"P","train_hit":4,"train_n":4}],"train":{"hit":16,"n":19},"test":{"hit":7,"n":9},"cv":{"hit":13,"n":25},"c10":{"hit":0,"n":0}},{"id":"BK001","feature_names":["colprev_switch","run_bucket"],"patterns":[{"values":["4","B4"],"pick":"P","train_hit":4,"train_n":4},{"values":["5","B2"],"pick":"P","train_hit":4,"train_n":4},{"values":["1","P4"],"pick":"B","train_hit":5,"train_n":6}],"train":{"hit":13,"n":14},"test":{"hit":4,"n":4},"cv":{"hit":5,"n":14},"c10":{"hit":0,"n":0}},{"id":"BK003","feature_names":["shape_horiz_bp_count","switch_10"],"patterns":[{"values":["2","4"],"pick":"P","train_hit":4,"train_n":5},{"values":["-3","3"],"pick":"P","train_hit":4,"train_n":4},{"values":["0","3"],"pick":"B","train_hit":4,"train_n":5},{"values":["0","4"],"pick":"B","train_hit":6,"train_n":6}],"train":{"hit":18,"n":20},"test":{"hit":11,"n":12},"cv":{"hit":7,"n":17},"c10":{"hit":0,"n":0}},{"id":"BK006","feature_names":["cell_-3_-3","shape_mirror2"],"patterns":[{"values":["P","BPB"],"pick":"B","train_hit":4,"train_n":5},{"values":["B","BBP"],"pick":"B","train_hit":4,"train_n":5},{"values":["P","PPP"],"pick":"B","train_hit":4,"train_n":4},{"values":["B","PBP"],"pick":"P","train_hit":5,"train_n":5}],"train":{"hit":17,"n":19},"test":{"hit":9,"n":10},"cv":{"hit":1,"n":4},"c10":{"hit":0,"n":0}},{"id":"BK012","feature_names":["shape_L_c","switch_18"],"patterns":[{"values":["BBP","12"],"pick":"P","train_hit":4,"train_n":4},{"values":["PPP","8"],"pick":"P","train_hit":5,"train_n":6},{"values":["PBB","10"],"pick":"P","train_hit":6,"train_n":7},{"values":["BBP","6"],"pick":"B","train_hit":5,"train_n":6}],"train":{"hit":20,"n":23},"test":{"hit":9,"n":10},"cv":{"hit":6,"n":12},"c10":{"hit":0,"n":0}},{"id":"BK013","feature_names":["col_parity","shape_L_c"],"patterns":[{"values":["0","PHP"],"pick":"B","train_hit":4,"train_n":4},{"values":["1","BBH"],"pick":"B","train_hit":4,"train_n":5},{"values":["0","BPH"],"pick":"P","train_hit":5,"train_n":6}],"train":{"hit":13,"n":15},"test":{"hit":12,"n":14},"cv":{"hit":4,"n":14},"c10":{"hit":0,"n":0}},{"id":"BK020","feature_names":["shape_mirror1_bp_count","switch_12"],"patterns":[{"values":["3","7"],"pick":"P","train_hit":5,"train_n":5},{"values":["-2","7"],"pick":"B","train_hit":4,"train_n":4},{"values":["-2","5"],"pick":"B","train_hit":4,"train_n":5}],"train":{"hit":13,"n":14},"test":{"hit":9,"n":11},"cv":{"hit":10,"n":20},"c10":{"hit":0,"n":0}},{"id":"BK023","feature_names":["last4","net_5"],"patterns":[{"values":["BPHB","E"],"pick":"B","train_hit":4,"train_n":5},{"values":["BBHP","B"],"pick":"P","train_hit":5,"train_n":6}],"train":{"hit":9,"n":11},"test":{"hit":6,"n":6},"cv":{"hit":8,"n":19},"c10":{"hit":0,"n":0}},{"id":"BK029","feature_names":["netstrong_12","row"],"patterns":[{"values":["P+","4"],"pick":"B","train_hit":8,"train_n":10}],"train":{"hit":8,"n":10},"test":{"hit":9,"n":11},"cv":{"hit":16,"n":28},"c10":{"hit":0,"n":0}},{"id":"BK033","feature_names":["shape_triangle_bp_count","switch_8"],"patterns":[{"values":["3","3"],"pick":"P","train_hit":4,"train_n":5},{"values":["2","4"],"pick":"P","train_hit":4,"train_n":5}],"train":{"hit":8,"n":10},"test":{"hit":6,"n":7},"cv":{"hit":4,"n":8},"c10":{"hit":0,"n":0}},{"id":"BK036","feature_names":["lag12","net_8"],"patterns":[{"values":["H","E"],"pick":"P","train_hit":8,"train_n":10}],"train":{"hit":8,"n":10},"test":{"hit":5,"n":6},"cv":{"hit":5,"n":7},"c10":{"hit":0,"n":0}},{"id":"BK041","feature_names":["cell_0_-5","switch_8"],"patterns":[{"values":["P","2"],"pick":"P","train_hit":4,"train_n":5},{"values":["B","6"],"pick":"B","train_hit":4,"train_n":5}],"train":{"hit":8,"n":10},"test":{"hit":4,"n":5},"cv":{"hit":2,"n":9},"c10":{"hit":0,"n":0}},{"id":"BK046","feature_names":["lag5","last4"],"patterns":[{"values":["P","BPHB"],"pick":"B","train_hit":4,"train_n":5},{"values":["B","BBHP"],"pick":"P","train_hit":4,"train_n":5}],"train":{"hit":8,"n":10},"test":{"hit":5,"n":5},"cv":{"hit":12,"n":33},"c10":{"hit":0,"n":0}},{"id":"BK049","feature_names":["cell_-3_-3","shape_mirror2_bp_count"],"patterns":[{"values":["B","1"],"pick":"B","train_hit":10,"train_n":13},{"values":["P","-3"],"pick":"B","train_hit":4,"train_n":4}],"train":{"hit":14,"n":17},"test":{"hit":11,"n":14},"cv":{"hit":3,"n":7},"c10":{"hit":0,"n":0}},{"id":"BK053","feature_names":["cell_-2_0","shape_mirror1_bp_count"],"patterns":[{"values":["P","-2"],"pick":"B","train_hit":9,"train_n":9},{"values":["H","-3"],"pick":"P","train_hit":5,"train_n":5}],"train":{"hit":14,"n":14},"test":{"hit":11,"n":14},"cv":{"hit":14,"n":18},"c10":{"hit":0,"n":0}},{"id":"BK056","feature_names":["mirror_three","shape_mirror2"],"patterns":[{"values":["invert","PBP"],"pick":"P","train_hit":7,"train_n":9},{"values":["same","BPB"],"pick":"B","train_hit":4,"train_n":5}],"train":{"hit":11,"n":14},"test":{"hit":1,"n":1},"cv":{"hit":4,"n":12},"c10":{"hit":0,"n":0}},{"id":"BK059","feature_names":["lag4","ties_5"],"patterns":[{"values":["P","2"],"pick":"B","train_hit":7,"train_n":9}],"train":{"hit":7,"n":9},"test":{"hit":12,"n":15},"cv":{"hit":1,"n":2},"c10":{"hit":0,"n":0}},{"id":"BK062","feature_names":["cell_-2_-2","shape_square_corner"],"patterns":[{"values":["P","PPB"],"pick":"B","train_hit":12,"train_n":15},{"values":["B","PHP"],"pick":"P","train_hit":4,"train_n":4}],"train":{"hit":16,"n":19},"test":{"hit":7,"n":9},"cv":{"hit":13,"n":25},"c10":{"hit":0,"n":0}},{"id":"BK068","feature_names":["net_3","shape_triangle_bp_count"],"patterns":[{"values":["P","2"],"pick":"P","train_hit":7,"train_n":9}],"train":{"hit":7,"n":9},"test":{"hit":7,"n":9},"cv":{"hit":10,"n":25},"c10":{"hit":0,"n":0}},{"id":"BK075","feature_names":["last2","ties_24"],"patterns":[{"values":["PB","0"],"pick":"B","train_hit":7,"train_n":9}],"train":{"hit":7,"n":9},"test":{"hit":3,"n":3},"cv":{"hit":2,"n":7},"c10":{"hit":0,"n":0}},{"id":"BK077","feature_names":["shape_L_a","switch_3"],"patterns":[{"values":["PHB","1"],"pick":"P","train_hit":4,"train_n":5},{"values":["BPH","1"],"pick":"P","train_hit":4,"train_n":5}],"train":{"hit":8,"n":10},"test":{"hit":10,"n":13},"cv":{"hit":6,"n":13},"c10":{"hit":0,"n":0}},{"id":"BK079","feature_names":["parityB_8","shape_triangle_bp_count"],"patterns":[{"values":["0","2"],"pick":"P","train_hit":7,"train_n":9}],"train":{"hit":7,"n":9},"test":{"hit":10,"n":13},"cv":{"hit":7,"n":19},"c10":{"hit":0,"n":0}},{"id":"BK080","feature_names":["netstrong_10","shape_mirror2"],"patterns":[{"values":["flat","BHP"],"pick":"P","train_hit":5,"train_n":6},{"values":["B+","PPB"],"pick":"P","train_hit":7,"train_n":9},{"values":["B+","PBB"],"pick":"B","train_hit":5,"train_n":5}],"train":{"hit":17,"n":20},"test":{"hit":10,"n":13},"cv":{"hit":8,"n":18},"c10":{"hit":0,"n":0}},{"id":"BK083","feature_names":["lag1","ties_24"],"patterns":[{"values":["P","2"],"pick":"B","train_hit":13,"train_n":17}],"train":{"hit":13,"n":17},"test":{"hit":11,"n":14},"cv":{"hit":17,"n":33},"c10":{"hit":0,"n":0}},{"id":"BK064","feature_names":["cell_-1_1","shape_L_c_bp_count"],"patterns":[{"values":["H","-2"],"pick":"B","train_hit":7,"train_n":8}],"train":{"hit":7,"n":8},"test":{"hit":7,"n":9},"cv":{"hit":7,"n":8},"c10":{"hit":0,"n":0}},{"id":"BK002","feature_names":["shape_diag_up_bp_count","shape_mirror2"],"patterns":[{"values":["-1","BPB"],"pick":"B","train_hit":6,"train_n":6},{"values":["-1","BBB"],"pick":"P","train_hit":5,"train_n":6}],"train":{"hit":11,"n":12},"test":{"hit":1,"n":1},"cv":{"hit":6,"n":7},"c10":{"hit":0,"n":0}},{"id":"BK084","feature_names":["run_color","ties_24"],"patterns":[{"values":["P","2"],"pick":"B","train_hit":13,"train_n":17}],"train":{"hit":13,"n":17},"test":{"hit":11,"n":14},"cv":{"hit":17,"n":33},"c10":{"hit":0,"n":0}},{"id":"BK039","feature_names":["run_bucket","shape_mirror2"],"patterns":[{"values":["P2","PBP"],"pick":"P","train_hit":5,"train_n":5},{"values":["P3","BPB"],"pick":"B","train_hit":5,"train_n":6},{"values":["P1","PPP"],"pick":"B","train_hit":7,"train_n":9}],"train":{"hit":17,"n":20},"test":{"hit":4,"n":5},"cv":{"hit":11,"n":22},"c10":{"hit":0,"n":0}},{"id":"BK050","feature_names":["cell_-3_0","shape_diag_down"],"patterns":[{"values":["P","PBP"],"pick":"P","train_hit":8,"train_n":10},{"values":["P","BBB"],"pick":"P","train_hit":7,"train_n":9}],"train":{"hit":15,"n":19},"test":{"hit":11,"n":14},"cv":{"hit":9,"n":18},"c10":{"hit":0,"n":0}},{"id":"BK052","feature_names":["lag18","shape_diag_down"],"patterns":[{"values":["P","PBP"],"pick":"P","train_hit":8,"train_n":10},{"values":["P","BBB"],"pick":"P","train_hit":7,"train_n":9}],"train":{"hit":15,"n":19},"test":{"hit":11,"n":14},"cv":{"hit":9,"n":18},"c10":{"hit":0,"n":0}},{"id":"BK085","feature_names":["switch_24","ties_12"],"patterns":[{"values":["11","0"],"pick":"P","train_hit":13,"train_n":17}],"train":{"hit":13,"n":17},"test":{"hit":3,"n":3},"cv":{"hit":9,"n":18},"c10":{"hit":0,"n":0}},{"id":"BK024","feature_names":["lag2","shape_L_d"],"patterns":[{"values":["P","BPH"],"pick":"B","train_hit":4,"train_n":5},{"values":["P","BBH"],"pick":"B","train_hit":5,"train_n":6},{"values":["B","PBH"],"pick":"P","train_hit":4,"train_n":5}],"train":{"hit":13,"n":16},"test":{"hit":7,"n":8},"cv":{"hit":2,"n":4},"c10":{"hit":0,"n":0}},{"id":"BK076","feature_names":["lag8","shape_mirror2"],"patterns":[{"values":["P","PHB"],"pick":"P","train_hit":7,"train_n":9}],"train":{"hit":7,"n":9},"test":{"hit":1,"n":1},"cv":{"hit":7,"n":15},"c10":{"hit":0,"n":0}},{"id":"BK019","feature_names":["run_len","shape_mirror1_bp_count"],"patterns":[{"values":["4","1"],"pick":"B","train_hit":7,"train_n":9},{"values":["5","-1"],"pick":"P","train_hit":4,"train_n":4}],"train":{"hit":11,"n":13},"test":{"hit":5,"n":6},"cv":{"hit":4,"n":9},"c10":{"hit":0,"n":1}},{"id":"BK048","feature_names":["run_bucket","shape_mirror1"],"patterns":[{"values":["B2","PBP"],"pick":"P","train_hit":4,"train_n":5},{"values":["P2","BBB"],"pick":"P","train_hit":5,"train_n":6},{"values":["P3","PBB"],"pick":"B","train_hit":5,"train_n":6},{"values":["B2","BPP"],"pick":"B","train_hit":4,"train_n":5},{"values":["B2","BPB"],"pick":"P","train_hit":5,"train_n":6},{"values":["P2","BPB"],"pick":"P","train_hit":5,"train_n":6},{"values":["P1","HPB"],"pick":"P","train_hit":5,"train_n":5}],"train":{"hit":33,"n":39},"test":{"hit":11,"n":14},"cv":{"hit":26,"n":59},"c10":{"hit":0,"n":0}},{"id":"BK034","feature_names":["parityB_12","shape_vertical"],"patterns":[{"values":["0","BBB"],"pick":"P","train_hit":8,"train_n":10}],"train":{"hit":8,"n":10},"test":{"hit":5,"n":6},"cv":{"hit":14,"n":32},"c10":{"hit":0,"n":0}},{"id":"BK014","feature_names":["last3","ties_24"],"patterns":[{"values":["BPP","1"],"pick":"P","train_hit":4,"train_n":4},{"values":["PBP","2"],"pick":"B","train_hit":6,"train_n":7}],"train":{"hit":10,"n":11},"test":{"hit":6,"n":7},"cv":{"hit":2,"n":5},"c10":{"hit":0,"n":0}},{"id":"BK072","feature_names":["cell_0_-3","shape_vertical_bp_count"],"patterns":[{"values":["B","3"],"pick":"P","train_hit":7,"train_n":9}],"train":{"hit":7,"n":9},"test":{"hit":5,"n":6},"cv":{"hit":5,"n":13},"c10":{"hit":0,"n":0}},{"id":"BK074","feature_names":["lag3","shape_vertical_bp_count"],"patterns":[{"values":["B","3"],"pick":"P","train_hit":7,"train_n":9}],"train":{"hit":7,"n":9},"test":{"hit":5,"n":6},"cv":{"hit":5,"n":13},"c10":{"hit":0,"n":0}},{"id":"BK031","feature_names":["parityB_4","shape_L_d"],"patterns":[{"values":["1","BPH"],"pick":"B","train_hit":5,"train_n":6},{"values":["0","BHP"],"pick":"B","train_hit":4,"train_n":5},{"values":["0","BBH"],"pick":"B","train_hit":4,"train_n":5}],"train":{"hit":13,"n":16},"test":{"hit":8,"n":10},"cv":{"hit":3,"n":8},"c10":{"hit":0,"n":0}},{"id":"BK044","feature_names":["net_10","shape_L_b"],"patterns":[{"values":["E","PPB"],"pick":"B","train_hit":5,"train_n":6},{"values":["B","HBB"],"pick":"P","train_hit":6,"train_n":6}],"train":{"hit":11,"n":12},"test":{"hit":4,"n":5},"cv":{"hit":11,"n":31},"c10":{"hit":1,"n":1}},{"id":"BK045","feature_names":["net_10","shape_square_corner"],"patterns":[{"values":["E","PPB"],"pick":"B","train_hit":5,"train_n":6},{"values":["B","HBB"],"pick":"P","train_hit":6,"train_n":6}],"train":{"hit":11,"n":12},"test":{"hit":4,"n":5},"cv":{"hit":11,"n":31},"c10":{"hit":1,"n":1}},{"id":"BK007","feature_names":["cell_-1_0","run_bucket"],"patterns":[{"values":["H","P2"],"pick":"B","train_hit":4,"train_n":5},{"values":["H","P3"],"pick":"P","train_hit":5,"train_n":5}],"train":{"hit":9,"n":10},"test":{"hit":8,"n":9},"cv":{"hit":4,"n":12},"c10":{"hit":0,"n":0}},{"id":"BK008","feature_names":["lag6","run_bucket"],"patterns":[{"values":["H","P2"],"pick":"B","train_hit":4,"train_n":5},{"values":["H","P3"],"pick":"P","train_hit":5,"train_n":5}],"train":{"hit":9,"n":10},"test":{"hit":8,"n":9},"cv":{"hit":4,"n":12},"c10":{"hit":0,"n":0}},{"id":"BK037","feature_names":["shape_L_b","ties_10"],"patterns":[{"values":["PPH","0"],"pick":"P","train_hit":4,"train_n":5},{"values":["PBB","2"],"pick":"B","train_hit":4,"train_n":5}],"train":{"hit":8,"n":10},"test":{"hit":5,"n":6},"cv":{"hit":9,"n":28},"c10":{"hit":0,"n":0}},{"id":"BK038","feature_names":["shape_square_corner","ties_10"],"patterns":[{"values":["PPH","0"],"pick":"P","train_hit":4,"train_n":5},{"values":["PBB","2"],"pick":"B","train_hit":4,"train_n":5}],"train":{"hit":8,"n":10},"test":{"hit":5,"n":6},"cv":{"hit":9,"n":28},"c10":{"hit":0,"n":0}},{"id":"BK071","feature_names":["cell_0_-3","shape_vertical"],"patterns":[{"values":["B","BBB"],"pick":"P","train_hit":7,"train_n":9}],"train":{"hit":7,"n":9},"test":{"hit":5,"n":6},"cv":{"hit":7,"n":22},"c10":{"hit":0,"n":0}},{"id":"BK073","feature_names":["lag3","shape_vertical"],"patterns":[{"values":["B","BBB"],"pick":"P","train_hit":7,"train_n":9}],"train":{"hit":7,"n":9},"test":{"hit":5,"n":6},"cv":{"hit":7,"n":22},"c10":{"hit":0,"n":0}},{"id":"BK063","feature_names":["cell_-2_1","shape_triangle"],"patterns":[{"values":["H","PPP"],"pick":"B","train_hit":4,"train_n":5},{"values":["P","PHP"],"pick":"B","train_hit":4,"train_n":4},{"values":["P","HBB"],"pick":"P","train_hit":4,"train_n":4}],"train":{"hit":12,"n":13},"test":{"hit":7,"n":9},"cv":{"hit":10,"n":32},"c10":{"hit":0,"n":0}},{"id":"BK055","feature_names":["colprev_switch","switch_12"],"patterns":[{"values":["1","4"],"pick":"B","train_hit":10,"train_n":13},{"values":["5","9"],"pick":"P","train_hit":4,"train_n":5},{"values":["1","6"],"pick":"B","train_hit":8,"train_n":10}],"train":{"hit":22,"n":28},"test":{"hit":4,"n":5},"cv":{"hit":9,"n":29},"c10":{"hit":0,"n":0}},{"id":"BK078","feature_names":["netstrong_10","shape_L_d"],"patterns":[{"values":["flat","BBH"],"pick":"B","train_hit":4,"train_n":5},{"values":["B+","PPB"],"pick":"P","train_hit":4,"train_n":5},{"values":["flat","PPH"],"pick":"B","train_hit":7,"train_n":9}],"train":{"hit":15,"n":19},"test":{"hit":10,"n":13},"cv":{"hit":7,"n":27},"c10":{"hit":0,"n":0}},{"id":"BK021","feature_names":["shape_L_d","shape_mirror1_bp_count"],"patterns":[{"values":["BPP","-1"],"pick":"P","train_hit":4,"train_n":5},{"values":["PPP","-2"],"pick":"B","train_hit":5,"train_n":5},{"values":["PBP","0"],"pick":"P","train_hit":4,"train_n":5}],"train":{"hit":13,"n":15},"test":{"hit":9,"n":11},"cv":{"hit":7,"n":27},"c10":{"hit":0,"n":0}},{"id":"BK022","feature_names":["shape_L_d","shape_triangle_bp_count"],"patterns":[{"values":["BPP","-3"],"pick":"P","train_hit":4,"train_n":5},{"values":["PPP","-2"],"pick":"B","train_hit":5,"train_n":5},{"values":["PBP","2"],"pick":"P","train_hit":4,"train_n":5}],"train":{"hit":13,"n":15},"test":{"hit":9,"n":11},"cv":{"hit":7,"n":27},"c10":{"hit":0,"n":0}},{"id":"BK066","feature_names":["shape_L_d_bp_count","shape_mirror1_bp_count"],"patterns":[{"values":["-3","-2"],"pick":"B","train_hit":5,"train_n":5},{"values":["0","-3"],"pick":"P","train_hit":4,"train_n":5},{"values":["2","0"],"pick":"P","train_hit":4,"train_n":4},{"values":["-2","1"],"pick":"P","train_hit":4,"train_n":5}],"train":{"hit":17,"n":19},"test":{"hit":7,"n":9},"cv":{"hit":7,"n":28},"c10":{"hit":0,"n":0}},{"id":"BK025","feature_names":["run_bucket","ties_24"],"patterns":[{"values":["P2","1"],"pick":"P","train_hit":6,"train_n":7},{"values":["B1","0"],"pick":"B","train_hit":7,"train_n":9}],"train":{"hit":13,"n":16},"test":{"hit":6,"n":7},"cv":{"hit":2,"n":8},"c10":{"hit":0,"n":0}},{"id":"BK009","feature_names":["shape_L_c_bp_count","shape_diag_up"],"patterns":[{"values":["-1","BPP"],"pick":"B","train_hit":4,"train_n":5},{"values":["1","BBB"],"pick":"P","train_hit":4,"train_n":4}],"train":{"hit":8,"n":9},"test":{"hit":2,"n":2},"cv":{"hit":0,"n":1},"c10":{"hit":0,"n":0}},{"id":"BK015","feature_names":["last4","shape_L_a"],"patterns":[{"values":["BPPP","BPP"],"pick":"B","train_hit":4,"train_n":4},{"values":["PPPB","BBP"],"pick":"B","train_hit":4,"train_n":5},{"values":["BBPB","BBB"],"pick":"P","train_hit":4,"train_n":5}],"train":{"hit":12,"n":14},"test":{"hit":2,"n":2},"cv":{"hit":0,"n":1},"c10":{"hit":0,"n":0}}],"demos":[{"name":"Toan live3","seq":"BPPPBHBBBPBBPPPPBPHBBPBHPBHBPPPPPBPHPBBBPBHPPPPBBPHBPPBPB","origin":3,"split":"test"},{"name":"Toan live5","seq":"PBHPPPBPBHPBBPBBPHPBBHBPBPPBBHPBBPBPPPHBBPBBPPBPHPPPBBBPP","origin":7,"split":"test"},{"name":"Toan live4","seq":"PPBPBBBPPPBBPPBBBBPPBBBPHPPPPBBBPBBPBHHBPPPPBBHBPBBPPBBP","origin":7,"split":"test"},{"name":"Toan live1","seq":"PPBBBPBBHBHPBPBBPBBPPPPHPHBBBHBBBBBHBBBPPBPPPBBPHPBBPPB","origin":8,"split":"test"},{"name":"Toan live2","seq":"BBBPBBPPPBBHBPPBBBBPPBBBBPPPBBBBHBPHBBBBPPPBBHPBBP","origin":19,"split":"test"},{"name":"C09 2026-11-02","seq":"PPBBBPPBBBBPBPBBPPPPBPBPBBBPPBBPBHPBPPPPPPPPPBPP","origin":0,"split":"test"},{"name":"Anh hien tai","seq":"BPPPPBPPPPHPHBBBPPBBPPBHPBHPBP","origin":0,"split":"test"},{"name":"Cards Baccarat_PB_backup_2026-10-23_van65 (1).json","seq":"BPPPPHPBPHPBPBBPPBPPBPPPBPBPBBPPBBPBBBPPHPBBBPBPBBPHHBB","origin":9,"split":"test"},{"name":"Cards Baccarat_PB_backup_2026-10-24_van46.json","seq":"BHPPBPPPPHPBHPBBPPHPBPBPPPPBHPBBBHPPBPBPPBPBB","origin":0,"split":"test"},{"name":"Cards Baccarat_PB_backup_2026-10-24_van64.json","seq":"PBBBPBPPPPBPPPBHPHBBHHPPHPHPPBBPPBBBPPPBBPHPPBBPBHBBBHPPPPP","origin":4,"split":"test"},{"name":"Cards Baccarat_PB_backup_2026-10-25_van63.json","seq":"BHBPPBBPHPBBBPBBHBHPBBPBPPPBPHPBBPBPHPBPHBHBBBB","origin":15,"split":"test"},{"name":"Cards Toan_Hoc_Muc_1_2_van65_2026-10-26.json","seq":"PPPPPPHBPBPPBBPPHBPPPPPPBBPBPBPHBBHPPBBBBBBHPPPPBBPBPPHBBPBBPB","origin":2,"split":"test"}],"meta":{"rules":86,"groups":30,"patterns":60,"train_boards":40,"test_boards":12,"results":1642}}</script><script>
+(()=>{'use strict';
+const D=JSON.parse(document.getElementById('seed').textContent),ALL=D.rules.map(r=>({...r,group:r.id})),DEMOS=D.demos.map(d=>({...d,seq:typeof d.seq==='string'?d.seq.split(''):d.seq})),KEY='bang_khoi_lab_v35_nine_formulas_20261119',OLD_KEY='bang_khoi_lab_v27_chon_3_30_20261117';
+const $=id=>document.getElementById(id),escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),pct=(h,n)=>n?(100*h/n).toFixed(1)+'%':'—',color=x=>x==='B'?'B':x==='P'?'P':'H';
+const coreThree=['BK047','BK054','BK030'],presets={3:coreThree,7:['BK047','BK054','BK030','BK043','BK040','BK065','BK069'],12:['BK047','BK054','BK030','BK043','BK040','BK065','BK069','BK005','BK032','BK035','BK017','BK010'],20:['BK047','BK054','BK030','BK043','BK040','BK065','BK069','BK005','BK032','BK035','BK017','BK010','BK018','BK027','BK060','BK082','BK081','BK058','BK026','BK070'],30:['BK047','BK054','BK030','BK043','BK040','BK065','BK069','BK005','BK032','BK035','BK017','BK010','BK018','BK027','BK060','BK082','BK081','BK058','BK026','BK070','BK051','BK028','BK057','BK042','BK067','BK086','BK016','BK011','BK004','BK061']};
+const LEGACY_FORMULAS=[
+ {id:'F1',name:'Bộ cũ 1',note:'3 rule gốc',ids:presets[3]},
+ {id:'F2',name:'Bộ cũ 2',note:'7 rule gốc',ids:presets[7]},
+ {id:'F3',name:'Bộ cũ 3',note:'12 rule gốc',ids:presets[12]},
+ {id:'F4',name:'Bộ cũ 4',note:'20 rule gốc',ids:presets[20]},
+ {id:'F5',name:'Bộ cũ 5',note:'30 rule gốc',ids:presets[30]},
+ {id:'F6',name:'Bộ cũ 6',note:'11 rule Phase · cả bàn',ids:["BK053", "BK029", "BK020", "BK083", "BK062", "BK012", "BK013", "BK003", "BK049", "BK006", "BK077"]},
+ {id:'F7',name:'Bộ cũ 7',note:'4 rule chọn lọc',ids:["BK001", "BK033", "BK036", "BK041"]},
+ {id:'F8',name:'Bộ cũ 8',note:'6 rule tăng phủ',ids:["BK001", "BK033", "BK036", "BK041", "BK059", "BK080"]},
+ {id:'F9',name:'Bộ cũ 9',note:'6 rule khác họ',ids:["BK056", "BK075", "BK079", "BK068", "BK023", "BK046"]}
+];
+// Ten FIXED rule bundles mined from historic boards, then rechecked board by board.
+// No outcomes from the active board are used to alter their membership.
+const BOARD_FORMULAS=[
+ {id:'M1',name:'Công thức 1',note:'Nguồn: Toan live2',ids:['BK003','BK078','BK081','BK058']},
+ {id:'M2',name:'Công thức 2',note:'Nguồn: PB ván 65',ids:['BK048','BK003','BK050','BK052']},
+ {id:'M3',name:'Công thức 3',note:'Nguồn: Toan 42 ván',ids:['BK017','BK014','BK006','BK002']},
+ {id:'M4',name:'Công thức 4',note:'Nguồn: Video Shoe 1',ids:['BK040','BK070','BK081','BK026']},
+ {id:'M5',name:'Công thức 5',note:'Nguồn: Ảnh 54 ô',ids:['BK057','BK012','BK030','BK020']},
+ {id:'M6',name:'Công thức 6',note:'Nguồn: bàn học 6',ids:["BK086","BK004","BK003","BK048"]},
+ {id:'M7',name:'Công thức 7',note:'Nguồn: bàn học 7',ids:["BK086","BK048","BK017","BK014"]},
+ {id:'M8',name:'Công thức 8',note:'Nguồn: bàn học 8',ids:["BK014","BK086","BK012","BK057"]},
+ {id:'M9',name:'Công thức 9',note:'Nguồn: bàn học 9',ids:["BK039","BK057","BK025","BK049"]},
+ {id:'M10',name:'Công thức 10',note:'Nguồn: bàn học 10',ids:["BK040","BK070","BK044","BK057"]},
+ {id:'M11',name:'Công thức 11',note:'Ứng viên · 4 rule',ids:['BK012','BK003','BK057','BK020']}
+];
+const EXPERIMENT_FORMULAS=[
+ {id:'G4',name:'G4 · 4 rule',note:'Bổ sung tín hiệu · thử nghiệm',ids:["BK001","BK003","BK016","BK053"]},
+ {id:'G5',name:'G5 · 5 rule',note:'Bổ sung tín hiệu · thử nghiệm',ids:["BK001","BK003","BK014","BK016","BK053"]},
+ {id:'G6',name:'G6 · 6 rule',note:'Bổ sung tín hiệu · thử nghiệm',ids:["BK001","BK003","BK005","BK010","BK016","BK053"]}
+];
+// Group B stays OUTSIDE the 23 core formulas; membership is fixed, never selected on the current board.
+// The 12+5 retrospective records were examined when selecting these rules: do NOT treat rates as independent validation.
+const GROUP_B_FORMULAS=[
+ {id:'BA',name:'B-A · 4 rule',note:'Nhóm B · chọn lọc · theo dõi',ids:['BK012','BK010','BK033','BK003']},
+ {id:'BB',name:'B-B · 5 rule',note:'Nhóm B · mở rộng B-A + BK020',ids:['BK012','BK010','BK033','BK003','BK020']}
+];
+// C4 replaces C3, adding BK033 from the six newly supplied boards on 2026-11-20.
+// Historical 29/34 (85.3%) on those same boards is retrospective selection, NOT an out-of-sample estimate.
+const NEW_FORMULAS=[
+ {id:'C4',name:'C4 · 4 rule',note:'Thay C3 · thêm BK033 · từ 6 bàn · chưa kiểm chứng độc lập',ids:['BK059','BK016','BK024','BK033']},
+ {id:'C5',name:'C5 · 4 rule',note:'Công thức riêng · từ 6 bàn · chưa kiểm chứng độc lập',ids:['BK033','BK010','BK016','BK024']}
+];
+// Specialist sets selected after inspecting the named source board. These are hypothesis-generating only.
+const SPECIALIST_FORMULAS=[
+ {id:'S1',name:'S1 · Chuyên C09',note:'C09 58 tay · 9/11 hồi cứu (81,8%) · 5 rule; yếu trên nhiều bàn khác',ids:['BK040','BK010','BK083','BK007','BK009']},
+ {id:'S2',name:'S2 · Chuyên C20',note:'C20 53 tay · 10/12 hồi cứu (83,3%) · 4 rule; chưa kiểm chứng độc lập',ids:['BK035','BK078','BK058','BK070']},
+ {id:'S3',name:'S3 · Chuyên C13',note:'C13 57 tay · 10/12 hồi cứu (83,3%) · 4 rule; chưa kiểm chứng độc lập',ids:['BK043','BK067','BK006','BK032']}
+];
+// Coverage exploration: not >80% overall. They are tracked for signal coverage, not labeled as winning recipes.
+const COVERAGE_FORMULAS=[
+ {id:'D1',name:'D1 · Tăng tín hiệu',note:'BK009, BK078, BK082, BK048 · nhiều tín hiệu hơn, chưa đạt >80% trên 9 bàn gần đây',ids:['BK009','BK078','BK082','BK048']},
+ {id:'D2',name:'D2 · Cân bằng',note:'BK009, BK078, BK070, BK003 · thử nghiệm bổ sung độ phủ, chưa xác nhận >80%',ids:['BK009','BK078','BK070','BK003']}
+];
+const CORE_FORMULAS=[...LEGACY_FORMULAS,...BOARD_FORMULAS,...EXPERIMENT_FORMULAS];
+// 106 additional multi-rule specialists found by retrospective board-wise search.
+// Selection was conditioned on the source board result: never use source % as a live win probability.
+// The E1–E6 identities are stable; all other E identifiers are fixed from this release onward.
+const EXPANDED_FORMULAS=[{"id":"E1","name":"E1 · Bàn C13","note":"Nguồn Bàn C13 · bàn 11 · 12/12 (100.0%) hồi cứu; 13 bàn khác 46/80 (57.5%)","ids":["BK003","BK048","BK017","BK059","BK078"]},{"id":"E2","name":"E2 · Bàn C08","note":"Nguồn Bàn C08 · bàn 5 · 14/16 (87.5%) hồi cứu; 13 bàn khác 42/73 (57.5%)","ids":["BK003","BK006","BK055","BK001","BK033"]},{"id":"E3","name":"E3 · Bàn C21","note":"Nguồn Bàn C21 · bàn 8 · 13/15 (86.7%) hồi cứu; 13 bàn khác 43/76 (56.6%)","ids":["BK057","BK078","BK026","BK011","BK082"]},{"id":"E4","name":"E4 · Bàn C09","note":"Nguồn Bàn C09 · bàn 10 · 10/12 (83.3%) hồi cứu; 13 bàn khác 35/52 (67.3%)","ids":["BK060","BK078","BK009","BK079","BK041"]},{"id":"E5","name":"E5 · Bàn C20","note":"Nguồn Bàn C20 · bàn 13 · 11/13 (84.6%) hồi cứu; 13 bàn khác 40/71 (56.3%)","ids":["BK058","BK065","BK035","BK003","BK010"]},{"id":"E6","name":"E6 · Bàn C13","note":"Nguồn Bàn C13 · bàn 14 · 9/11 (81.8%) hồi cứu; 13 bàn khác 47/80 (58.8%)","ids":["BK067","BK012","BK032","BK086","BK003"]},{"id":"E7","name":"E7 · Bàn của tôi","note":"Nguồn Bàn của tôi · bàn 1 · 13/16 (81.2%) hồi cứu; 13 bàn khác 43/75 (57.3%)","ids":["BK026","BK042","BK003","BK033","BK055"]},{"id":"E8","name":"E8 · Bàn của tôi","note":"Nguồn Bàn của tôi · bàn 1 · 13/16 (81.2%) hồi cứu; 13 bàn khác 49/87 (56.3%)","ids":["BK081","BK026","BK003","BK033","BK016"]},{"id":"E9","name":"E9 · Bàn của tôi","note":"Nguồn Bàn của tôi · bàn 1 · 12/15 (80.0%) hồi cứu; 13 bàn khác 43/75 (57.3%)","ids":["BK026","BK010","BK042","BK003","BK049"]},{"id":"E10","name":"E10 · Bàn của tôi","note":"Nguồn Bàn của tôi · bàn 1 · 12/15 (80.0%) hồi cứu; 13 bàn khác 50/87 (57.5%)","ids":["BK026","BK010","BK057","BK033","BK055"]},{"id":"E11","name":"E11 · Bàn của tôi","note":"Nguồn Bàn của tôi · bàn 1 · 12/15 (80.0%) hồi cứu; 13 bàn khác 43/71 (60.6%)","ids":["BK043","BK003","BK033","BK001","BK055"]},{"id":"E12","name":"E12 · Bàn của tôi","note":"Nguồn Bàn của tôi · bàn 1 · 12/14 (85.7%) hồi cứu; 13 bàn khác 39/67 (58.2%)","ids":["BK026","BK042","BK016","BK003","BK033","BK002"]},{"id":"E13","name":"E13 · Bàn của tôi","note":"Nguồn Bàn của tôi · bàn 1 · 12/14 (85.7%) hồi cứu; 13 bàn khác 36/59 (61.0%)","ids":["BK043","BK010","BK042","BK016","BK033","BK031"]},{"id":"E14","name":"E14 · Bàn của tôi","note":"Nguồn Bàn của tôi · bàn 1 · 11/12 (91.7%) hồi cứu; 13 bàn khác 42/73 (57.5%)","ids":["BK010","BK026","BK057","BK033","BK079"]},{"id":"E15","name":"E15 · Bàn của tôi","note":"Nguồn Bàn của tôi · bàn 1 · 10/11 (90.9%) hồi cứu; 13 bàn khác 52/91 (57.1%)","ids":["BK017","BK026","BK001","BK003","BK033","BK080"]},{"id":"E16","name":"E16 · Bàn của tôi","note":"Nguồn Bàn của tôi · bàn 1 · 10/11 (90.9%) hồi cứu; 13 bàn khác 45/80 (56.2%)","ids":["BK030","BK010","BK026","BK042","BK003","BK079"]},{"id":"E17","name":"E17 · C11","note":"Nguồn C11 · bàn 2 · 8/10 (80.0%) hồi cứu; 13 bàn khác 41/73 (56.2%)","ids":["BK010","BK082","BK067","BK001","BK020","BK083"]},{"id":"E18","name":"E18 · Bàn C08","note":"Nguồn Bàn C08 · bàn 5 · 14/16 (87.5%) hồi cứu; 13 bàn khác 37/65 (56.9%)","ids":["BK003","BK006","BK033","BK075","BK055"]},{"id":"E19","name":"E19 · Bàn C08","note":"Nguồn Bàn C08 · bàn 5 · 14/16 (87.5%) hồi cứu; 13 bàn khác 54/95 (56.8%)","ids":["BK003","BK058","BK055","BK016","BK033"]},{"id":"E20","name":"E20 · Bàn C08","note":"Nguồn Bàn C08 · bàn 5 · 13/15 (86.7%) hồi cứu; 13 bàn khác 47/79 (59.5%)","ids":["BK003","BK012","BK020","BK033","BK041","BK055"]},{"id":"E21","name":"E21 · Bàn C08","note":"Nguồn Bàn C08 · bàn 5 · 13/15 (86.7%) hồi cứu; 13 bàn khác 42/74 (56.8%)","ids":["BK006","BK012","BK075","BK039","BK055","BK078"]},{"id":"E22","name":"E22 · Bàn C08","note":"Nguồn Bàn C08 · bàn 5 · 13/15 (86.7%) hồi cứu; 13 bàn khác 44/76 (57.9%)","ids":["BK006","BK041","BK055","BK078","BK033"]},{"id":"E23","name":"E23 · Bàn C08","note":"Nguồn Bàn C08 · bàn 5 · 13/15 (86.7%) hồi cứu; 13 bàn khác 31/51 (60.8%)","ids":["BK012","BK041","BK055","BK075","BK033"]},{"id":"E24","name":"E24 · Bàn C08","note":"Nguồn Bàn C08 · bàn 5 · 13/15 (86.7%) hồi cứu; 13 bàn khác 50/88 (56.8%)","ids":["BK012","BK058","BK055","BK035","BK033"]},{"id":"E25","name":"E25 · Bàn C08","note":"Nguồn Bàn C08 · bàn 5 · 13/15 (86.7%) hồi cứu; 13 bàn khác 53/94 (56.4%)","ids":["BK058","BK012","BK033","BK041","BK077","BK078"]},{"id":"E26","name":"E26 · Bàn C08","note":"Nguồn Bàn C08 · bàn 5 · 12/15 (80.0%) hồi cứu; 13 bàn khác 41/72 (56.9%)","ids":["BK026","BK042","BK003","BK041","BK075","BK055"]},{"id":"E27","name":"E27 · Bàn C08","note":"Nguồn Bàn C08 · bàn 6 · 8/10 (80.0%) hồi cứu; 13 bàn khác 38/63 (60.3%)","ids":["BK024","BK017","BK059","BK082","BK063"]},{"id":"E28","name":"E28 · Bàn C08","note":"Nguồn Bàn C08 · bàn 6 · 8/10 (80.0%) hồi cứu; 13 bàn khác 34/59 (57.6%)","ids":["BK024","BK047","BK016","BK035","BK060"]},{"id":"E29","name":"E29 · Bàn C08","note":"Nguồn Bàn C08 · bàn 6 · 8/10 (80.0%) hồi cứu; 13 bàn khác 43/75 (57.3%)","ids":["BK049","BK024","BK069","BK059","BK082"]},{"id":"E30","name":"E30 · Bàn C08","note":"Nguồn Bàn C08 · bàn 6 · 8/10 (80.0%) hồi cứu; 13 bàn khác 52/92 (56.5%)","ids":["BK069","BK032","BK017","BK016","BK059","BK024"]},{"id":"E31","name":"E31 · Bàn C08","note":"Nguồn Bàn C08 · bàn 6 · 8/10 (80.0%) hồi cứu; 13 bàn khác 38/67 (56.7%)","ids":["BK069","BK035","BK049","BK059","BK024"]},{"id":"E32","name":"E32 · Bàn C08","note":"Nguồn Bàn C08 · bàn 7 · 9/11 (81.8%) hồi cứu; 13 bàn khác 32/56 (57.1%)","ids":["BK007","BK037","BK051","BK016","BK024"]},{"id":"E33","name":"E33 · Bàn C08","note":"Nguồn Bàn C08 · bàn 7 · 9/11 (81.8%) hồi cứu; 13 bàn khác 29/50 (58.0%)","ids":["BK007","BK037","BK059","BK016","BK025"]},{"id":"E34","name":"E34 · Bàn C08","note":"Nguồn Bàn C08 · bàn 7 · 9/11 (81.8%) hồi cứu; 13 bàn khác 28/44 (63.6%)","ids":["BK028","BK016","BK068","BK039","BK024","BK007"]},{"id":"E35","name":"E35 · Bàn C08","note":"Nguồn Bàn C08 · bàn 7 · 9/11 (81.8%) hồi cứu; 13 bàn khác 34/59 (57.6%)","ids":["BK050","BK007","BK009","BK016","BK024"]},{"id":"E36","name":"E36 · Bàn C08","note":"Nguồn Bàn C08 · bàn 7 · 8/10 (80.0%) hồi cứu; 13 bàn khác 28/42 (66.7%)","ids":["BK007","BK040","BK039","BK016","BK024"]},{"id":"E37","name":"E37 · Bàn C08","note":"Nguồn Bàn C08 · bàn 7 · 8/10 (80.0%) hồi cứu; 13 bàn khác 31/49 (63.3%)","ids":["BK016","BK059","BK007","BK025","BK009"]},{"id":"E38","name":"E38 · Bàn C08","note":"Nguồn Bàn C08 · bàn 7 · 8/10 (80.0%) hồi cứu; 13 bàn khác 26/40 (65.0%)","ids":["BK028","BK016","BK023","BK039","BK024","BK021"]},{"id":"E39","name":"E39 · Bàn C08","note":"Nguồn Bàn C08 · bàn 7 · 8/10 (80.0%) hồi cứu; 13 bàn khác 33/51 (64.7%)","ids":["BK037","BK009","BK016","BK024","BK025"]},{"id":"E40","name":"E40 · Bàn C08","note":"Nguồn Bàn C08 · bàn 7 · 8/10 (80.0%) hồi cứu; 13 bàn khác 36/55 (65.5%)","ids":["BK040","BK041","BK068","BK024","BK025","BK009"]},{"id":"E41","name":"E41 · Bàn C08","note":"Nguồn Bàn C08 · bàn 7 · 8/10 (80.0%) hồi cứu; 13 bàn khác 34/50 (68.0%)","ids":["BK060","BK016","BK023","BK041","BK039","BK024"]},{"id":"E42","name":"E42 · Bàn C21","note":"Nguồn Bàn C21 · bàn 8 · 12/15 (80.0%) hồi cứu; 13 bàn khác 42/66 (63.6%)","ids":["BK078","BK016","BK059","BK082","BK051"]},{"id":"E43","name":"E43 · Bàn C21","note":"Nguồn Bàn C21 · bàn 8 · 12/15 (80.0%) hồi cứu; 13 bàn khác 43/72 (59.7%)","ids":["BK078","BK026","BK012","BK082","BK051"]},{"id":"E44","name":"E44 · Bàn C21","note":"Nguồn Bàn C21 · bàn 8 · 12/15 (80.0%) hồi cứu; 13 bàn khác 35/60 (58.3%)","ids":["BK078","BK060","BK011","BK082","BK051"]},{"id":"E45","name":"E45 · Bàn C21","note":"Nguồn Bàn C21 · bàn 8 · 12/14 (85.7%) hồi cứu; 13 bàn khác 39/60 (65.0%)","ids":["BK078","BK060","BK026","BK016","BK082"]},{"id":"E46","name":"E46 · Bàn C21","note":"Nguồn Bàn C21 · bàn 8 · 12/13 (92.3%) hồi cứu; 13 bàn khác 39/64 (60.9%)","ids":["BK026","BK086","BK011","BK059","BK068","BK078"]},{"id":"E47","name":"E47 · Bàn C21","note":"Nguồn Bàn C21 · bàn 8 · 12/13 (92.3%) hồi cứu; 13 bàn khác 36/59 (61.0%)","ids":["BK043","BK060","BK026","BK012","BK079","BK078"]},{"id":"E48","name":"E48 · Bàn C21","note":"Nguồn Bàn C21 · bàn 8 · 11/12 (91.7%) hồi cứu; 13 bàn khác 36/62 (58.1%)","ids":["BK017","BK026","BK013","BK059","BK078"]},{"id":"E49","name":"E49 · Bàn C21","note":"Nguồn Bàn C21 · bàn 8 · 11/12 (91.7%) hồi cứu; 13 bàn khác 41/73 (56.2%)","ids":["BK017","BK082","BK086","BK011","BK013","BK078"]},{"id":"E50","name":"E50 · Bàn C21","note":"Nguồn Bàn C21 · bàn 8 · 11/12 (91.7%) hồi cứu; 13 bàn khác 51/88 (58.0%)","ids":["BK032","BK026","BK012","BK068","BK063","BK078"]},{"id":"E51","name":"E51 · Bàn C09","note":"Nguồn Bàn C09 · bàn 9 · 12/15 (80.0%) hồi cứu; 13 bàn khác 45/77 (58.4%)","ids":["BK035","BK003","BK009","BK037","BK057"]},{"id":"E52","name":"E52 · Bàn C09","note":"Nguồn Bàn C09 · bàn 9 · 12/13 (92.3%) hồi cứu; 13 bàn khác 41/73 (56.2%)","ids":["BK035","BK016","BK003","BK020","BK080","BK037"]},{"id":"E53","name":"E53 · Bàn C09","note":"Nguồn Bàn C09 · bàn 9 · 11/13 (84.6%) hồi cứu; 13 bàn khác 44/74 (59.5%)","ids":["BK003","BK009","BK080","BK037","BK082"]},{"id":"E54","name":"E54 · Bàn C09","note":"Nguồn Bàn C09 · bàn 9 · 11/13 (84.6%) hồi cứu; 13 bàn khác 46/79 (58.2%)","ids":["BK016","BK003","BK049","BK077","BK024","BK037"]},{"id":"E55","name":"E55 · Bàn C09","note":"Nguồn Bàn C09 · bàn 9 · 11/13 (84.6%) hồi cứu; 13 bàn khác 38/64 (59.4%)","ids":["BK035","BK003","BK080","BK037","BK033"]},{"id":"E56","name":"E56 · Bàn C09","note":"Nguồn Bàn C09 · bàn 9 · 11/13 (84.6%) hồi cứu; 13 bàn khác 31/53 (58.5%)","ids":["BK035","BK009","BK080","BK037","BK024"]},{"id":"E57","name":"E57 · Bàn C09","note":"Nguồn Bàn C09 · bàn 9 · 11/12 (91.7%) hồi cứu; 13 bàn khác 36/62 (58.1%)","ids":["BK016","BK003","BK077","BK009","BK037"]},{"id":"E58","name":"E58 · Bàn C09","note":"Nguồn Bàn C09 · bàn 9 · 10/12 (83.3%) hồi cứu; 13 bàn khác 51/87 (58.6%)","ids":["BK035","BK057","BK003","BK020","BK033","BK025"]},{"id":"E59","name":"E59 · Bàn C09","note":"Nguồn Bàn C09 · bàn 9 · 10/12 (83.3%) hồi cứu; 13 bàn khác 45/75 (60.0%)","ids":["BK082","BK003","BK080","BK024","BK037"]},{"id":"E60","name":"E60 · Bàn C09","note":"Nguồn Bàn C09 · bàn 9 · 10/11 (90.9%) hồi cứu; 13 bàn khác 46/80 (57.5%)","ids":["BK082","BK086","BK003","BK077","BK019","BK009"]},{"id":"E61","name":"E61 · Bàn C09","note":"Nguồn Bàn C09 · bàn 10 · 10/12 (83.3%) hồi cứu; 13 bàn khác 34/56 (60.7%)","ids":["BK033","BK059","BK009","BK040","BK083"]},{"id":"E62","name":"E62 · Bàn C09","note":"Nguồn Bàn C09 · bàn 10 · 10/12 (83.3%) hồi cứu; 13 bàn khác 40/61 (65.6%)","ids":["BK033","BK059","BK009","BK055","BK041"]},{"id":"E63","name":"E63 · Bàn C09","note":"Nguồn Bàn C09 · bàn 10 · 10/12 (83.3%) hồi cứu; 13 bàn khác 33/57 (57.9%)","ids":["BK033","BK060","BK009","BK056","BK083"]},{"id":"E64","name":"E64 · Bàn C09","note":"Nguồn Bàn C09 · bàn 10 · 10/12 (83.3%) hồi cứu; 13 bàn khác 36/58 (62.1%)","ids":["BK033","BK060","BK009","BK079","BK055"]},{"id":"E65","name":"E65 · Bàn C09","note":"Nguồn Bàn C09 · bàn 10 · 10/11 (90.9%) hồi cứu; 13 bàn khác 46/72 (63.9%)","ids":["BK006","BK033","BK059","BK007","BK078","BK009"]},{"id":"E66","name":"E66 · Bàn C09","note":"Nguồn Bàn C09 · bàn 10 · 10/11 (90.9%) hồi cứu; 13 bàn khác 49/77 (63.6%)","ids":["BK033","BK059","BK044","BK055","BK078","BK009"]},{"id":"E67","name":"E67 · Bàn C09","note":"Nguồn Bàn C09 · bàn 10 · 10/11 (90.9%) hồi cứu; 13 bàn khác 34/57 (59.6%)","ids":["BK069","BK060","BK011","BK079","BK078","BK009"]},{"id":"E68","name":"E68 · Bàn C09","note":"Nguồn Bàn C09 · bàn 10 · 10/10 (100.0%) hồi cứu; 13 bàn khác 40/59 (67.8%)","ids":["BK040","BK001","BK059","BK079","BK078","BK009"]},{"id":"E69","name":"E69 · Bàn C09","note":"Nguồn Bàn C09 · bàn 10 · 9/10 (90.0%) hồi cứu; 13 bàn khác 32/54 (59.3%)","ids":["BK060","BK033","BK044","BK007","BK078"]},{"id":"E70","name":"E70 · Bàn C13","note":"Nguồn Bàn C13 · bàn 11 · 11/13 (84.6%) hồi cứu; 13 bàn khác 39/68 (57.4%)","ids":["BK003","BK048","BK041","BK078","BK026"]},{"id":"E71","name":"E71 · Bàn C13","note":"Nguồn Bàn C13 · bàn 11 · 12/12 (100.0%) hồi cứu; 13 bàn khác 38/67 (56.7%)","ids":["BK003","BK048","BK041","BK059","BK024"]},{"id":"E72","name":"E72 · Bàn C13","note":"Nguồn Bàn C13 · bàn 11 · 11/12 (91.7%) hồi cứu; 13 bàn khác 45/75 (60.0%)","ids":["BK010","BK027","BK003","BK068","BK048","BK078"]},{"id":"E73","name":"E73 · Bàn C13","note":"Nguồn Bàn C13 · bàn 11 · 10/12 (83.3%) hồi cứu; 13 bàn khác 37/56 (66.1%)","ids":["BK003","BK041","BK024","BK039","BK026"]},{"id":"E74","name":"E74 · Bàn C13","note":"Nguồn Bàn C13 · bàn 11 · 10/12 (83.3%) hồi cứu; 13 bàn khác 39/61 (63.9%)","ids":["BK003","BK041","BK078","BK010","BK069"]},{"id":"E75","name":"E75 · Bàn C13","note":"Nguồn Bàn C13 · bàn 11 · 11/11 (100.0%) hồi cứu; 13 bàn khác 41/71 (57.7%)","ids":["BK010","BK060","BK003","BK024","BK048"]},{"id":"E76","name":"E76 · Bàn C13","note":"Nguồn Bàn C13 · bàn 11 · 11/11 (100.0%) hồi cứu; 13 bàn khác 35/59 (59.3%)","ids":["BK027","BK003","BK041","BK059","BK039","BK031"]},{"id":"E77","name":"E77 · Bàn C13","note":"Nguồn Bàn C13 · bàn 11 · 10/11 (90.9%) hồi cứu; 13 bàn khác 46/71 (64.8%)","ids":["BK017","BK003","BK059","BK068","BK078"]},{"id":"E78","name":"E78 · Bàn C13","note":"Nguồn Bàn C13 · bàn 11 · 10/11 (90.9%) hồi cứu; 13 bàn khác 45/71 (63.4%)","ids":["BK040","BK003","BK033","BK046","BK048","BK078"]},{"id":"E79","name":"E79 · Bàn C09","note":"Nguồn Bàn C09 · bàn 12 · 8/10 (80.0%) hồi cứu; 13 bàn khác 25/41 (61.0%)","ids":["BK007","BK009","BK010","BK056","BK085"]},{"id":"E80","name":"E80 · Bàn C09","note":"Nguồn Bàn C09 · bàn 12 · 8/10 (80.0%) hồi cứu; 13 bàn khác 35/51 (68.6%)","ids":["BK007","BK009","BK010","BK078","BK068"]},{"id":"E81","name":"E81 · Bàn C09","note":"Nguồn Bàn C09 · bàn 12 · 8/10 (80.0%) hồi cứu; 13 bàn khác 38/61 (62.3%)","ids":["BK007","BK009","BK086","BK078","BK051"]},{"id":"E82","name":"E82 · Bàn C09","note":"Nguồn Bàn C09 · bàn 12 · 8/10 (80.0%) hồi cứu; 13 bàn khác 39/63 (61.9%)","ids":["BK007","BK040","BK010","BK049","BK078"]},{"id":"E83","name":"E83 · Bàn C09","note":"Nguồn Bàn C09 · bàn 12 · 8/10 (80.0%) hồi cứu; 13 bàn khác 34/55 (61.8%)","ids":["BK009","BK010","BK023","BK078","BK083"]},{"id":"E84","name":"E84 · Bàn C09","note":"Nguồn Bàn C09 · bàn 12 · 8/10 (80.0%) hồi cứu; 13 bàn khác 39/67 (58.2%)","ids":["BK010","BK042","BK049","BK007","BK078"]},{"id":"E85","name":"E85 · Bàn C09","note":"Nguồn Bàn C09 · bàn 12 · 8/10 (80.0%) hồi cứu; 13 bàn khác 27/45 (60.0%)","ids":["BK040","BK010","BK012","BK023","BK085","BK007"]},{"id":"E86","name":"E86 · Bàn C09","note":"Nguồn Bàn C09 · bàn 12 · 8/10 (80.0%) hồi cứu; 13 bàn khác 35/59 (59.3%)","ids":["BK040","BK012","BK085","BK024","BK007","BK037"]},{"id":"E87","name":"E87 · Bàn C09","note":"Nguồn Bàn C09 · bàn 12 · 8/10 (80.0%) hồi cứu; 13 bàn khác 39/69 (56.5%)","ids":["BK070","BK012","BK056","BK083","BK014","BK009"]},{"id":"E88","name":"E88 · Bàn C09","note":"Nguồn Bàn C09 · bàn 12 · 8/10 (80.0%) hồi cứu; 13 bàn khác 38/64 (59.4%)","ids":["BK070","BK051","BK007","BK078","BK009"]},{"id":"E89","name":"E89 · Bàn C20","note":"Nguồn Bàn C20 · bàn 13 · 10/12 (83.3%) hồi cứu; 13 bàn khác 38/64 (59.4%)","ids":["BK035","BK003","BK078","BK004","BK020"]},{"id":"E90","name":"E90 · Bàn C20","note":"Nguồn Bàn C20 · bàn 13 · 10/12 (83.3%) hồi cứu; 13 bàn khác 55/92 (59.8%)","ids":["BK058","BK003","BK082","BK070","BK010"]},{"id":"E91","name":"E91 · Bàn C20","note":"Nguồn Bàn C20 · bàn 13 · 10/12 (83.3%) hồi cứu; 13 bàn khác 54/94 (57.4%)","ids":["BK058","BK035","BK003","BK082","BK020"]},{"id":"E92","name":"E92 · Bàn C20","note":"Nguồn Bàn C20 · bàn 13 · 10/12 (83.3%) hồi cứu; 13 bàn khác 43/74 (58.1%)","ids":["BK058","BK065","BK078","BK082","BK010"]},{"id":"E93","name":"E93 · Bàn C20","note":"Nguồn Bàn C20 · bàn 13 · 10/11 (90.9%) hồi cứu; 13 bàn khác 54/93 (58.1%)","ids":["BK058","BK003","BK079","BK039","BK078","BK021"]},{"id":"E94","name":"E94 · Bàn C20","note":"Nguồn Bàn C20 · bàn 13 · 9/10 (90.0%) hồi cứu; 13 bàn khác 36/60 (60.0%)","ids":["BK035","BK004","BK039","BK063","BK078","BK009"]},{"id":"E95","name":"E95 · Bàn C20","note":"Nguồn Bàn C20 · bàn 13 · 9/10 (90.0%) hồi cứu; 13 bàn khác 39/68 (57.4%)","ids":["BK035","BK027","BK086","BK055","BK078","BK066"]},{"id":"E96","name":"E96 · Bàn C20","note":"Nguồn Bàn C20 · bàn 13 · 9/10 (90.0%) hồi cứu; 13 bàn khác 57/97 (58.8%)","ids":["BK058","BK086","BK003","BK012","BK078","BK066"]},{"id":"E97","name":"E97 · Bàn C20","note":"Nguồn Bàn C20 · bàn 13 · 9/10 (90.0%) hồi cứu; 13 bàn khác 41/66 (62.1%)","ids":["BK065","BK070","BK003","BK063","BK078","BK009"]},{"id":"E98","name":"E98 · Bàn C13","note":"Nguồn Bàn C13 · bàn 14 · 10/12 (83.3%) hồi cứu; 13 bàn khác 45/80 (56.2%)","ids":["BK043","BK032","BK010","BK028","BK086","BK012"]},{"id":"E99","name":"E99 · Bàn C13","note":"Nguồn Bàn C13 · bàn 14 · 9/11 (81.8%) hồi cứu; 13 bàn khác 45/79 (57.0%)","ids":["BK043","BK012","BK032","BK010","BK086"]},{"id":"E100","name":"E100 · Bàn C13","note":"Nguồn Bàn C13 · bàn 14 · 9/11 (81.8%) hồi cứu; 13 bàn khác 50/89 (56.2%)","ids":["BK043","BK012","BK032","BK037","BK003"]},{"id":"E101","name":"E101 · Bàn C13","note":"Nguồn Bàn C13 · bàn 14 · 9/11 (81.8%) hồi cứu; 13 bàn khác 56/98 (57.1%)","ids":["BK067","BK012","BK058","BK082","BK003"]},{"id":"E102","name":"E102 · Bàn C13","note":"Nguồn Bàn C13 · bàn 14 · 8/10 (80.0%) hồi cứu; 13 bàn khác 44/78 (56.4%)","ids":["BK010","BK058","BK067","BK079","BK055"]},{"id":"E103","name":"E103 · Bàn C13","note":"Nguồn Bàn C13 · bàn 14 · 8/10 (80.0%) hồi cứu; 13 bàn khác 56/99 (56.6%)","ids":["BK032","BK035","BK010","BK057","BK086","BK012"]},{"id":"E104","name":"E104 · Bàn C13","note":"Nguồn Bàn C13 · bàn 14 · 8/10 (80.0%) hồi cứu; 13 bàn khác 48/85 (56.5%)","ids":["BK058","BK086","BK012","BK019","BK078","BK066"]},{"id":"E105","name":"E105 · Bàn C13","note":"Nguồn Bàn C13 · bàn 14 · 8/10 (80.0%) hồi cứu; 13 bàn khác 50/84 (59.5%)","ids":["BK067","BK032","BK010","BK026","BK003"]},{"id":"E106","name":"E106 · Bàn C13","note":"Nguồn Bàn C13 · bàn 14 · 8/10 (80.0%) hồi cứu; 13 bàn khác 57/94 (60.6%)","ids":["BK082","BK026","BK067","BK003","BK012","BK055"]}];
+const FORMULAS=[...CORE_FORMULAS,...GROUP_B_FORMULAS,...NEW_FORMULAS,...SPECIALIST_FORMULAS,...COVERAGE_FORMULAS,...EXPANDED_FORMULAS];
+const activeFormulas=()=>state.formulaGroup==='focus'?FORMULAS:state.formulaGroup==='groupB'?GROUP_B_FORMULAS:state.formulaGroup==='legacy'?LEGACY_FORMULAS:state.formulaGroup==='experimental'?EXPERIMENT_FORMULAS:BOARD_FORMULAS;
+const autoFormulas=()=>FORMULAS;
+const BACKTEST_STUDY=[{"id":"M11","name":"Công thức 11","train":{"hit":57,"n":64,"pct":89.1,"conf":3,"tie":5,"boards_with_signal":23},"test":{"hit":46,"n":57,"pct":80.7,"conf":0,"tie":7,"boards_with_signal":12},"new":{"hit":19,"n":23,"pct":82.6,"conf":1,"tie":0,"boards_with_signal":5}},{"id":"F7","name":"Bộ cũ 7","train":{"hit":37,"n":44,"pct":84.1,"conf":0,"tie":6,"boards_with_signal":24},"test":{"hit":18,"n":21,"pct":85.7,"conf":0,"tie":1,"boards_with_signal":10},"new":{"hit":14,"n":17,"pct":82.4,"conf":0,"tie":0,"boards_with_signal":4}},{"id":"G4","name":"G4","train":{"hit":52,"n":54,"pct":96.3,"conf":1,"tie":6,"boards_with_signal":26},"test":{"hit":36,"n":42,"pct":85.7,"conf":0,"tie":6,"boards_with_signal":12},"new":{"hit":14,"n":20,"pct":70.0,"conf":1,"tie":0,"boards_with_signal":4}},{"id":"G5","name":"G5","train":{"hit":62,"n":65,"pct":95.4,"conf":1,"tie":6,"boards_with_signal":26},"test":{"hit":42,"n":49,"pct":85.7,"conf":0,"tie":7,"boards_with_signal":12},"new":{"hit":15,"n":21,"pct":71.4,"conf":2,"tie":0,"boards_with_signal":4}},{"id":"G6","name":"G6","train":{"hit":68,"n":71,"pct":95.8,"conf":2,"tie":6,"boards_with_signal":28},"test":{"hit":43,"n":50,"pct":86.0,"conf":0,"tie":9,"boards_with_signal":12},"new":{"hit":19,"n":26,"pct":73.1,"conf":1,"tie":1,"boards_with_signal":4}}];
+const GROUP_B_BACKTEST=[
+ {id:'BA',name:'B-A · 4 rule',train:{hit:52,n:60},test:{hit:31,n:34},new:{hit:21,n:24}},
+ {id:'BB',name:'B-B · 5 rule',train:{hit:61,n:69},test:{hit:40,n:45},new:{hit:24,n:27}}
+];
+const FORMULA_MAP=Object.fromEntries(FORMULAS.map(f=>[f.id,f]));
+const formulaName=id=>FORMULA_MAP[id]?.name||'Tùy chọn',formulaIds=id=>FORMULA_MAP[id]?.ids||[];
+const allRulesByIds=ids=>{const set=new Set(ids);return ALL.filter(r=>set.has(r.id));};
+function rankedFormulas(board){
+ const rows=activeFormulas().map(f=>{const m=presetHealth(board,allRulesByIds(f.ids));return {...f,m};});
+ // Accuracy is strictly from CURRENT board; no-signal and 1-2-signal profiles appear after 3+ samples.
+ return rows.sort((a,b)=>{const x=a.m.full,y=b.m.full;
+  const qa=x.n>=3?2:x.n?1:0,qb=y.n>=3?2:y.n?1:0;
+  return qb-qa||(y.n?y.hit/y.n:-1)-(x.n?x.hit/x.n:-1)||y.n-x.n||a.id.localeCompare(b.id);
+ });
+}
+// Watchlist rules are screen filters, NOT a prospective success probability. All 25 groups remain scored.
+function focusIsStrong(row){const x=row.m.full,r=row.m.recent;
+ return (x.n>=5&&x.hit/x.n>=.65) || (x.n>=3&&x.hit/x.n>=.45&&r.n>=3&&r.hit/r.n>=2/3);
+}
+function focusVisible(rows, filter='top'){
+ if(filter==='all')return rows;
+ if(filter==='signal')return rows.filter(f=>f.m.full.n>=3&&(f.m.next==='B'||f.m.next==='P')).slice(0,12);
+ if(filter==='strong')return rows.filter(f=>f.m.full.n>=5&&f.m.full.hit/f.m.full.n>=.80).slice(0,16);
+ return rows.filter(focusIsStrong).slice(0,6);
+}
+function focusSort(a,b){
+ const aa=a.m,bb=b.m, aaGood=Number(focusIsStrong(a)),bbGood=Number(focusIsStrong(b));
+ const aNext=Number(aa.next==='B'||aa.next==='P'),bNext=Number(bb.next==='B'||bb.next==='P');
+ const aR=aa.recent.n>=3?aa.recent.hit/aa.recent.n:-1,bR=bb.recent.n>=3?bb.recent.hit/bb.recent.n:-1;
+ const aF=aa.full.n?aa.full.hit/aa.full.n:-1,bF=bb.full.n?bb.full.hit/bb.full.n:-1;
+ return bbGood-aaGood || bNext-aNext || bR-aR || bF-aF || bb.full.n-aa.full.n || a.id.localeCompare(b.id);
+}
+const defaultState=()=>({version:21,manualMode:false,dynamicAutoMode:false,formulaGroup:'focus',smartFilter:'top',viewMode:'formula',singleRuleId:null,singleOnlyActive:false,formulaAutoMode:false,autoDetailsOpen:false,autoMode:false,lookback:20,boards:[{id:'manual_1',name:'Bàn của tôi',seq:[],origin:0}],chosen:'manual_1',enabled:['BK003','BK078','BK081','BK058'],demo:null,redo:[]});
+let state;try{const saved=localStorage.getItem(KEY),older=localStorage.getItem(OLD_KEY);state=Object.assign(defaultState(),JSON.parse(saved||older||'{}'));if(!saved){state.demo=null;}}catch{state=defaultState();}
+if(!Array.isArray(state.boards)||!state.boards.length)state=defaultState();
+if(!['focus','mined','legacy','experimental','groupB'].includes(state.formulaGroup))state.formulaGroup='focus';
+if(Number(state.version||0)<14){state.viewMode='formula';state.formulaGroup='mined';state.autoMode=false;state.formulaAutoMode=false;state.version=14;}
+if(Number(state.version||0)<17){state.formulaGroup='focus';state.smartFilter='top';state.autoMode=false;state.formulaAutoMode=false;} if(state.formulaGroup==='focus'){state.autoMode=false;state.formulaAutoMode=false;} if(!['top','signal','strong','all'].includes(state.smartFilter))state.smartFilter='top';state.version=19;if(typeof state.dynamicAutoMode!=='boolean')state.dynamicAutoMode=false;
+state.enabled=(state.enabled||[]).filter(id=>ALL.some(r=>r.id===id));if(!Array.isArray(state.redo))state.redo=[];if(![0,5,10,15,20].includes(Number(state.lookback)))state.lookback=20;state.lookback=Number(state.lookback);if(typeof state.autoMode!=='boolean')state.autoMode=true;if(typeof state.autoDetailsOpen!=='boolean')state.autoDetailsOpen=false;
+if(!['single','formula'].includes(state.viewMode)){
+ // v3.6 -> v3.7: show independent BK rules first, retain the old formula selection
+ state.formulaAutoMode=!!state.autoMode;state.autoMode=false;state.viewMode='single';
+}
+if(typeof state.formulaAutoMode!=='boolean')state.formulaAutoMode=!!state.autoMode;
+// v4.6 migration: past checkboxes/manual modes never silently disable AUTO.
+state.manualMode=false;state.autoMode=true;state.dynamicAutoMode=false;state.formulaGroup='focus';state.viewMode='formula';state.version=21;
+if(typeof state.singleOnlyActive!=='boolean')state.singleOnlyActive=false;
+if(!ALL.some(r=>r.id===state.singleRuleId))state.singleRuleId=null;
+if(state.viewMode==='single')state.autoMode=false;
+let tab='main';
+const LAGS=[1,2,3,4,5,6,7,8,9,12,18,24],SHAPES={L_a:[[-1,0],[-1,-1],[-2,0]],L_b:[[-1,0],[-2,0],[-2,-1]],L_c:[[-1,0],[-1,1],[-2,0]],L_d:[[-1,0],[-2,0],[-2,1]],triangle:[[-1,-1],[-1,1],[-2,0]],diag_up:[[-1,-1],[-2,-2],[-3,-3]],diag_down:[[-1,1],[-2,2],[-3,3]],horiz:[[-1,0],[-2,0],[-3,0]],vertical:[[-1,-1],[-1,-2],[-1,-3]],mirror1:[[-1,-1],[-1,0],[-1,1]],mirror2:[[-2,-1],[-2,0],[-2,1]],square_corner:[[-1,0],[-2,0],[-2,-1]]};
+function features(board,t){const a=board.seq,origin=Number(board.origin)||0,past=a.slice(0,t),pos=origin+t,row=pos%6,col=Math.floor(pos/6),f={row:String(row+1),col_parity:String(col%2),round_mod6:String(pos%6)};function get(dc,dr){const c=col+dc,r=row+dr;if(c<0||r<0||r>=6)return null;const i=6*c+r-origin;return(i>=0&&i<t)?a[i]:null;}
+for(const k of LAGS)if(t>=k)f['lag'+k]=a[t-k];for(const dc of [-1,-2,-3])for(let dr=-3;dr<=3;dr++){const z=get(dc,dr);if(z!==null)f[`cell_${dc}_${dr}`]=z;}for(const dr of [-1,-2,-3,-4,-5]){const z=get(0,dr);if(z!==null)f[`cell_0_${dr}`]=z;}
+for(const [name,offsets] of Object.entries(SHAPES)){const vs=offsets.map(v=>get(...v));if(vs.every(z=>z!==null)){f['shape_'+name]=vs.join('');f['shape_'+name+'_bp_count']=String(vs.filter(x=>x==='B').length-vs.filter(x=>x==='P').length);}}
+for(const n of [3,4,5,6,8,10,12,18,24])if(t>=n){const s=past.slice(-n),d=s.filter(x=>x==='B').length-s.filter(x=>x==='P').length;f['net_'+n]=d>0?'B':d<0?'P':'E';f['netstrong_'+n]=d>=Math.max(2,Math.floor(n/3))?'B+':d<=-Math.max(2,Math.floor(n/3))?'P+':'flat';f['switch_'+n]=String(s.slice(1).filter((x,i)=>x!==s[i]).length);f['ties_'+n]=String(s.filter(x=>x==='H').length);f['parityB_'+n]=String(s.filter(x=>x==='B').length%2);}
+if(t>=2)f.last2=past.slice(-2).join('');if(t>=3)f.last3=past.slice(-3).join('');if(t>=4)f.last4=past.slice(-4).join('');if(t>=6)f.last6=past.slice(-6).join('');if(t){let z=past[t-1],run=1;while(run<t&&past[t-run-1]===z)run++;f.run_color=z;f.run_len=String(Math.min(run,6));f.run_bucket=z+Math.min(run,4);f.run_parity=z+(run%2);}
+if(col>=1){const prev=Array.from({length:6},(_,i)=>get(-1,i-row));if(prev.every(z=>z!==null)){let nb=prev.filter(z=>z==='B').length,np=prev.filter(z=>z==='P').length;f.colprev_B=String(nb);f.colprev_P=String(np);f.colprev_major=nb>np?'B':np>nb?'P':'E';f.colprev_switch=String(prev.slice(1).filter((x,i)=>x!==prev[i]).length);}}
+const tri1=[-1,0,1].map(dr=>get(-1,dr)),tri2=[-1,0,1].map(dr=>get(-2,dr));if([...tri1,...tri2].every(z=>z!==null)){f.mirror_three=tri1.every((x,i)=>x===tri2[i])?'same':tri1.every((x,i)=>x!==tri2[i]&&x!=='H'&&tri2[i]!=='H')?'invert':'other';}return f;}
+function humanName(k){if(/^cell_/.test(k)){const m=k.match(/^cell_(-?\d+)_(-?\d+)$/);if(m)return `Ô cột ${Math.abs(+m[1])} bên trái, ${+m[2]<0?'trên':+m[2]>0?'dưới':'cùng hàng'} ${Math.abs(+m[2])} hàng`;}if(/^lag\d+/.test(k))return 'Kết quả '+k.slice(3)+' lượt trước';if(/^shape_/.test(k))return 'Hình '+k.slice(6).replaceAll('_bp_count',' (B−P)').replaceAll('_',' ');if(/^net_/.test(k))return 'Bên trội '+k.slice(4)+' lượt';if(/^netstrong_/.test(k))return 'Bên trội mạnh '+k.slice(10)+' lượt';if(/^switch_/.test(k))return 'Số lần đổi trạng thái '+k.slice(7)+' lượt';if(/^ties_/.test(k))return 'Số hòa '+k.slice(5)+' lượt';if(/^parityB_/.test(k))return 'Chẵn/lẻ B '+k.slice(8)+' lượt';const x={row:'Hàng',col_parity:'Chẵn/lẻ cột',colprev_major:'Bên trội cột trước',colprev_switch:'Số lần đổi trong cột trước',round_mod6:'Vị trí hàng mod 6',run_bucket:'Độ dài bệt (tối đa 4)',run_color:'Màu bệt',run_len:'Độ dài bệt',last2:'Hai lượt gần nhất',last3:'Ba lượt gần nhất',last4:'Bốn lượt gần nhất',mirror_three:'Hai hình 3 ô cột trước'};return x[k]||k;}
+function describe(r,p){return r.feature_names.map((x,i)=>humanName(x)+' = '+p.values[i]).join(' · ');}
+function predict(r,board,t,knownFeatures=null){if(t<4)return null;const f=knownFeatures||features(board,t);for(const p of r.patterns){if(r.feature_names.every((n,i)=>f[n]!==undefined&&String(f[n])===String(p.values[i]))){return{pick:p.pick,cond:describe(r,p),pattern:p};}}return null;}
+function selections(board,t,rules){if(t<4||!rules.length)return [];const f=features(board,t);return rules.map(r=>({rule:r,res:predict(r,board,t,f)})).filter(x=>x.res);}
+
+// AUTO v4.4: conservative historical anchors + a board-only challenger gate.
+// Crucial: anchors were selected retrospectively from 12+5 historical boards.
+// Reference scores are not prospective success probabilities.
+const AUTO_ANCHOR_IDS=['BK012','BK010','BK033','BK003','BK020'];
+const AUTO_ANCHOR_SET=new Set(AUTO_ANCHOR_IDS);
+let dynamicRuleCache={key:null,value:null};
+function autoRuleHistory(past,t){
+ let recent=past,span='cả bàn';
+ for(const w of [10,15,20,30]){
+  const sub=past.filter(e=>e.t>=t-w);
+  if(sub.length>=3){recent=sub;span=w+' tay';break;}
+ }
+ return {recent,span,k:recent.filter(e=>e.ok).length,n:recent.length,fullN:past.length,fullK:past.filter(e=>e.ok).length,last3:past.slice(-3)};
+}
+// The features, not r.group, are used to detect exact repeated condition signatures.
+// r.group in the original dataset is the rule's own ID and does NOT imply independence.
+function dynamicChoose(history,t,allHits){
+ const ranks=[],byId=new Map(allHits.map(x=>[x.rule.id,x]));
+ const candidatePool=[];
+ for(const r of ALL){
+  const past=history[r.id],a=autoRuleHistory(past,t),ref=r.test||{hit:0,n:0};
+  const referenceN=Number(ref.n)||0,referenceHit=Number(ref.hit)||0;
+  const anchor=AUTO_ANCHOR_SET.has(r.id);
+  const fullRate=a.fullN?a.fullK/a.fullN:null;
+  const lastTwo=a.last3.slice(-2);
+  // Do not promote a 2/3 rule from the 86-rule search into live predictions.
+  const challenger=!anchor&&referenceN>=7&&referenceHit/referenceN>=.80&&
+       a.fullN>=5&&a.fullK/a.fullN>=.80&&a.last3.filter(e=>e.ok).length>=2;
+  if(!anchor&&!challenger)continue;
+  // Local evidence may override the anchor when a rule is visibly weak on THIS board.
+  const failing=a.fullN>=4&&(fullRate<.5||
+       (lastTwo.length===2&&lastTwo.every(e=>!e.ok)));
+  if(failing)continue;
+  const refWilson=referenceN?wilson90(referenceHit,referenceN):0;
+  const localWilson=a.fullN?wilson90(a.fullK,a.fullN):0;
+  const score=(anchor?.64:.36)*refWilson+(a.fullN?Math.min(a.fullN,8)/8*.24*localWilson:0)+(anchor?.08:0);
+  candidatePool.push({rule:r,score,anchor,challenger,refK:referenceHit,refN:referenceN,...a,active:byId.has(r.id)});
+ }
+ // Rank ACTIVE eligible rules first. Inactive candidates are only a watchlist.
+ candidatePool.sort((a,b)=>Number(b.active)-Number(a.active)||b.score-a.score||b.fullN-a.fullN||a.rule.id.localeCompare(b.rule.id));
+ const chosen=[],familySeen=new Set();
+ for(const item of candidatePool){
+  if(!item.active)continue;
+  const key=item.rule.feature_names.slice().sort().join('|');
+  if(familySeen.has(key))continue;
+  familySeen.add(key);chosen.push(item);
+  if(chosen.length===4)break;
+ }
+ const picked=chosen.map(x=>byId.get(x.rule.id));
+ const v=votes(picked),conflict=!!(v.B&&v.P);
+ const pick=conflict||!(v.B||v.P)?null:v.B?'B':'P';
+ let status='CHỜ — không có rule đủ điều kiện đang phát tín hiệu';
+ if(conflict)status='CHỜ — các rule báo trái chiều';
+ else if(pick)status=chosen.length>=2?`Có ${chosen.length} rule cùng báo ${pick} (chưa chắc chắn)`:`Một rule có dữ liệu tham chiếu đang báo ${pick} (tín hiệu đơn)`;
+ else if(!candidatePool.length)status='CHỜ — chưa có rule có bằng chứng đủ mức';
+ return {chosen,ready:!!pick,pick,active:picked,v,conflict,status,qualified:candidatePool.length,watch: candidatePool.slice(0,5)};
+}
+function dynamicWalk(board){
+ const key=board.id+'|'+(board.origin||0)+'|'+board.seq.join('');
+ if(dynamicRuleCache.key===key)return dynamicRuleCache.value;
+ const history=Object.fromEntries(ALL.map(r=>[r.id,[]]));
+ const rows=[];let conflict=0,current=null;
+ for(let t=4;t<=board.seq.length;t++){
+  // Each hand uses only results strictly before t, for its features AND rule performance.
+  const allHits=selections(board,t,ALL);
+  const decision=dynamicChoose(history,t,allHits);
+  if(t===board.seq.length){current=decision;break;}
+  const actual=board.seq[t];
+  if(decision.conflict)conflict++;
+  if(decision.pick){rows.push({t:t+1+(Number(board.origin)||0),pick:decision.pick,
+    actual,ok:actual==='H'?null:actual===decision.pick,
+    ruleIds:decision.chosen.map(x=>x.rule.id),status:decision.status});}
+  // Reveal the actual result AFTER the pre-round decision is logged.
+  if(actual!=='H')for(const x of allHits)history[x.rule.id].push({t,ok:x.res.pick===actual});
+ }
+ const hit=rows.filter(x=>x.ok===true).length,miss=rows.filter(x=>x.ok===false).length,tie=rows.filter(x=>x.ok===null).length;
+ const result={current,rows,hit,miss,tie,n:hit+miss,signals:rows.length,conflict};
+ dynamicRuleCache={key,value:result};return result;
+}
+function dynamicRules(board){const c=dynamicWalk(board).current;return c?.ready?c.chosen.map(x=>x.rule):[];}
+function dynamicSummary(board){const d=dynamicWalk(board);return {hit:d.hit,miss:d.miss,n:d.n,tie:d.tie,signals:d.signals,conflict:d.conflict};}
+function dynamicStages(board){const rows=dynamicWalk(board).rows,origin=Number(board.origin)||0,res=[];
+ for(let a=0;a<board.seq.length;a+=20){const end=Math.min(a+20,board.seq.length),part=rows.filter(x=>x.t>=origin+a+1&&x.t<=origin+end);
+  const hit=part.filter(x=>x.ok===true).length,miss=part.filter(x=>x.ok===false).length;
+  res.push({start:a+1,end,hit,miss,n:hit+miss,conflict:0});}
+ return res;
+}
+function renderDynamicAuto(board){
+ const a=autoWalk(board),p=a.current,leader=p.leader,profiles=p.profiles||[],current=profiles.filter(x=>x.current?.pick&&!x.current.conflict);
+ const Bs=current.filter(x=>x.current.pick==='B'),Ps=current.filter(x=>x.current.pick==='P');
+ const fire=current.filter(x=>x.ok),selected=leader?.mode||null;
+ const chosen=leader?.current?.pick||null;
+ $('ruleAutoToggle').textContent=state.manualMode?'↩ Quay lại AUTO':'Cách chọn';
+ $('ruleAutoToggle').classList.toggle('selected',!state.manualMode);
+ $('ruleAutoBox').classList.toggle('selected',!state.manualMode);
+ $('ruleAutoStatus').textContent=state.manualMode?'ĐANG CHỌN THỦ CÔNG · AUTO vẫn theo dõi nhưng không điều khiển tín hiệu chính':
+  chosen?`ĐANG BÁO ${chosen} · ${formulaName(selected)} · ${leader.hit}/${leader.sz} đúng (${leader.span}). ${leader.sz<5?'ÍT MẪU — chỉ tham khảo.':'Theo dõi kết quả mới.'}`:
+  `CHỜ · chưa có bộ đạt điều kiện và đang báo. Các bộ khác vẫn được theo dõi.`;
+ $('ruleAutoStats').innerHTML=`<span>138 bộ đang báo: <b>${Bs.length} B · ${Ps.length} P</b></span><span>Đạt điều kiện: <b>${fire.length}</b></span><span>AUTO đã chấm: <b>${a.hit}/${a.n} (${pct(a.hit,a.n)})</b></span>`;
+ $('ruleAutoBadges').innerHTML=fire.slice(0,4).map(x=>`<span class="ruleAutoBadge">${escape(formulaName(x.mode))} · <b>${x.hit}/${x.sz}</b> · <span class="${x.current.pick}">${x.current.pick}</span></span>`).join('')||'<span class="ruleAutoBadge">Chưa có bộ đủ mẫu đang báo · Xem các thẻ dưới để biết bộ nào có tín hiệu tham khảo</span>';
+}
+
+const AUTO_MODES=FORMULAS.map(f=>f.id);
+const AUTO_RULE_SETS=Object.fromEntries(AUTO_MODES.map(n=>[n,new Set(formulaIds(n))]));
+let autoCache={key:null,value:null};
+function autoData(board){
+ const key=board.id+'|'+(board.origin||0)+'|'+board.seq.join('');
+ if(autoCache.key===key)return autoCache.value;
+ const modes=Object.fromEntries(AUTO_MODES.map(n=>[n,[]]));
+ // Every rule is evaluated using results 0..t-1 only; at t==length the result is still unknown.
+ for(let t=4;t<=board.seq.length;t++){
+  const allHits=selections(board,t,ALL);
+  const actual=t<board.seq.length?board.seq[t]:null;
+  for(const n of AUTO_MODES){
+   const hits=allHits.filter(h=>AUTO_RULE_SETS[n].has(h.rule.id)),v=votes(hits);
+   const conflict=v.B>0&&v.P>0,pick=conflict||(!v.B&&!v.P)?null:(v.B?'B':'P');
+   if(!pick&&!conflict)continue;
+   modes[n].push({t,pick,actual,conflict,ok:actual&&actual!=='H'&&pick?pick===actual:null,number:hits.length});
+  }
+ }
+ const val={modes,len:board.seq.length};autoCache={key,value:val};return val;
+}
+function wilson90(hit,n){if(!n)return 0;const z=1.645,p=hit/n,d=1+z*z/n;return (p+z*z/(2*n)-z*Math.sqrt(p*(1-p)/n+z*z/(4*n*n)))/d;}
+function autoAt(data,t){
+ const profiles=autoFormulas().map(f=>f.id).map(n=>{
+  const events=data.modes[n];
+  const past=events.filter(e=>e.t<t&&e.pick&&e.actual&&e.actual!=='H');
+  let considered=past,span='cả bàn';
+  for(const window of [10,20,30]){const subset=past.filter(e=>e.t>=t-window);if(subset.length>=3){considered=subset;span=window+' tay';break;}}
+  const hit=considered.filter(e=>e.ok).length,sz=considered.length,latest=considered.slice(-3),recentHit=latest.filter(e=>e.ok).length;
+  const rate=sz?hit/sz:null;
+  const ok=sz>=3&&rate>=.70&&recentHit>=2;
+  const current=events.find(e=>e.t===t)||null;
+  return {mode:n,hit,sz,rate,span,recentHit,recentN:latest.length,ok,current,score:wilson90(hit,sz)+(latest.length===3?(recentHit/3-.5)*.035:0),total:past.length};
+ });
+ const qualified=profiles.filter(p=>p.ok).sort((a,b)=>b.score-a.score||b.sz-a.sz||a.mode.localeCompare(b.mode));
+ // Prefer the highest-scoring eligible profile that actually has a clean next-turn signal.
+ const firing=qualified.filter(p=>p.current?.pick&&!p.current.conflict);
+ const leader=firing[0]||qualified[0]||null;
+ const bestShown=leader||profiles.filter(p=>p.sz).sort((a,b)=>b.score-a.score||b.sz-a.sz)[0]||null;
+ return {profiles,leader,bestShown,ready:!!leader,active:!!leader?.current?.pick&&!leader.current.conflict};
+}
+let autoWalkCache={key:null,value:null};
+function autoWalk(board){
+ const key=board.id+'|'+(board.origin||0)+'|'+board.seq.join('')+'|'+state.formulaGroup;
+ if(autoWalkCache.key===key)return autoWalkCache.value;
+ const d=autoData(board), current=autoAt(d,board.seq.length), rows=[],byMode={};
+ for(let t=4;t<board.seq.length;t++){
+  const pick=autoAt(d,t),lead=pick.leader;
+  if(!lead||!pick.active)continue;
+  const e=lead.current,act=board.seq[t];
+  const ok=act==='H'?null:e.pick===act;
+  const row={t:t+1+(Number(board.origin)||0),id:'AUTO '+formulaName(lead.mode),pick:e.pick,actual:act,ok,cond:formulaName(lead.mode)+' · '+lead.span+' · '+lead.hit+'/'+lead.sz+' gần đây',mode:lead.mode};
+  rows.push(row);
+  if(!byMode[lead.mode])byMode[lead.mode]={hit:0,miss:0,tie:0,n:0};
+  if(ok===null)byMode[lead.mode].tie++;else {byMode[lead.mode].n++;if(ok)byMode[lead.mode].hit++;else byMode[lead.mode].miss++;}
+ }
+ const hit=rows.filter(r=>r.ok===true).length,miss=rows.filter(r=>r.ok===false).length,tie=rows.filter(r=>r.ok===null).length;
+ const result={current,rows,byMode,hit,miss,tie,n:hit+miss,signals:rows.length,conflict:0};
+ autoWalkCache={key,value:result};return result;
+}
+function autoSummary(board){const a=autoWalk(board);return {hit:a.hit,miss:a.miss,tie:a.tie,conflict:0,n:a.n,signals:a.signals};}
+function autoStages(board){
+ const all=autoWalk(board).rows,origin=Number(board.origin)||0,group=[];
+ for(let a=0;a<board.seq.length;a+=20){const b=Math.min(board.seq.length,a+20);const rr=all.filter(r=>r.t>=origin+a+1&&r.t<=origin+b);const hit=rr.filter(r=>r.ok===true).length,miss=rr.filter(r=>r.ok===false).length;group.push({start:a+1,end:b,hit,miss,n:hit+miss,conflict:0});}
+ return group;
+}
+
+function autoEnabled(){const a=autoWalk(boardActive()).current.leader;if(!a)return [];return ALL.filter(r=>AUTO_RULE_SETS[a.mode].has(r.id));}
+function enabledRules(){
+ if(state.dynamicAutoMode)return dynamicRules(boardActive());
+ if(state.viewMode==='single')return ALL.filter(r=>r.id===state.singleRuleId);
+ if(state.autoMode)return autoEnabled();const ids=new Set(state.enabled);return ALL.filter(r=>ids.has(r.id));
+}
+function selectSingleRule(id){
+ if(!state.manualMode)return;
+ state.dynamicAutoMode=false;
+ if(!ALL.some(r=>r.id===id))return;
+ if(state.viewMode==='formula')state.formulaAutoMode=state.autoMode;
+ state.viewMode='single';state.autoMode=false;state.singleRuleId=id;render();
+}
+function switchView(mode){
+ if(mode===state.viewMode)return;state.dynamicAutoMode=false;
+ if(mode==='single'){
+  state.formulaAutoMode=state.autoMode;state.autoMode=false;state.viewMode='single';
+ }else{
+  state.viewMode='formula';state.autoMode=!['focus','experimental','groupB'].includes(state.formulaGroup)&&!!state.formulaAutoMode;
+ }
+ render();
+}
+function singleHealth(m,board){
+ let recent=m.resolved,span='cả bàn';
+ for(const window of [10,15,20,30]){
+  const cut=(Number(board.origin)||0)+board.seq.length-window;
+  const xs=m.resolved.filter(x=>x.t>cut);
+  if(xs.length>=3){recent=xs;span=window+' tay';break;}
+ }
+ const hit=recent.filter(x=>x.ok).length,n=recent.length;
+ return {...m,recentHit:hit,recentN:n,span,rate:n?hit/n:null};
+}
+function rankedSingleRules(board,onlyActive=false){
+ const m=liveBreakdown(board);
+ return ALL.map(r=>({rule:r,score:singleHealth(m[r.id],board)}))
+ .filter(x=>!onlyActive||!!x.score.current)
+ .sort((a,b)=>{
+  const x=a.score,y=b.score,level=v=>v.n>=5?3:v.n>=3?2:v.n>0?1:0;
+  return level(y)-level(x)||(y.recentN?y.recentHit/y.recentN:-1)-(x.recentN?x.recentHit/x.recentN:-1)
+    ||(y.n?y.hit/y.n:-1)-(x.n?x.hit/x.n:-1)||y.n-x.n
+    ||Number(!!y.current)-Number(!!x.current)||a.rule.id.localeCompare(b.rule.id);
+ });
+}
+
+function boardActive(){if(state.demo){let d=DEMOS[state.demo.index];return {id:'__demo__',name:d.name+' · Demo',seq:d.seq.slice(0,state.demo.pos),origin:d.origin};}return state.boards.find(b=>b.id===state.chosen)||state.boards[0];}
+function review(board,rules=enabledRules()){let totals={},entries=[];for(const r of rules)totals[r.id]={hit:0,miss:0,tie:0,n:0};for(let t=4;t<board.seq.length;t++){let a=board.seq[t];for(const {rule:r,res} of selections(board,t,rules)){let q=totals[r.id],ok=a==='H'?null:res.pick===a;if(a==='H')q.tie++;else{q.n++;if(ok)q.hit++;else q.miss++;}entries.push({t:t+1+(Number(board.origin)||0),id:r.id,pick:res.pick,actual:a,ok,cond:res.cond});}}return{totals,entries};}
+// Phong do cua tung rule tren BAN HIEN TAI: tinh tu luot da biet truoc khi du doan.
+function liveBreakdown(board){
+ const q=review(board,ALL),by={},nextFeatures=features(board,board.seq.length);
+ for(const r of ALL){
+  const entries=q.entries.filter(x=>x.id===r.id),resolved=entries.filter(x=>x.ok!==null),last=resolved.slice(-5);
+  const hit=resolved.filter(x=>x.ok).length,miss=resolved.length-hit;
+  const lastHit=last.filter(x=>x.ok).length,lastN=last.length;
+  const current=predict(r,board,board.seq.length,nextFeatures),total=entries.length,tie=entries.filter(x=>x.ok===null).length;
+  const currentN=resolved.length;
+  let level='none',label='Chưa có mẫu';
+  let streak=0,streakSide=null;for(let i=resolved.length-1;i>=0;i--){const v=resolved[i].ok?'W':'L';if(streakSide&&streakSide!==v)break;streakSide=v;streak++;}
+  if(currentN>0&&currentN<5){
+   level=streak>=2?(streakSide==='W'?'streak':'slump'):'small';
+   label=streak>=2?(streakSide==='W'?`Đúng ${streak} liên tiếp · ít mẫu`:`Sai ${streak} liên tiếp · ít mẫu`):'Ít mẫu';
+  }
+  else if(currentN>=5&&lastN===5&&lastHit>=4&&hit/currentN>=.65){level='good';label='Tốt gần đây';}
+  else if(currentN>=5&&(lastHit<=2||hit/currentN<=.45)){level='weak';label='Yếu gần đây';}
+  else if(currentN>=5){level='neutral';label='Trung tính';}
+  by[r.id]={id:r.id,entries,resolved,hit,miss,tie,n:currentN,total,last,lastHit,lastN,level,label,streak,streakSide,current,lastAt:entries.length?entries[entries.length-1].t:null};
+ }
+ return by;
+}
+function trendHTML(m){return m.last.length?'<span class="trend" aria-label="5 tín hiệu B/P đã chấm gần nhất">'+m.last.map(x=>`<i title="Lượt ${x.t}: ${x.pick} → ${x.actual} · ${x.ok?'Đúng':'Sai'}" class="${x.ok?'win':'loss'}">${x.ok?'✓':'×'}</i>`).join('')+'</span>':'<span class="trendEmpty">Chưa có tín hiệu B/P để chấm</span>';}
+function compareLive(a,b){const level={good:6,streak:5,neutral:4,small:3,slump:2,weak:1,none:0};return level[b.level]-level[a.level]||(b.n>=5?1:0)-(a.n>=5?1:0)||(b.lastN?b.lastHit/b.lastN:0)-(a.lastN?a.lastHit/a.lastN:0)||b.n-a.n;}
+function liveBadge(m){return `<span class="healthFlag ${m.level}" title="Đánh giá hồi cứu theo các tín hiệu đã xảy ra trên bàn hiện tại">${m.label}</span>`;}
+function votes(hits){const groups=new Map();for(const h of hits){let group=h.rule.group;if(!groups.has(group))groups.set(group,new Set());groups.get(group).add(h.res.pick);}let B=0,P=0,conflicting=0;for(const v of groups.values()){if(v.size>1){conflicting++;continue;}if(v.has('B'))B++;if(v.has('P'))P++;}return{B,P,conflicting,groups:groups.size};}
+const HIST_CACHE=new Map();
+// v3.3: independent retrospective summaries for each preset on the selected board.
+// "Tay" counts actual rounds (ties included), whereas the hit-rate denominator counts resolved B/P signals.
+function presetHealth(board,rules){
+ const full=summaryBoard(board,rules);
+ let recent=null,span='',rounds=0;
+ for(const window of [10,15,20,30]){
+   const sample=summaryBoard(board,rules,window);
+   if(sample.n>=3){recent=sample;rounds=Math.min(window,board.seq.length);span=window+' tay';break;}
+ }
+ if(!recent){recent=full;rounds=board.seq.length;span='cả bàn ('+rounds+' tay)';}
+ const ratio=recent.n?recent.hit/recent.n:null;
+ let status='Chưa có dữ liệu',tone='empty';
+ if(recent.n>0&&recent.n<3){status='Ít mẫu';tone='small';}
+ else if(recent.n>=3&&recent.n<5){
+  status=ratio>=.75?'Đang khá · ít mẫu':ratio<.45?'Đang yếu · ít mẫu':'Chưa rõ · ít mẫu';tone='small';
+ }else if(recent.n>=5){
+  if(ratio>=.75){status='Tốt gần đây';tone='good';}
+  else if(ratio>=.60){status='Khá gần đây';tone='warm';}
+  else if(ratio>=.45){status='Trung tính';tone='neutral';}
+  else {status='Yếu gần đây';tone='weak';}
+ }
+ const v=votes(selections(board,board.seq.length,rules));
+ const next=v.B&&v.P?'XUNG ĐỘT':v.B?'B':v.P?'P':'CHỜ';
+ return {full,recent,span,rounds,status,tone,next};
+}
+
+function summaryBoard(board,rules,windowRounds=0){const s={hit:0,miss:0,tie:0,conflict:0,signals:0,byB:0,byP:0};for(let t=Math.max(4,windowRounds?board.seq.length-windowRounds:4);t<board.seq.length;t++){const v=votes(selections(board,t,rules)),actual=board.seq[t];if(v.B&&v.P){s.conflict++;continue;}if(!v.B&&!v.P)continue;s.signals++;const chosen=v.B?'B':'P';chosen==='B'?s.byB++:s.byP++;if(actual==='H')s.tie++;else if(chosen===actual)s.hit++;else s.miss++;}s.n=s.hit+s.miss;return s;}
+function windowLabel(){return state.lookback?state.lookback+' tay gần nhất':'toàn bàn';}
+function windowStatRule(m,board){const origin=Number(board.origin)||0,cut=state.lookback?origin+board.seq.length-state.lookback:-Infinity;const z=m.entries.filter(x=>x.t>cut),res=z.filter(x=>x.ok!==null);return{hit:res.filter(x=>x.ok).length,n:res.length,total:z.length,tie:z.length-res.length};}
+function stageSummary(board,rules){const segments=[];for(let a=0;a<board.seq.length;a+=20){let b=Math.min(board.seq.length,a+20),out={hit:0,miss:0,tie:0,conflict:0,signals:0,byB:0,byP:0};for(let t=Math.max(4,a);t<b;t++){const vv=votes(selections(board,t,rules)),val=board.seq[t];if(vv.B&&vv.P){out.conflict++;continue;}if(!vv.B&&!vv.P)continue;out.signals++;const pick=vv.B?'B':'P';if(val==='H')out.tie++;else if(val===pick)out.hit++;else out.miss++;}out.n=out.hit+out.miss;segments.push({start:a+1,end:b,...out});}return segments;}
+function summary12(ids){const key=ids.slice().sort().join('|');if(HIST_CACHE.has(key))return HIST_CACHE.get(key);const rr=ALL.filter(r=>ids.includes(r.id));const s={hit:0,miss:0,tie:0,conflict:0,signals:0,byB:0,byP:0};for(const d of DEMOS){const z=summaryBoard(d,rr);for(const k of Object.keys(s))s[k]+=z[k];}s.n=s.hit+s.miss;HIST_CACHE.set(key,s);return s;}
+function chosenProfile(){for(const f of FORMULAS)if(state.enabled.length===f.ids.length&&f.ids.every(id=>state.enabled.includes(id)))return f.id;return null;}
+function chooseProfile(id){const f=FORMULA_MAP[id];if(!f||!state.manualMode)return;state.dynamicAutoMode=false;state.viewMode='formula';state.autoMode=false;state.formulaAutoMode=false;if(state.formulaGroup!=='focus')state.formulaGroup=f.id.startsWith('M')?'mined':f.id.startsWith('G')?'experimental':['BA','BB'].includes(f.id)?'groupB':'legacy';state.enabled=f.ids.slice();render();}
+let warnedStorage=false;function store(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){if(!warnedStorage){warnedStorage=true;console.warn('Không lưu được localStorage; hãy xuất JSON để sao lưu.');}}}
+function notify(t){$('popup').textContent=t;$('popup').style.display='block';clearTimeout(notify.timeout);notify.timeout=setTimeout(()=>$('popup').style.display='none',4000)}
+function setTab(x){tab=x;document.querySelectorAll('.tabs button').forEach(a=>a.classList.toggle('active',a.dataset.tab===x));document.querySelectorAll('.tab').forEach(a=>a.classList.toggle('active',a.id==='tab-'+x));render();}
+function main(){const b=boardActive(),history=review(b),rules=enabledRules(),hits=selections(b,b.seq.length,rules),v=votes(hits),agg=state.dynamicAutoMode?dynamicSummary(b):state.autoMode?autoSummary(b):summaryBoard(b,rules),demo=!!state.demo;
+$('boardSelect').innerHTML=state.boards.map(x=>`<option value="${escape(x.id)}" ${x.id===state.chosen?'selected':''}>${escape(x.name)} (${x.seq.length})</option>`).join('');$('boardSelect').disabled=demo;$('boardMeta').textContent=demo?'Đang xem demo, không sửa trực tiếp':b.seq.length+' kết quả đã nhập';$('boardSummary').textContent=`${b.seq.length} lượt đã biết · B ${b.seq.filter(x=>x==='B').length} · P ${b.seq.filter(x=>x==='P').length} · H ${b.seq.filter(x=>x==='H').length}`;for(const id of ['addB','addP','addH','undo','redo','boardNew','boardRename','boardClear'])$(id).disabled=demo;
+const cols=Math.max(9,Math.ceil((b.seq.length+1+(b.origin||0))/6)+1),start=Math.floor((b.origin||0)/6)*6;let road='';for(let c=0;c<cols;c++)for(let r=0;r<6;r++){const ix=c*6+r-start+(start-(b.origin||0));const abs=c*6+r,local=abs-(b.origin||0),val=b.seq[local],next=local===b.seq.length;road+=`<div class="cell ${val|| (next?'next':'empty')}">${val|| (next?'?':'')}${val?`<em>${abs+1}</em>`:''}</div>`;} // rendering covers global column coordinates for partial-origin boards
+$('road').innerHTML=road;$('boardSummary').textContent+=' · Lượt tiếp theo '+(b.origin+b.seq.length+1);$('mobileNextNumber').textContent='Lượt '+(b.origin+b.seq.length+1);
+$('mainStats').innerHTML=[['Lượt có tín hiệu B/P',agg.n],['Đúng',agg.hit],['Sai',agg.miss],['% bàn này',pct(agg.hit,agg.n)]].map(([a,c])=>`<div class="stat"><b>${c}</b><span>${a}</span></div>`).join('');$('currentWarning').textContent=(state.dynamicAutoMode?'AUTO CHỌN LỌC · ':state.viewMode==='single'?'Đang chỉ sử dụng 1 rule · ':state.autoMode?'AUTO, chọn bộ trước mỗi lượt · ':'')+(agg.n<5?'Mới có ít tín hiệu trên bàn này.':(agg.hit/agg.n<.6?'Hiệu suất thực tế trên bàn này đang thấp.':'Đang theo dõi trên bàn này.'))+' · Hòa: '+agg.tie+' · Xung đột: '+agg.conflict;
+let t='CHỜ',desc='Rule đã chọn chưa kích hoạt cho lượt tiếp theo',cls='warn';if(state.viewMode==='single'&&!rules.length){t='CHỌN 1 RULE';desc='Xem các thẻ BK bên dưới và chạm để theo dõi một rule riêng.';}else if(v.B&&v.P){t='XUNG ĐỘT — CHỜ';desc=`${v.B} nhóm báo B, ${v.P} nhóm báo P. Không có đồng thuận.`;}else if(v.B||v.P){t=v.B?'B — TÍN HIỆU THỬ':'P — TÍN HIỆU THỬ';cls=v.B?'B':'P';desc=`${v.B+v.P} rule kích hoạt, ${hits.length} BK báo hiệu (có thể trùng). Đây không phải xác suất thắng.`;}
+if(state.dynamicAutoMode){const c=dynamicWalk(b).current;if(!c||!c.pick){t='CHỜ';cls='warn';desc=c?.status||'Không có rule đạt chuẩn ở lượt tiếp theo.';}else{t=c.pick+' — TÍN HIỆU THỬ';cls=c.pick;desc=c.status+' · Đã chọn trước lượt tới; không bảo đảm kết quả.';}}
+if(!state.manualMode){
+ const snap=autoWalk(b).current,lead=snap.leader,allFiring=snap.profiles.filter(p=>p.current?.pick&&!p.current.conflict),fireB=allFiring.filter(p=>p.current.pick==='B'),fireP=allFiring.filter(p=>p.current.pick==='P');
+ const leadPick=lead?.current?.pick||null;
+ const distinct=new Set();for(const p of allFiring){for(const h of selections(b,b.seq.length,allRulesByIds(formulaIds(p.mode))))distinct.add(h.rule.id);}
+ if(leadPick){t=leadPick+' — TÍN HIỆU THỬ';cls=leadPick;desc=`AUTO chọn ${formulaName(lead.mode)} (${lead.hit}/${lead.sz} trong ${lead.span}). ${lead.sz<5?'Chỉ có '+lead.sz+' mẫu — rất ít căn cứ.':''} Các bộ có thể dùng chung BK rule, không bảo đảm lượt tới.`;}
+ else{t='CHỜ';cls='warn';desc=`Chưa có công thức đủ điều kiện để AUTO chọn. Tuy nhiên, đang có ${fireB.length} bộ báo B và ${fireP.length} bộ báo P để tham khảo.`;}
+ $('voteChips').innerHTML=`<span class="chip">${fireB.length} bộ báo B</span><span class="chip">${fireP.length} bộ báo P</span><span class="chip">${distinct.size} BK khác nhau</span><span class="chip">AUTO 138 bộ · ${agg.hit}/${agg.n} đã chấm</span>`;
+ }else{
+ $('voteChips').innerHTML=`<span class="chip">B <strong>${v.B}</strong></span><span class="chip">P <strong>${v.P}</strong></span><span class="chip">${hits.length} BK đang báo</span><span class="chip">THỦ CÔNG</span>`;
+ }
+ $('signalTitle').textContent=t;$('signalTitle').className='hero '+cls;$('signalDesc').textContent=desc;
+const nowProfile=state.dynamicAutoMode?null:state.viewMode==='single'?null:state.autoMode?(autoWalk(b).current.leader?.mode||null):chosenProfile(),total12=summary12(state.viewMode==='single'?rules.map(r=>r.id):(state.autoMode&&nowProfile?formulaIds(nowProfile):state.enabled)),winAgg=summaryBoard(b,rules,state.lookback);
+$('modeSummary').innerHTML=state.dynamicAutoMode?`<b>AUTO CHỌN LỌC · lõi tham chiếu + rule đủ bằng chứng trên bàn</b> · <strong>${agg.hit}/${agg.n} (${pct(agg.hit,agg.n)})</strong> · ${agg.conflict} xung đột · ${agg.tie} Hòa. <span style="color:#8daab9">Chấm theo lựa chọn trước từng lượt, không dùng bộ hiện tại chấm ngược lịch sử.</span>`:state.viewMode==='single'?`<span class="ruleOneTag">RULE ĐƠN</span> · <b>${state.singleRuleId||'Chưa chọn rule'}</b> · Cả bàn <strong>${agg.hit}/${agg.n} (${pct(agg.hit,agg.n)})</strong> · ${rules.length?'Tiếp: '+(hits[0]?.res?.pick||'CHỜ'):'Chạm 1 thẻ BK để chọn'} · <span style="color:#8daab9">Không cộng phiếu rule trùng nhau.</span>`:state.autoMode?`<b>AUTO theo 138 công thức, chọn trước mỗi lượt</b> · <strong>${agg.hit}/${agg.n} (${pct(agg.hit,agg.n)})</strong> · ${agg.tie} Hòa. <span style="color:#7f9aab">Hiển thị thống kê của bộ được tự chọn trước từng lượt, không phải % của bộ đang dẫn đầu hiện tại.</span>`:`<b>${nowProfile?formulaName(nowProfile):'Tùy chọn · '+rules.length+' rule'} đang dùng</b> · <strong>Cả ván ${agg.hit}/${agg.n} (${agg.n?pct(agg.hit,agg.n):'—'})</strong> · <strong>${presetHealth(b,rules).span}: ${presetHealth(b,rules).recent.hit}/${presetHealth(b,rules).recent.n} (${presetHealth(b,rules).recent.n?pct(presetHealth(b,rules).recent.hit,presetHealth(b,rules).recent.n):'—'})</strong> · ${agg.conflict} xung đột · Cũ 12 bàn ${pct(total12.hit,total12.n)}.`;
+$('stageStats').innerHTML=`<div class="periodInfo">Bộ ${rules.length} rule đang bật · dùng kết quả từng lượt đã xảy ra</div><table class="stageTable"><thead><tr><th>Đoạn lượt</th><th>Đúng/tổng</th><th>Tỷ lệ</th><th>Xung đột</th></tr></thead><tbody>${(state.dynamicAutoMode?dynamicStages(b):state.autoMode?autoStages(b):stageSummary(b,rules)).map(x=>`<tr><td>${x.start}–${x.end}</td><td>${x.hit}/${x.n}</td><td>${pct(x.hit,x.n)}</td><td>${x.conflict}</td></tr>`).join('')}</tbody></table>`;
+const liveBreakdownCached=liveBreakdown(b);$('liveRulesPanel').style.display=hits.length?'':'none';
+$('liveRuleCards').innerHTML=hits.map(({rule:r,res})=>{
+  const st=history.totals[r.id]||{hit:0,n:0};
+  const m=liveBreakdownCached[r.id];
+  return `<div class="liveRule"><div style="min-width:0"><div class="liveRuleName"><strong>${escape(r.id)}</strong>${liveBadge(m)}<span class="hint">12 bàn: ${pct(r.test.hit,r.test.n)}</span></div><div class="liveRuleMeta" title="${escape(res.cond)}">${escape(res.cond)}</div><div class="liveRuleMeta">Bàn này: ${m.hit}/${m.n} (${pct(m.hit,m.n)}) · ${m.total} lượt kích hoạt · 5 gần nhất: ${m.lastHit}/${m.lastN}</div>${trendHTML(m)}</div><span class="liveRuleResult ${res.pick}">${res.pick}</span></div>`;
+}).join('');
+
+const roadEl=$('road'),pitch=parseFloat(getComputedStyle(roadEl).gridAutoColumns||'43')+parseFloat(getComputedStyle(roadEl).columnGap||'4'),col=Math.floor((b.origin+b.seq.length)/6);$('roadWrap').scrollLeft=Math.max(0,col*pitch-$('roadWrap').clientWidth*.55);
+}
+function renderRules(){
+ const b=boardActive(),live=liveBreakdown(b),needle=$('ruleSearch').value.toLowerCase().trim(),order=$('ruleOrder').value,active=new Set(state.enabled);const recent=x=>windowStatRule(x,b);
+ $('liveBoardCaption').innerHTML=`<strong>Đang xem: ${escape(b.name)}</strong> · ${b.seq.length} lượt đã nhập · hiển thị ${windowLabel()} và toàn bàn. <b>Tín hiệu</b> là số lần rule đã phát dự đoán, không phải số mẫu điều kiện của công thức.`;
+ const allValues=ALL.map(r=>live[r.id]),withSignals=allValues.filter(x=>x.total),good=allValues.filter(x=>x.level==='good'),weak=allValues.filter(x=>x.level==='weak');
+ $('healthOverview').innerHTML=`<span><b>${withSignals.length}/${ALL.length}</b><small>rule đã từng kích hoạt</small></span><span><b>${good.length}</b><small>tốt gần đây (≥5 mẫu)</small></span><span><b>${weak.length}</b><small>yếu gần đây</small></span><span><b>${active.size}</b><small>rule dùng thủ công</small></span>`;
+ const top=[...allValues].filter(x=>x.n>=2).sort(compareLive).slice(0,3);
+ $('liveRuleTop').innerHTML=top.length?`<div class="topHead">Rule đáng theo dõi trên bàn này <small>(ít nhất 2 tín hiệu B/P; cần 5 tín hiệu để đánh giá rõ hơn)</small></div><div class="topGrid">${top.map(m=>`<div class="topOne"><div><b>${m.id}</b> ${liveBadge(m)}</div><div><strong>${pct(m.hit,m.n)}</strong> <small>${m.hit}/${m.n} đúng · 5 gần nhất ${m.lastHit}/${m.lastN}</small></div>${trendHTML(m)}<button type="button" data-top-toggle="${m.id}" class="btn slim">${state.viewMode==='single'&&state.singleRuleId===m.id?'✓ Rule riêng đang chọn':'Chọn riêng BK'}</button></div>`).join('')}</div>`:'<div class="noTop">Chưa rule nào có ít nhất 2 tín hiệu B/P đã chấm. Các rule ít mẫu chưa thể đánh giá phong độ.</div>';
+ $('liveRuleTop').querySelectorAll('[data-top-toggle]').forEach(x=>x.onclick=()=>{if(!state.manualMode)return;selectSingleRule(x.dataset.topToggle);setTab('main');});
+ let rr=ALL.filter(r=>r.id.toLowerCase().includes(needle)||r.feature_names.join(' ').toLowerCase().includes(needle)||r.feature_names.some(h=>humanName(h).toLowerCase().includes(needle)));
+ const fil=$('ruleFilter').value;rr=rr.filter(r=>fil==='all'||(fil==='now'&&live[r.id].current)||(fil==='seen'&&live[r.id].total>0)||(fil==='seen3'&&live[r.id].n>=3)||(fil==='good'&&live[r.id].level==='good')||(fil==='enabled'&&active.has(r.id))); 
+ const rate=(r,key)=>r[key].n?r[key].hit/r[key].n:-1,liveRate=m=>m.n?m.hit/m.n:-1;
+ rr.sort((a,b)=>{
+  const x=live[a.id],y=live[b.id];
+  if(order==='id')return a.id.localeCompare(b.id);
+  if(order==='testN')return b.test.n-a.test.n;
+  if(order==='cvPct')return rate(b,'cv')-rate(a,'cv')||b.cv.n-a.cv.n;
+  if(order==='recentPct'){const a1=recent(x),b1=recent(y);return (b1.n?b1.hit/b1.n:-1)-(a1.n?a1.hit/a1.n:-1)||b1.n-a1.n;}if(order==='currentHealth')return compareLive(x,y);
+  if(order==='currentPct')return liveRate(y)-liveRate(x)||y.n-x.n;
+  if(order==='last5')return (y.lastN?y.lastHit/y.lastN:-1)-(x.lastN?x.lastHit/x.lastN:-1)||y.lastN-x.lastN||y.n-x.n;
+  if(order==='currentN')return y.total-x.total||liveRate(y)-liveRate(x);
+  if(order==='activeNow')return Number(!!y.current)-Number(!!x.current)||y.n-x.n;
+  return rate(b,'test')-rate(a,'test')||b.test.n-a.test.n;
+ });
+ $('enabledCount').textContent=state.manualMode?state.enabled.length+'/'+ALL.length+' đang chọn':'86 rule đang được theo dõi';
+ const picker=$('rulePicker'),scroll=picker.scrollTop;
+ picker.innerHTML=rr.map(r=>{const m=live[r.id],on=active.has(r.id);
+  return `<label class="pickCard ${on?'selected':''} ${m.level==='good'?'currently-good':''}"><input class="ruleCheckbox" type="checkbox" data-rule="${r.id}" ${on?'checked':''} aria-label="Bật hoặc tắt ${r.id}"/><div class="pickContent">
+  <div class="pickTop"><strong>${r.id}</strong>${liveBadge(m)}${m.current?`<span class="nowFlag ${m.current.pick}">ĐANG BÁO ${m.current.pick}</span>`:''}</div>
+  <div class="pickTag">${escape(r.feature_names.map(humanName).join(' + '))}</div><div class="pickWindow">${windowLabel()}: <b>${recent(m).hit}/${recent(m).n} (${pct(recent(m).hit,recent(m).n)})</b> · ${recent(m).total} lần báo${recent(m).n<3?' · ít mẫu':''}</div>
+  <div class="pickPrimary"><div><b>${pct(m.hit,m.n)}</b><small>Bàn này · ${m.hit} đúng / ${m.n} lượt B/P</small></div><div><b>${m.lastN?pct(m.lastHit,m.lastN):'—'}</b><small>${m.lastHit}/${m.lastN} · 5 gần nhất</small></div><div><b>${m.total}</b><small>Tổng lần báo · ${m.tie} Hòa</small></div></div>
+  <div class="pickDirect"><button type="button" class="singleRulePick" data-select-one="${r.id}">${state.viewMode==='single'&&state.singleRuleId===r.id?'✓ Đang theo dõi riêng':'Theo dõi riêng rule này'}</button></div>
+  <div class="ruleTrend">${trendHTML(m)}<span class="mutedMeta">${m.lastAt?'Lượt báo cuối: '+m.lastAt:'Chưa từng báo trong bàn'}</span></div>
+  <div class="pickSecondary"><span>12 bàn cũ: <b>${pct(r.test.hit,r.test.n)}</b> (${r.test.hit}/${r.test.n})</span><span>40 bàn: <b>${pct(r.train.hit,r.train.n)}</b></span><span>CV: <b>${pct(r.cv.hit,r.cv.n)}</b></span></div>
+  <details class="pickDetail"><summary>${r.patterns.length} mẫu điều kiện của công thức (cố định)</summary>${r.patterns.map(p=>`<p>${escape(describe(r,p))} ⇒ <b class="${p.pick}">${p.pick}</b> (${p.train_hit}/${p.train_n} tập học)</p>`).join('')}</details>
+  </div></label>`;}).join('')||'<p class="hint">Không tìm thấy rule.</p>';
+ picker.scrollTop=scroll;
+ picker.querySelectorAll('[data-select-one]').forEach(x=>x.onclick=e=>{e.preventDefault();e.stopPropagation();selectSingleRule(x.dataset.selectOne);setTab('main');});
+ picker.querySelectorAll('.ruleCheckbox').forEach(x=>x.onchange=()=>{if(!state.manualMode)return;const id=x.dataset.rule;state.viewMode='formula';state.dynamicAutoMode=false;state.autoMode=false;state.formulaAutoMode=false;state.enabled=x.checked?Array.from(new Set([...state.enabled,id])):state.enabled.filter(y=>y!==id);render();});
+ $('compareList').innerHTML=rankedFormulas(b).map(f=>{const h=summary12(f.ids),m=f.m,on=!state.autoMode&&chosenProfile()===f.id;
+ return `<button type="button" data-compare="${f.id}" class="compareCard ${on?'selected':''}"><span><strong>${f.name}</strong><small>${f.note} · ${f.ids.length} rule</small><small>Cả bàn: ${m.full.hit}/${m.full.n} (${m.full.n?pct(m.full.hit,m.full.n):'—'}) · 12 bàn: ${pct(h.hit,h.n)}</small><small>Gần đây ${m.span}: ${m.recent.hit}/${m.recent.n} (${m.recent.n?pct(m.recent.hit,m.recent.n):'—'}) · ${m.status} · Tiếp: ${m.next}</small></span><span class="compareNum"><b>${m.full.n?pct(m.full.hit,m.full.n):'—'}</b><small>${m.full.n<3?'Ít mẫu':'Cả bàn'}</small></span><span class="compareArrow">${on?'ĐANG CHỌN':'Chọn'}</span></button>`;
+ }).join('');
+ $('compareList').querySelectorAll('[data-compare]').forEach(x=>x.onclick=()=>{if(state.manualMode)chooseProfile(x.dataset.compare);});
+}
+function renderStats(){const b=boardActive(),q=review(b),a=enabledRules(),agg=state.dynamicAutoMode?dynamicSummary(b):state.autoMode?autoSummary(b):summaryBoard(b,a),rows=a.map(r=>({r,z:q.totals[r.id]}));
+if(state.autoMode){const aw=autoWalk(b);q.entries=aw.rows;rows.length=0;for(const mode of AUTO_MODES){const z=aw.byMode[mode];if(z)rows.push({r:{id:'AUTO '+formulaName(mode),test:{hit:0,n:0}},z});}}
+$('statsCards').innerHTML=[['Lượt có dự đoán B/P',agg.n],['Đúng',agg.hit],['Sai',agg.miss],['Tỷ lệ đúng',pct(agg.hit,agg.n)],['Hòa',agg.tie],['Xung đột',agg.conflict]].map(([name,value])=>`<div class="stat"><b>${value}</b><span>${name}</span></div>`).join('');
+$('statsRules').innerHTML=rows.sort((x,y)=>(y.z.n?y.z.hit/y.z.n:-1)-(x.z.n?x.z.hit/x.z.n:-1)).map(({r,z})=>`<tr><td><b>${r.id}</b></td><td class="good">${z.hit}</td><td class="bad">${z.miss}</td><td>${z.tie}</td><td>${z.n}</td><td>${pct(z.hit,z.n)}</td><td>${pct(r.test.hit,r.test.n)}</td></tr>`).join('')||'<tr><td colspan="7" class="dim">Chưa chọn rule.</td></tr>';
+$('historyRows').innerHTML=q.entries.slice().reverse().slice(0,500).map(x=>`<tr><td>${x.t}</td><td>${x.id}</td><td class="${x.pick}">${x.pick}</td><td class="${x.actual}">${x.actual}</td><td class="${x.ok===null?'dim':x.ok?'good':'bad'}">${x.ok===null?'Hòa':x.ok?'Đúng':'Sai'}</td><td>${escape(x.cond)}</td></tr>`).join('')||'<tr><td colspan="6" class="dim">Chưa có tín hiệu được chấm.</td></tr>';
+}
+function renderData(){$('demoSelect').innerHTML=DEMOS.map((d,i)=>`<option value="${i}" ${state.demo?.index===i?'selected':''}>${escape(d.name)} · ${d.seq.length} kết quả</option>`).join('');$('demoInfo').textContent=state.demo?`${DEMOS[state.demo.index].name}: đã mở ${state.demo.pos}/${DEMOS[state.demo.index].seq.length} kết quả`:'Chưa mở bàn thử; chọn bàn bên trên và bấm Mở.';$('demoBar').style.width=state.demo?(100*state.demo.pos/DEMOS[state.demo.index].seq.length)+'%':'0%';$('demoPrev').disabled=!state.demo||state.demo.pos<1;$('demoNext').disabled=!state.demo||state.demo.pos>=DEMOS[state.demo.index].seq.length;$('demoFinish').disabled=!state.demo||state.demo.pos>=DEMOS[state.demo.index].seq.length;$('demoExit').disabled=!state.demo;}
+function syncAutoDisclosure(){
+ const isOpen=!!state.autoDetailsOpen;
+ $('autoBody').hidden=!isOpen;
+ $('autoPanel').classList.toggle('is-collapsed',!isOpen);
+ $('autoDisclosure').setAttribute('aria-expanded',String(isOpen));
+ $('autoDisclosure').textContent=isOpen?'▾ Ẩn chi tiết AUTO':'▸ Hiện chi tiết AUTO';
+}
+function renderAuto(board,a){
+ syncAutoDisclosure();
+ const choice=a.current,shown=choice.bestShown,lead=choice.leader,used=a.current.active;
+ document.body.classList.toggle('auto-on',state.autoMode);$('autoToggle').textContent=state.autoMode?'AUTO · BẬT':'AUTO · TẮT';
+ $('autoToggle').classList.toggle('primary',state.autoMode);
+ let header='',reason='';
+ if(!shown){header='CHƯA CÓ TÍN HIỆU';reason='Chưa bộ nào có đủ dữ liệu để đánh giá.';}
+ else if(!lead){header='CHƯA ĐỦ CĂN CỨ';reason=formulaName(shown.mode)+' đang tạm dẫn đầu, nhưng chưa đạt điều kiện tối thiểu để tự bật tín hiệu.';}
+ else if(used){header='AUTO · '+formulaName(lead.mode);reason='Bộ này vừa có phong độ phù hợp và đang phát tín hiệu '+lead.current.pick+' cho lượt tới.';}
+ else {header='AUTO · ĐANG THEO DÕI';reason=formulaName(lead.mode)+' có phong độ gần đây khá hơn, nhưng chưa kích hoạt dự đoán cho lượt tới.';}
+ $('autoCurrent').innerHTML=`<strong>BÀN ĐANG KIỂM TRA: ${escape(board.name)}</strong> · ${board.seq.length} lượt đã nhập ${state.demo?'· <span style="color:#efc77e">DEMO lịch sử</span>':'· Dữ liệu bàn hiện tại'}`;
+ $('autoStatus').innerHTML=`<div><div class="main">${header}</div><div class="desc">${reason}</div></div><div class="side">${shown?shown.span+'<br>'+shown.hit+'/'+shown.sz+' đúng':'—'}</div>`;
+ $('autoGrid').innerHTML=choice.profiles.map(p=>{const leading=lead?.mode===p.mode,em=p.current?.pick&&!p.current.conflict?' · ĐANG BÁO '+p.current.pick:'';return `<div class="autoMini ${leading?'leader':''}"><div class="n">${formulaName(p.mode)}</div><div class="r ${p.ok?'good':(p.sz>=3?'poor':'')}">${pct(p.hit,p.sz)}</div><div class="m">${p.hit}/${p.sz} · ${p.span}</div><div class="m">3 tín hiệu: ${p.recentHit}/${p.recentN}</div><div class="tiny">${p.sz<3?'Ít mẫu':p.ok?'Khá gần đây':'Chưa đạt'}${em}</div></div>`}).join('');
+ $('autoStat').innerHTML=`<b>AUTO trên bàn này:</b> ${a.hit}/${a.n} đúng (${pct(a.hit,a.n)}) · ${a.tie} Hòa · ${a.signals} lần báo trong bàn. <span style="color:#8fabb8">Mỗi lượt chọn bằng dữ liệu bàn này đã có trước lúc mở kết quả. Đây là thống kê, không phải dự đoán chắc chắn.</span>`;
+}
+function render(){
+ const b=boardActive(),aInfo=state.viewMode==='formula'&&!['focus','experimental','groupB'].includes(state.formulaGroup)?autoWalk(b):null,current=state.viewMode==='formula'?(state.autoMode?(aInfo?.current.leader?.mode||null):chosenProfile()):null;
+ document.body.classList.toggle('manual-enabled',!!state.manualMode);
+ $('manualToggle').textContent=state.manualMode?'✓ Đang thủ công · Về AUTO':'Bật thủ công (nâng cao)';
+ renderDynamicAuto(b);
+ $('activeBoardBanner').innerHTML=`<span class="boardPulse"></span><b>${escape(b.name)}</b> · ${b.seq.length} lượt · B ${b.seq.filter(x=>x==='B').length} / P ${b.seq.filter(x=>x==='P').length} / H ${b.seq.filter(x=>x==='H').length} <span>${state.demo?'DEMO · dữ liệu cũ':'AUTO chỉ dùng bàn này'}</span>`;
+ // Separate modes avoid mixing per-rule evidence with overlapping formula bundles.
+ const single=state.viewMode==='single';
+ document.body.dataset.focus=state.viewMode;
+ $('modePanelTitle').textContent=single?'86 rule · thống kê riêng từng BK':(state.formulaGroup==='focus'?'138 bộ · nổi bật trên bàn này':state.formulaGroup==='groupB'?'Nhóm B · 2 bộ độc lập':state.formulaGroup==='mined'?'11 công thức':state.formulaGroup==='experimental'?'3 bộ thử G4–G6':'9 bộ cũ')+' · cao trước trên bàn này';
+ $('formulaScope').hidden=single;
+ document.querySelectorAll('[data-smart-filter]').forEach(x=>{x.classList.toggle('active',x.dataset.smartFilter===state.smartFilter);x.setAttribute('aria-pressed',String(x.dataset.smartFilter===state.smartFilter));});
+ $('backtestBody').innerHTML='<table class="studyTable"><thead><tr><th>Bộ</th><th>40 học</th><th>12 đối chiếu</th><th>5 gần đây</th></tr></thead><tbody>'+[...BACKTEST_STUDY,...GROUP_B_BACKTEST].map(x=>'<tr><td>'+escape(x.name)+'</td>'+['train','test','new'].map(k=>'<td>'+x[k].hit+'/'+x[k].n+' · '+pct(x[k].hit,x[k].n)+'</td>').join('')+'</tr>').join('')+'</tbody></table>';
+ $('comparePanelTitle').textContent=state.formulaGroup==='focus'?'138 bộ công thức · thống kê từng bàn':state.formulaGroup==='groupB'?'Nhóm B riêng · chọn B-A hoặc B-B':state.formulaGroup==='mined'?'11 công thức theo bàn · cao trước':state.formulaGroup==='experimental'?'3 bộ ghép bổ sung · cao trước':'9 bộ cũ · cao trước';
+ $('viewModeDetails').textContent=single?'Xem 86 rule':'Xem so sánh';
+ document.querySelectorAll('[data-focus]').forEach(x=>{x.classList.toggle('active',x.dataset.focus===state.viewMode);x.setAttribute('aria-pressed',String(x.dataset.focus===state.viewMode));});
+ $('modeButtons').hidden=single;
+ $('singleRuleBoard').hidden=!single;
+ $('autoPanel').hidden=single||['focus','experimental','groupB'].includes(state.formulaGroup);
+ const ranked=single?[]:rankedFormulas(b);
+ if(!single && state.formulaGroup==='focus')ranked.sort(focusSort);
+ const shown=single?[]:(state.formulaGroup==='focus'?focusVisible(ranked,state.smartFilter):ranked);
+ const strongCount=ranked.filter(focusIsStrong).length;
+ const signalCount25=ranked.filter(f=>f.m.full.n>=3&&(f.m.next==='B'||f.m.next==='P')).length;
+ if(!single){$('formulaScopeNote').textContent=`${strongCount} nổi bật · ${signalCount25} đang báo (≥3 mẫu) · ${ranked.length} bộ được chấm · theo bàn hiện tại`; }
+ $('modeButtons').innerHTML=shown.map((f,i)=>{
+   const m=f.m,fullRate=m.full.n?pct(m.full.hit,m.full.n):'—',recentRate=m.recent.n?pct(m.recent.hit,m.recent.n):'—';
+   const nextTone=m.next==='B'?'B':m.next==='P'?'P':m.next==='XUNG ĐỘT'?'conflict':'wait';
+   const enough=m.full.n>=3;
+   return `<${state.manualMode?'button':'div'} class="modeBtn ${current===f.id?'selected':''} ${!enough?'formulaLowSample':''}" data-mode="${f.id}" aria-label="${f.name}. ${f.note}. Cả bàn ${m.full.hit}/${m.full.n}: ${fullRate}. Gần đây ${m.span}: ${m.recent.hit}/${m.recent.n}: ${recentRate}. Tín hiệu tiếp theo ${m.next}.">
+      <span class="modeTop"><span class="modeTag">${f.name}</span><span class="modeNext ${nextTone}">${m.next}</span></span>
+      <span class="formulaSub">${f.id.startsWith('M')?'Theo bàn':f.id.startsWith('F')?'Bộ cũ':f.id.startsWith('G')?'Bổ sung':['C4','C5'].includes(f.id)?f.id+' mới':f.id.startsWith('S')?'Chuyên bàn':f.id.startsWith('D')?'Tăng phủ':'Nhóm B'} · ${f.ids.length} BK rule</span><span class="formulaIds">${f.ids.join(' · ')}</span>
+      <span class="modeFull"><strong>${fullRate}</strong><span>${m.full.hit}/${m.full.n} cả bàn</span></span>
+      <span class="modeRecent"><span>${m.span.startsWith('cả bàn')?m.span:'Gần '+m.span}</span><strong>${recentRate} <em>${m.recent.hit}/${m.recent.n}</em></strong></span>
+      <span class="modeBottom ${m.tone}">${m.full.n<3?'Ít mẫu cả bàn · '+m.status:m.status}</span>
+    </${state.manualMode?'button':'div'}>`;
+ }).join('') || (single?'':`<div class="focusEmpty"><b>${state.smartFilter==='signal'?'Không có bộ nào đang báo và đã đủ 3 tín hiệu':state.smartFilter==='strong'?'Chưa bộ nào đạt 80% với ít nhất 5 tín hiệu':'Chưa có bộ đủ điều kiện nổi bật'}</b><div>Tool vẫn chấm cả 138 bộ ở nền. Đổi bộ lọc sang <b>Tất cả 138</b> để xem các kết quả khác. Không suy ra tỷ lệ thắng từ vài tín hiệu.</div></div>`);
+ $('modeButtons').scrollLeft=0;
+ if(state.manualMode)$('modeButtons').querySelectorAll('[data-mode]').forEach(x=>x.onclick=()=>chooseProfile(x.dataset.mode));
+ if(single){
+  const all=rankedSingleRules(b,false),signalCount=all.filter(x=>x.score.current).length;
+  const rankedRules=state.singleOnlyActive?all.filter(x=>x.score.current):all;
+  $('singleRuleHint').textContent=`${ALL.length} rule độc lập · ${signalCount} đang báo B/P lượt tới`;
+  $('singleFilter').classList.toggle('active',state.singleOnlyActive);
+  $('singleFilter').textContent=state.singleOnlyActive?'✓ Đang báo · Bỏ lọc':'Lọc đang báo';
+  const cards=rankedRules.slice(0,18);
+  $('singleRuleCards').innerHTML=cards.length?cards.map(({rule:r,score:m})=>{
+    const recentRate=m.recentN?pct(m.recentHit,m.recentN):'—';
+    const fullRate=m.n?pct(m.hit,m.n):'—';
+    const isSelected=state.singleRuleId===r.id;
+    const status=m.n<5?'Ít mẫu'+(m.n?' ('+m.n+' lượt)':''):m.label;
+    return `<button type="button" data-single="${r.id}" class="singleRuleCard ${isSelected?'selected':''}" aria-label="Rule ${r.id}. Cả bàn ${m.hit}/${m.n}. Gần đây ${m.recentHit}/${m.recentN} trong ${m.span}. Lượt tới ${m.current?.pick||'CHỜ'}. Chọn riêng rule này.">
+       <span class="singleRuleTop"><b>${r.id}</b><span class="singleRuleNext ${m.current?.pick||''}">${m.current?.pick||'CHỜ'}</span></span>
+       <span class="singleRuleStat"><strong>${fullRate}</strong><span>${m.hit}/${m.n} cả bàn</span></span>
+       <span class="singleRuleRecent">Gần ${m.span}: <b>${recentRate}</b> · ${m.recentHit}/${m.recentN}</span>
+       <span class="singleRuleStatus ${m.n<5?'small':m.level==='good'?'good':m.level==='weak'?'weak':''}">${isSelected?'✓ Đang chọn · ':''}${status}</span>
+     </button>`;
+  }).join(''):'<div class="singleRuleEmpty">Chưa có BK rule nào phát tín hiệu B/P cho lượt tới. Bỏ lọc để xem thống kê các rule đã xuất hiện.</div>';
+  $('singleRuleCards').querySelectorAll('[data-single]').forEach(x=>x.onclick=()=>selectSingleRule(x.dataset.single));
+ }
+ $('windowMeta').textContent=windowLabel()+' · '+b.seq.length+' lượt đã nhập';
+ if(!single&&!['focus','experimental','groupB'].includes(state.formulaGroup))renderAuto(b,aInfo);
+$('windowOptions').querySelectorAll('[data-lookback]').forEach(x=>{x.classList.toggle('selected',Number(x.dataset.lookback)===state.lookback);x.onclick=()=>{state.lookback=Number(x.dataset.lookback);render();};});
+ main();if(tab==='rules')renderRules();if(tab==='stats')renderStats();if(tab==='data')renderData();store();
+}
+function add(x){if(state.demo)return;boardActive().seq.push(x);state.redo=[];render();}
+function makeBoard(name,seq=[],origin=0){const b={id:'manual_'+Date.now()+'_'+Math.random().toString(36).slice(2,7),name:name||'Bàn mới',seq,origin};state.boards.push(b);state.chosen=b.id;state.demo=null;state.redo=[];render();return b;}
+function normalize(v){if(typeof v!=='string')return null;let s=v.trim().toUpperCase();return s==='B'||s==='BANKER'?'B':s==='P'||s==='PLAYER'?'P':['H','T','HOA','HÒA','TIE','DRAW'].includes(s)?'H':null;}
+function rank(x){x=String(x).toUpperCase().trim();return x==='A'?1:['10','0','T','J','Q','K'].includes(x)?0:(/^[2-9]$/.test(x)?Number(x):null);}
+function asOutcome(x){if(typeof x==='string')return normalize(x);if(!x||typeof x!=='object')return null;let direct=normalize(x.result??x.outcome??x.winner??x.side??x.win??x.value);if(direct)return direct;let pc=x.p??x.player??x.playerCards??x.cards?.p,bc=x.b??x.banker??x.bankerCards??x.cards?.b;if(Array.isArray(pc)&&Array.isArray(bc)){let p=pc.map(rank),b=bc.map(rank);if(p.includes(null)||b.includes(null))return null;let ps=p.reduce((s,x)=>s+x,0)%10,bs=b.reduce((s,x)=>s+x,0)%10;return ps===bs?'H':ps>bs?'P':'B';}return null;}
+function parseImport(raw,name){let json=null;try{json=JSON.parse(raw);}catch{}let out=[];const part=(x,label)=>{let seq=[],origin=0;if(Array.isArray(x)){seq=x.map(asOutcome).filter(Boolean);}else if(x&&typeof x==='object'){if(Array.isArray(x.cols))seq=x.cols.flatMap(c=>Array.isArray(c)?c:[]).map(asOutcome).filter(Boolean);else if(Array.isArray(x.seq))seq=x.seq.map(asOutcome).filter(Boolean);else if(typeof x.seq==='string')seq=x.seq.split('').map(normalize).filter(Boolean);else if(Array.isArray(x.results))seq=x.results.map(asOutcome).filter(Boolean);else if(Array.isArray(x.hands))seq=x.hands.map(asOutcome).filter(Boolean);else if(Array.isArray(x.records))seq=x.records.map(asOutcome).filter(Boolean);else if(Array.isArray(x.rounds))seq=x.rounds.map(asOutcome).filter(Boolean);else if(Array.isArray(x.state?.hands))seq=x.state.hands.map(asOutcome).filter(Boolean);origin=Number(x.origin)||0;if(x.state?.startRound&&!x.origin)origin=Math.max(0,Number(x.state.startRound)-1)||0;label=x.name||label;}if(seq.length)out.push({name:label,seq,origin});};
+if(json){if(Array.isArray(json.boards))json.boards.forEach((b,i)=>part(b,name+' '+(i+1)));else part(json,name);}else{let stripped=raw.toUpperCase().replace(/[\s,;|/\-]+/g,'');if(/^[BPHT]+$/.test(stripped)&&stripped)out.push({name,seq:stripped.split('').map(x=>x==='T'?'H':x),origin:0});else{let xs=raw.trim().split(/[\s,;|/]+/).map(normalize).filter(Boolean);if(xs.length)out.push({name,seq:xs,origin:0});}}if(!out.length)throw new Error('Không đọc được chuỗi B/P/H hay backup JSON.');return out;}
+function download(file,text,mime){let blob=new Blob([text],{type:mime}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=file;a.click();setTimeout(()=>URL.revokeObjectURL(url),3000);}
+function exportAllIndependentCSV(kind){
+ const b=boardActive(),live=liveBreakdown(b),name=b.name;
+ const all=kind==='summary';let rows;
+ if(all){
+  rows=[['Bàn','Rule','Đúng','Sai','Hòa','B/P đã chấm','% cả bàn','Gần đây bao nhiêu tay','Gần đây đúng','Gần đây tổng','% gần đây','Lượt tới','Lần báo cuối','5 tín hiệu gần nhất','40 bàn học đúng','40 bàn học tổng','12 bàn đối chiếu đúng','12 bàn đối chiếu tổng','CV đúng','CV tổng']];
+  for(const r of ALL){const m=singleHealth(live[r.id],b);
+   rows.push([name,r.id,m.hit,m.miss,m.tie,m.n,pct(m.hit,m.n),m.span,m.recentHit,m.recentN,pct(m.recentHit,m.recentN),m.current?.pick||'CHỜ',m.lastAt||'',m.last.map(x=>x.ok?'Đ':'S').join(''),r.train.hit,r.train.n,r.test.hit,r.test.n,r.cv.hit,r.cv.n]);
+  }
+ }else{
+  rows=[['Bàn','Lượt','Rule','Dự đoán','Thực tế','Đúng/sai','Điều kiện']];
+  for(const e of review(b,ALL).entries)rows.push([name,e.t,e.id,e.pick,e.actual,e.ok===null?'HÒA':e.ok?'ĐÚNG':'SAI',e.cond]);
+ }
+ const file='BangKhoi_v40_'+(all?'86_Rule_TongHop':'86_Rule_TungLuot')+'.csv';
+ download(file,'\ufeff'+rows.map(r=>r.map(v=>'"'+String(v??'').replaceAll('"','""')+'"').join(',')).join('\r\n'),'text/csv;charset=utf-8');
+}
+function exportCSV(){let q=review(boardActive());if(!state.manualMode&&state.autoMode)q={entries:autoWalk(boardActive()).rows};let rows=[['Lượt','Rule','Dự đoán','Thực tế','Đúng_sai','Điều kiện']];for(let e of q.entries)rows.push([e.t,e.id,e.pick,e.actual,e.ok===null?'HOA':e.ok?'DUNG':'SAI',e.cond]);download('BangKhoi_v40_HienTai_DungSai.csv','\ufeff'+rows.map(r=>r.map(x=>'"'+String(x).replaceAll('"','""')+'"').join(',')).join('\r\n'),'text/csv;charset=utf-8');}
+// v5.2 — ONE FILE FOR RESEARCH + RESTORE: avoids multiple separately exported files.
+// Each signal is reconstructed from results available BEFORE its corresponding round.
+// The audit is a current-algorithm replay, not a historic live decision ledger.
+function researchStatus(actual,pick,conflict=false){return conflict?'conflict':actual==='H'?'tie':actual===pick?'correct':'wrong';}
+function researchStatsInit(){return {hit:0,miss:0,tie:0,conflict:0,signals:0,n:0};}
+function researchStatsAdd(s,status){if(status==='conflict'){s.conflict++;return;}s.signals++;if(status==='correct')s.hit++;else if(status==='wrong')s.miss++;else if(status==='tie')s.tie++;s.n=s.hit+s.miss;}
+function researchCompactStats(events,len){
+ const confirmed=events.filter(x=>x.status==='correct'||x.status==='wrong');
+ let recent=confirmed,span=len;
+ for(const w of [10,15,20,30]){const r=confirmed.filter(e=>e.roundIndex>len-w);if(r.length>=3){recent=r;span=Math.min(len,w);break;}}
+ return {rounds:span,hit:recent.filter(e=>e.status==='correct').length,n:recent.length};
+}
+function researchBoard(board){
+ const rules=Object.fromEntries(ALL.map(r=>[r.id,researchStatsInit()]));
+ const formulas=Object.fromEntries(FORMULAS.map(f=>[f.id,researchStatsInit()]));
+ const ruleEvents=[],formulaEvents=[],formulaEventsById=Object.fromEntries(FORMULAS.map(f=>[f.id,[]]));
+ const ruleEventsById=Object.fromEntries(ALL.map(r=>[r.id,[]]));
+ const origin=Number(board.origin)||0;
+ for(let t=4;t<board.seq.length;t++){
+  const actual=board.seq[t],round=t+1+origin,roundIndex=t+1;
+  const hits=selections(board,t,ALL),hitsById=new Map(hits.map(h=>[h.rule.id,h]));
+  for(const h of hits){
+   const status=researchStatus(actual,h.res.pick),e={round,roundIndex,ruleId:h.rule.id,pick:h.res.pick,actual,status,condition:h.res.cond};
+   ruleEvents.push(e);ruleEventsById[h.rule.id].push(e);researchStatsAdd(rules[h.rule.id],status);
+  }
+  for(const f of FORMULAS){
+   const active=f.ids.map(id=>hitsById.get(id)).filter(Boolean);
+   if(!active.length)continue;
+   const v=votes(active),conflict=!!(v.B&&v.P);
+   const pick=conflict?null:(v.B?'B':v.P?'P':null);
+   if(!pick&&!conflict)continue;
+   const status=researchStatus(actual,pick,conflict);
+   const e={round,roundIndex,formulaId:f.id,pick,actual,status,
+    activeRuleIds:active.map(h=>h.rule.id),ruleVotes:active.map(h=>[h.rule.id,h.res.pick]),
+    voteB:v.B,voteP:v.P};
+   formulaEvents.push(e);formulaEventsById[f.id].push(e);researchStatsAdd(formulas[f.id],status);
+  }
+ }
+ // Current next-hand signals are calculated only from currently known outcomes.
+ const hitsNext=selections(board,board.seq.length,ALL);
+ const nextById=new Map(hitsNext.map(h=>[h.rule.id,h]));
+ const ruleNext=hitsNext.map(h=>({ruleId:h.rule.id,pick:h.res.pick,condition:h.res.cond}));
+ const formulaNext=[];
+ for(const f of FORMULAS){const hh=f.ids.map(id=>nextById.get(id)).filter(Boolean);if(!hh.length)continue;
+  const v=votes(hh),conflict=!!(v.B&&v.P),pick=conflict?null:(v.B?'B':v.P?'P':null);
+  formulaNext.push({formulaId:f.id,pick,conflict,activeRuleIds:hh.map(h=>h.rule.id),ruleVotes:hh.map(h=>[h.rule.id,h.res.pick])});
+ }
+ for(const r of ALL){const s=rules[r.id],e=ruleEventsById[r.id];s.recent=researchCompactStats(e,board.seq.length);s.next=nextById.get(r.id)?.res.pick||null;}
+ for(const f of FORMULAS){const s=formulas[f.id],e=formulaEventsById[f.id];s.recent=researchCompactStats(e,board.seq.length);s.next=formulaNext.find(x=>x.formulaId===f.id)?.pick||null;}
+ const auto=autoWalk(board),current=auto.current,leader=current?.leader||null;
+ return {boardId:board.id,name:board.name,roundCount:board.seq.length,
+  outcomeCounts:{B:board.seq.filter(x=>x==='B').length,P:board.seq.filter(x=>x==='P').length,H:board.seq.filter(x=>x==='H').length},
+  ruleSummary:rules,formulaSummary:formulas,ruleEvents,formulaEvents,
+  nextHand:{round:origin+board.seq.length+1,ruleSignals:ruleNext,formulaSignals:formulaNext,
+   auto:{selectedFormulaId:leader?.mode||null,pick:current?.active&&leader?.current?leader.current.pick:null,
+    eligible:!!current?.active,score:leader?{hit:leader.hit,n:leader.sz,span:leader.span}:null}},
+  autoReplayed:{note:'Walk-forward tái tính bằng thuật toán ở phiên bản hiện tại, không phải bản ghi trực tiếp khi đánh thực tế.',
+   summary:{hit:auto.hit,miss:auto.miss,tie:auto.tie,n:auto.n,signals:auto.signals},
+   events:auto.rows.map(x=>({round:x.t,formulaId:x.mode,pick:x.pick,actual:x.actual,
+    status:x.ok===null?'tie':x.ok?'correct':'wrong',selectionReason:x.cond}))}
+ };
+}
+async function exportCompleteResearch(){
+ const btn=$('exportJson'),info=$('researchExportStatus');
+ if(btn.disabled)return;
+ btn.disabled=true;const original=btn.textContent;btn.textContent='Đang tổng hợp…';
+ try{
+  const exportedAt=new Date().toISOString();
+  const payload={format:'BangKhoiLab',version:22,researchExportFormat:'BangKhoiLabResearchBundle',researchExportVersion:1,
+   exportedAt,appVersion:'5.2',notes:[
+    'ONE FILE: có cả raw boards để nhập lại, thư viện rule/công thức, thống kê và lịch sử đúng/sai từng lượt.',
+    'status=correct/wrong/tie/conflict; Hòa (tie) không tính vào mẫu số độ chính xác B/P; conflict không phát dự đoán.',
+    'Lịch sử, AUTO và lượt tới được tái tính theo mã đang xuất, không phải bản ghi live từ các phiên bản cũ.',
+    'Tỷ lệ lịch sử không bảo đảm dự báo trong tương lai; nhiều rule và công thức được chọn sau khi xem cùng dữ liệu.'
+   ],boards:state.boards.map(b=>({id:b.id,name:b.name,seq:b.seq.slice(),origin:Number(b.origin)||0})),
+   chosenBoardId:state.chosen,enabledRuleIds:state.enabled.slice(),autoMode:state.autoMode,
+   dynamicAutoMode:state.dynamicAutoMode,smartFilter:state.smartFilter,formulaGroup:state.formulaGroup,
+   viewMode:state.viewMode,singleRuleId:state.singleRuleId,formulaAutoMode:state.formulaAutoMode,
+   ruleCatalog:ALL.map(r=>({id:r.id,feature_names:r.feature_names,patterns:r.patterns,train:r.train,test:r.test,cv:r.cv})),
+   formulaCatalog:FORMULAS.map(f=>({id:f.id,name:f.name,note:f.note,ids:f.ids,group:
+    f.id.startsWith('F')?'legacy':f.id.startsWith('M')?'board-mined':f.id.startsWith('G')?'experimental':
+    f.id==='BA'||f.id==='BB'?'group-B':f.id.startsWith('E')?'chuyen-ban-hoi-cuu':'new'})),
+   referenceBacktest:{note:'Các con số này là hồi cứu từ dữ liệu từng nghiên cứu, không phải tỷ lệ xác nhận độc lập.',data:[...BACKTEST_STUDY,...GROUP_B_BACKTEST]},
+   analysis:{method:'replay-prev-round-only',version:'5.2',boards:[]}
+  };
+  let totalRounds=0,totalRuleSignals=0,totalFormulaSignals=0;
+  for(let i=0;i<payload.boards.length;i++){
+   const b=payload.boards[i];info.textContent=`Đang tính bàn ${i+1}/${payload.boards.length}: ${b.name} (${b.seq.length} tay)…`;
+   // Yield so the iPhone can paint progress; no network requests.
+   await new Promise(resolve=>setTimeout(resolve,0));
+   const result=researchBoard(b);payload.analysis.boards.push(result);
+   totalRounds+=b.seq.length;totalRuleSignals+=result.ruleEvents.length;totalFormulaSignals+=result.formulaEvents.length;
+  }
+  payload.analysis.overall={boardCount:payload.boards.length,roundCount:totalRounds,ruleSignals:totalRuleSignals,formulaSignals:totalFormulaSignals,ruleCount:ALL.length,formulaCount:FORMULAS.length};
+  const yyyy=exportedAt.slice(0,10),filename=`BangKhoi_DAY_DU_1_FILE_${yyyy}.json`;
+  download(filename,JSON.stringify(payload,null,1),'application/json;charset=utf-8');
+  info.textContent=`Đã xuất 1 file: ${payload.boards.length} bàn · ${totalRounds} tay · ${ALL.length} rule · ${FORMULAS.length} công thức · lịch sử AUTO.`;
+  notify('Đã tạo 1 file JSON đầy đủ để gửi phân tích và sao lưu.');
+ }catch(e){info.textContent='Không xuất được: '+e.message;notify('Lỗi xuất dữ liệu: '+e.message);}
+ finally{btn.disabled=false;btn.textContent=original;}
+}
+function wire(){document.querySelectorAll('.tabs button').forEach(x=>x.onclick=()=>setTab(x.dataset.tab));
+document.querySelectorAll('[data-focus]').forEach(x=>x.onclick=()=>switchView(x.dataset.focus));$('singleFilter').onclick=()=>{state.singleOnlyActive=!state.singleOnlyActive;render();};
+document.querySelectorAll('[data-smart-filter]').forEach(x=>x.onclick=()=>{state.smartFilter=x.dataset.smartFilter;state.formulaGroup='focus';if(!state.manualMode){state.viewMode='formula';state.autoMode=true;}render();});
+$('ruleAutoToggle').onclick=()=>{if(state.manualMode){state.manualMode=false;state.viewMode='formula';state.dynamicAutoMode=false;state.autoMode=true;state.formulaGroup='focus';render();return;}const h=$('autoHelp');h.hidden=!h.hidden;};
+$('manualToggle').onclick=()=>{state.manualMode=!state.manualMode;state.autoMode=!state.manualMode;state.dynamicAutoMode=false;state.viewMode='formula';state.formulaGroup='focus';render();};
+$('viewModeDetails').onclick=()=>setTab('rules');$('autoDisclosure').onclick=()=>{state.autoDetailsOpen=!state.autoDetailsOpen;syncAutoDisclosure();store();};$('autoToggle').onclick=()=>{if(['focus','experimental','groupB'].includes(state.formulaGroup))return;state.viewMode='formula';state.dynamicAutoMode=false;state.autoMode=!state.autoMode;state.formulaAutoMode=state.autoMode;render();};$('gotoRuleSettings').onclick=()=>setTab('rules');
+$('addB').onclick=()=>add('B');$('addP').onclick=()=>add('P');$('addH').onclick=()=>add('H');
+$('undo').onclick=()=>{const b=boardActive();if(!state.demo&&b.seq.length){state.redo.push(b.seq.pop());render();}};
+$('redo').onclick=()=>{if(!state.demo&&state.redo.length){boardActive().seq.push(state.redo.pop());render();}};
+$('boardNew').onclick=()=>{const name=prompt('Tên bàn mới:','Bàn '+(state.boards.length+1));if(name!==null)makeBoard(name);};
+$('boardRename').onclick=()=>{let b=boardActive();if(!state.demo){let n=prompt('Tên bàn:',b.name);if(n){b.name=n;render();}}};
+$('boardClear').onclick=()=>{if(!state.demo&&confirm('Xóa dữ liệu của bàn hiện tại?')){boardActive().seq=[];state.redo=[];render();}};
+$('boardSelect').onchange=()=>{state.chosen=$('boardSelect').value;state.demo=null;render();};
+$('goStats').onclick=()=>setTab('stats');
+for(const id of ['ruleSearch','ruleOrder','ruleFilter'])$(id).addEventListener(id==='ruleSearch'?'input':'change',renderRules);
+$('demoOpen').onclick=()=>{state.demo={index:Number($('demoSelect').value)||0,pos:0};setTab('main');};
+$('demoPrev').onclick=()=>{if(state.demo){state.demo.pos=Math.max(0,state.demo.pos-1);render();}};
+$('demoNext').onclick=()=>{if(state.demo){state.demo.pos=Math.min(DEMOS[state.demo.index].seq.length,state.demo.pos+1);render();}};
+$('demoFinish').onclick=()=>{if(state.demo){state.demo.pos=DEMOS[state.demo.index].seq.length;render();}};
+$('demoExit').onclick=()=>{state.demo=null;render();};
+const importSome=(raw,name)=>{const arr=parseImport(raw,name);let backup=null;try{backup=JSON.parse(raw);}catch{}if(Array.isArray(backup?.enabledRuleIds))state.enabled=backup.enabledRuleIds.filter(id=>ALL.some(r=>r.id===id));if(typeof backup?.autoMode==='boolean')state.autoMode=backup.autoMode;if(typeof backup?.dynamicAutoMode==='boolean')state.dynamicAutoMode=backup.dynamicAutoMode;if(backup?.viewMode==='single'||backup?.viewMode==='formula')state.viewMode=backup.viewMode;if(ALL.some(r=>r.id===backup?.singleRuleId))state.singleRuleId=backup.singleRuleId;if(typeof backup?.formulaAutoMode==='boolean')state.formulaAutoMode=backup.formulaAutoMode;state.formulaGroup='focus';if(!state.manualMode){state.autoMode=true;state.viewMode='formula';state.dynamicAutoMode=false;}if(arr.length&&state.boards.length===1&&state.boards[0].seq.length===0&&state.boards[0].name==='Bàn của tôi'){state.boards=[];}for(const d of arr)makeBoard(d.name,d.seq,d.origin);setTab('main');notify('Đã nhập '+arr.length+' bàn, '+arr.reduce((s,x)=>s+x.seq.length,0)+' lượt; '+state.enabled.length+' rule đang bật.');};
+$('importPaste').onclick=()=>{try{importSome($('pasteText').value,'Chuỗi dán');}catch(e){notify('Lỗi: '+e.message);}};
+$('importFile').onchange=async e=>{const f=e.target.files?.[0];if(f)try{importSome(await f.text(),f.name);}catch(e){notify('Lỗi: '+e.message);}e.target.value='';};
+$('loadC10').onclick=()=>{makeBoard('C10 (20 lượt từ ảnh)',('BBPBBP'+'PPPPPP'+'BBBBBB'+'BH').split(''),0);setTab('main');notify('Đã nạp bàn C10: 20 kết quả B/P/H.');};
+$('exportJson').onclick=exportCompleteResearch;
+$('exportResults').onclick=exportCSV;
+$('exportFormulaLibrary').onclick=()=>download('BangKhoi_v52_DanhMuc_138_CongThuc.json',JSON.stringify({format:'BangKhoiLabFormulaLibrary',version:'5.2',note:'138 công thức gồm C4/C5, S1–S3, D1/D2 và 106 công thức E theo từng bàn. Các tỷ lệ >80% trên một bàn là hồi cứu, không được xác minh độc lập.',coreFormulas:CORE_FORMULAS,groupB:GROUP_B_FORMULAS,newFormulas:NEW_FORMULAS,specialistFormulas:SPECIALIST_FORMULAS,coverageFormulas:COVERAGE_FORMULAS,expandedFormulas:EXPANDED_FORMULAS,backtest:[...BACKTEST_STUDY,...GROUP_B_BACKTEST]},null,2),'application/json');$('exportRoundCsv').onclick=exportCSV;
+$('exportAllRuleSummary').onclick=()=>exportAllIndependentCSV('summary');$('exportAllRuleEvents').onclick=()=>exportAllIndependentCSV('events');
+document.addEventListener('keydown',e=>{if(/INPUT|SELECT|TEXTAREA/.test(e.target.tagName)||e.ctrlKey||e.metaKey||e.altKey)return;if(tab==='main'&&['B','P','H'].includes(e.key.toUpperCase()))add(e.key.toUpperCase());});
+}
+wire();render();window.__LAB_TEST__={researchBoard,exportCompleteResearch,NEW_FORMULAS,SPECIALIST_FORMULAS,COVERAGE_FORMULAS,EXPANDED_FORMULAS,dynamicChoose,dynamicWalk,dynamicRules,dynamicSummary,FORMULAS,CORE_FORMULAS,GROUP_B_FORMULAS,GROUP_B_BACKTEST,LEGACY_FORMULAS,BOARD_FORMULAS,EXPERIMENT_FORMULAS,BACKTEST_STUDY,activeFormulas,rankedFormulas,formulaName,presetHealth,features,predict,review,ALL,DEMOS,parseImport,votes,summary12,summaryBoard,stageSummary,liveBreakdown,autoData,autoAt,autoWalk,chooseProfile,rankedSingleRules,singleHealth,selectSingleRule,switchView,focusVisible,focusIsStrong,getState:()=>state,autoNow:()=>autoWalk(boardActive()),setWindow:(n)=>{state.lookback=n;render();}};
+})();
+</script><script>if('serviceWorker' in navigator && location.protocol === 'https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./lab-sw.js').catch(()=>{}));}</script></body></html>
